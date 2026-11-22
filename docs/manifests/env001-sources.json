@@ -1,0 +1,152 @@
+{
+  "audit_date": "2026-09-26",
+  "status": "source-audited candidate; historical training simulator linkage unproven",
+  "sources": [
+    {
+      "repository": "https://github.com/lucas-maes/le-wm",
+      "revision": "ca231f9f9d9ab041034b6d05e90b6e04bd6cff82",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "4882021920cbd61e050e4dc2e02440e9bd36ea4cbc5803e738a2ee3d63502e07"
+        },
+        {
+          "path": "jepa.py",
+          "sha256": "41bad7fd21e0f14aea4c9c3d39a9c87037e787746d953ab62cdc0677e938ce96"
+        },
+        {
+          "path": "module.py",
+          "sha256": "0b258a9e8dc24c29fcb1e8c50a09ec78b8ea85aeb79e21dd8adf712396646620"
+        },
+        {
+          "path": "utils.py",
+          "sha256": "0793dc4f0c2f27a3ece84e11fd10aa33dce762ca2c5032849c17dea5d95dd09f"
+        },
+        {
+          "path": "train.py",
+          "sha256": "bcb67b15f105bd78ab52c5480824a1334f95d841487d2f706ea55b4d5488dbdc"
+        },
+        {
+          "path": "eval.py",
+          "sha256": "91173f832a2ce57365f7f4813322fb353ee4431986687a75fc17da172edfa074"
+        },
+        {
+          "path": "config/train/lewm.yaml",
+          "sha256": "a64c43d90f8a9f0cfe289594f3484121a1fd8c666fd079dab949b429b796b045"
+        },
+        {
+          "path": "config/train/data/pusht.yaml",
+          "sha256": "b8ba85c0eb145f6131d049f3c0a556430262485d963c28a48954b357da1fc11e"
+        },
+        {
+          "path": "config/eval/pusht.yaml",
+          "sha256": "5d07527d3012b33cf59f4a5112476bc6780930af81b3874b97cf2ecec911eae4"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/galilai-group/stable-worldmodel",
+      "revision": "44c45bd1f774995aac0cc2b41444ebea24c1d5ad",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "b76556cc8248c558cdd41fa32b492e2459fc4ef28ebd5e0444a5b86d76829fb8"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "dc7d98c83e84352d527833c853cd79f013f0599fd630fe407c782b63f13717b0"
+        },
+        {
+          "path": "stable_worldmodel/envs/pusht/env.py",
+          "sha256": "d8d0de35aaab5b846db4e79b0fbfd6b17375178cce40a25df5301c8030ca6d68"
+        },
+        {
+          "path": "stable_worldmodel/envs/utils.py",
+          "sha256": "38314dcabc556c954d64b1c2a1b558e32b48a0db092657dd745dcb960c9cf6f0"
+        },
+        {
+          "path": "stable_worldmodel/data/dataset.py",
+          "sha256": "8eea182267730a9bad95eb6412db58f66eb859ffc2e39e67aef078bc858ccf6f"
+        },
+        {
+          "path": "stable_worldmodel/world.py",
+          "sha256": "15fc9e4a69d2ad81d29ca8fedd689b53e96887f7614fa98223ef5ddee37bbda6"
+        },
+        {
+          "path": "stable_worldmodel/wm/lewm.py",
+          "sha256": "6eda82465fe7215a0d211ef452f2b1cbafab1991087db651a44ff7f6ac37430d"
+        }
+      ]
+    }
+  ],
+  "checkpoint": {
+    "repository": "https://huggingface.co/quentinll/lewm-pusht",
+    "revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "size": 1519
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "ff45e6fb2af057489eacebcb263f372061bdcab2",
+        "size": 178
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "2e534ee5c6286721c0ef967e24bddbfde482abf9",
+        "size": 1313
+      },
+      {
+        "rfilename": "weights.pt",
+        "blobId": "3a7873ece010f9f3c240b2ff3a4695e979aead41",
+        "size": 72290721,
+        "lfs": {
+          "sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+          "size": 72290721,
+          "pointerSize": 133
+        }
+      }
+    ],
+    "downloaded_and_hash_verified": [
+      "config.json",
+      "weights.pt"
+    ],
+    "license_declaration": "mit",
+    "card_sha256": "660de4e79b109ea18602618d90c72c44630957978ebd8474910713d896340292"
+  },
+  "training_dataset": {
+    "repository": "https://huggingface.co/datasets/quentinll/lewm-pusht",
+    "revision": "655cd446b9929369d7d406001da85c15d1457850",
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "bed0738c7eeb449bca98b5d2f33c89a1ee56349a",
+        "size": 2504
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "afa431023f1f27fd7378e79a1f740f0f889814be",
+        "size": 136
+      },
+      {
+        "rfilename": "pusht_expert_train.h5.zst",
+        "blobId": "0f7c50ecb25af70ac9633acdae9288a201dead28",
+        "size": 13136247974,
+        "lfs": {
+          "sha256": "7cfbd6d90fa2f27876379a5ff169715a36ed82edbda64f9e5b5bfa34d212f318",
+          "size": 13136247974,
+          "pointerSize": 136
+        }
+      }
+    ],
+    "downloaded": false,
+    "license_declaration": "mit",
+    "card_sha256": "ebf5f6c780c07bd365ff8b947acb33e11e06e0ded471de73893d0ec545ed7ccd"
+  },
+  "compared_later_source_revisions": {
+    "lucas-maes/le-wm": "8edfeb336732b5f3ce7b8b210d0ba370a09e2cac",
+    "galilai-group/stable-worldmodel": "63988116d34cde56aea1240d5e58eb158ac67dc0"
+  }
+}

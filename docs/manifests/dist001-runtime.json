@@ -1,0 +1,301 @@
+{
+  "actions": {
+    "all_study": {
+      "archive_blocks": 460257,
+      "archive_magnitude_percentiles": {
+        "1": 0.038393001191218974,
+        "25": 0.13818613803180363,
+        "5": 0.06810335420313174,
+        "50": 0.21055490272620014,
+        "75": 0.3232672425339535,
+        "95": 0.5208286121082826,
+        "99": 0.6830063671802233,
+        "99.9": 0.9710342719158102
+      },
+      "archive_nn_distance": {
+        "max": 0.5118610276365757,
+        "mean": 0.0656689442006244,
+        "median": 0.04155038653013103,
+        "p05": 0.003209647215983725,
+        "p95": 0.23873758430046638
+      },
+      "archive_spread_percentiles": {
+        "1": 0.031305394214230085,
+        "25": 0.10994669477638822,
+        "5": 0.05150865485389098,
+        "50": 0.21382796087152744,
+        "75": 0.3942789054783258,
+        "95": 0.6793741301302917,
+        "99": 0.9298642996577311,
+        "99.9": 1.4202818834639848
+      },
+      "study_blocks": 5040,
+      "study_fraction_above_archive_p99_magnitude": 0.0,
+      "study_fraction_joint_tail_below_1e-3": 1.0,
+      "study_fraction_nn_beyond_archive_p99": 0.0,
+      "study_joint_tail_mass": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "p05": 0.0,
+        "p95": 0.0
+      },
+      "study_magnitude_rank": {
+        "max": 0.9836591295732602,
+        "mean": 0.7388486146335564,
+        "median": 0.9771649317663827,
+        "p05": 0.0,
+        "p95": 0.9836591295732602
+      },
+      "study_nn_distance": {
+        "max": 0.31965546970316816,
+        "mean": 0.13833818067085374,
+        "median": 0.13878196189810119,
+        "p05": 0.025898006726975793,
+        "p95": 0.26419761511846734
+      }
+    },
+    "archive_block_definition": "non-overlapping 5-control blocks from each episode start",
+    "by_cohort": {
+      "challenge": {
+        "archive_blocks": 460257,
+        "archive_magnitude_percentiles": {
+          "1": 0.038393001191218974,
+          "25": 0.13818613803180363,
+          "5": 0.06810335420313174,
+          "50": 0.21055490272620014,
+          "75": 0.3232672425339535,
+          "95": 0.5208286121082826,
+          "99": 0.6830063671802233,
+          "99.9": 0.9710342719158102
+        },
+        "archive_nn_distance": {
+          "max": 0.5118610276365757,
+          "mean": 0.0656689442006244,
+          "median": 0.04155038653013103,
+          "p05": 0.003209647215983725,
+          "p95": 0.23873758430046638
+        },
+        "archive_spread_percentiles": {
+          "1": 0.031305394214230085,
+          "25": 0.10994669477638822,
+          "5": 0.05150865485389098,
+          "50": 0.21382796087152744,
+          "75": 0.3942789054783258,
+          "95": 0.6793741301302917,
+          "99": 0.9298642996577311,
+          "99.9": 1.4202818834639848
+        },
+        "magnitude_mean": 0.5135772621514146,
+        "study_blocks": 3360,
+        "study_fraction_above_archive_p99_magnitude": 0.0,
+        "study_fraction_joint_tail_below_1e-3": 1.0,
+        "study_fraction_nn_beyond_archive_p99": 0.0,
+        "study_joint_tail_mass": {
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "p05": 0.0,
+          "p95": 0.0
+        },
+        "study_magnitude_rank": {
+          "max": 0.9836591295732602,
+          "mean": 0.8170771981740634,
+          "median": 0.9789899990657394,
+          "p05": 0.0,
+          "p95": 0.9836591295732602
+        },
+        "study_nn_distance": {
+          "max": 0.31965546970316816,
+          "mean": 0.17361289610827504,
+          "median": 0.1909140011847408,
+          "p05": 0.025898006726975793,
+          "p95": 0.2719570405634022
+        }
+      },
+      "ordinary": {
+        "archive_blocks": 460257,
+        "archive_magnitude_percentiles": {
+          "1": 0.038393001191218974,
+          "25": 0.13818613803180363,
+          "5": 0.06810335420313174,
+          "50": 0.21055490272620014,
+          "75": 0.3232672425339535,
+          "95": 0.5208286121082826,
+          "99": 0.6830063671802233,
+          "99.9": 0.9710342719158102
+        },
+        "archive_nn_distance": {
+          "max": 0.5118610276365757,
+          "mean": 0.0656689442006244,
+          "median": 0.04155038653013103,
+          "p05": 0.003209647215983725,
+          "p95": 0.23873758430046638
+        },
+        "archive_spread_percentiles": {
+          "1": 0.031305394214230085,
+          "25": 0.10994669477638822,
+          "5": 0.05150865485389098,
+          "50": 0.21382796087152744,
+          "75": 0.3942789054783258,
+          "95": 0.6793741301302917,
+          "99": 0.9298642996577311,
+          "99.9": 1.4202818834639848
+        },
+        "magnitude_mean": 0.261930620646658,
+        "study_blocks": 1680,
+        "study_fraction_above_archive_p99_magnitude": 0.0,
+        "study_fraction_joint_tail_below_1e-3": 1.0,
+        "study_fraction_nn_beyond_archive_p99": 0.0,
+        "study_joint_tail_mass": {
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "p05": 0.0,
+          "p95": 0.0
+        },
+        "study_magnitude_rank": {
+          "max": 0.9289397010800488,
+          "mean": 0.5823914475525424,
+          "median": 0.6580692960671972,
+          "p05": 0.08209163576002103,
+          "p95": 0.87651518608082
+        },
+        "study_nn_distance": {
+          "max": 0.20282560188674117,
+          "mean": 0.06778874979601117,
+          "median": 0.0600947833361943,
+          "p05": 0.02457649444828459,
+          "p95": 0.13091996446685375
+        }
+      }
+    }
+  },
+  "gap": {
+    "archive": {
+      "latent_mse": 0.016260423955056027,
+      "persistence_mse": 0.511905134255725,
+      "ratio": 0.03176452601651977,
+      "windows": 198
+    },
+    "simulator": {
+      "latent_mse": 0.020181559127369762,
+      "persistence_mse": 0.5076355157500001,
+      "ratio": 0.0397560030793999,
+      "windows": 198
+    },
+    "skipped": {
+      "out_of_bounds_controls": 2
+    },
+    "windows_requested": 200
+  },
+  "identity": {
+    "episodes": [
+      866,
+      1506,
+      2585,
+      3203,
+      4127,
+      5537,
+      5935,
+      6986,
+      7524,
+      7742,
+      8183,
+      10158,
+      11390,
+      11872,
+      11963,
+      13084,
+      14802,
+      14810,
+      16281,
+      16327
+    ],
+    "final_step_mean_abs": 0.42177368994472786,
+    "final_step_position_error_mean": 0.00461484600431068,
+    "rendering_mismatch_flag": false,
+    "rendering_mismatch_limit": 1.0,
+    "reset_frame_identical_fraction": 0.0,
+    "reset_frame_mean_abs": 0.5341634114583333,
+    "reset_goal": "start state reused as goal (kick-free reset; overlay uses env default)",
+    "status": "complete",
+    "steps": 40
+  },
+  "keys": {
+    "archive_sha256_checked_by": "action_stats.py (MODEL-001)",
+    "attributes": {},
+    "datasets": {
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          2336736,
+          2
+        ]
+      },
+      "ep_len": {
+        "dtype": "int32",
+        "shape": [
+          18685
+        ]
+      },
+      "ep_offset": {
+        "dtype": "int64",
+        "shape": [
+          18685
+        ]
+      },
+      "episode_idx": {
+        "dtype": "int64",
+        "shape": [
+          2336736
+        ]
+      },
+      "pixels": {
+        "dtype": "uint8",
+        "shape": [
+          2336736,
+          224,
+          224,
+          3
+        ]
+      },
+      "proprio": {
+        "dtype": "float32",
+        "shape": [
+          2336736,
+          4
+        ]
+      },
+      "state": {
+        "dtype": "float32",
+        "shape": [
+          2336736,
+          7
+        ]
+      },
+      "step_idx": {
+        "dtype": "int64",
+        "shape": [
+          2336736
+        ]
+      }
+    },
+    "goal_key": null,
+    "pixels_key": "pixels",
+    "state_key": "state"
+  },
+  "runtime": {
+    "device": "cpu",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "precision": "float32",
+    "python": "3.10.21",
+    "torch": "2.14.0"
+  },
+  "sources": {
+    "metrics": "38df7546ebd3166c554df1ffddcd86d43d7440d180f1755625715a24453d9912",
+    "runner": "2a2fb05cad35af2f2bba3ba9c11281a5a6012afe5fe006c1e4fda309151694b7"
+  },
+  "stop_rule": "no rendering mismatch flagged",
+  "task": "DIST-001"
+}

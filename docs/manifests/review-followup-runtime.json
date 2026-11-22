@@ -1,0 +1,1584 @@
+{
+  "archive": {
+    "decompose_pred": {
+      "abs_angle_mean_deg": 25.475911215403062,
+      "abs_angle_mean_deg_ci95": [
+        21.807694766174986,
+        29.095555250495632
+      ],
+      "abs_angle_median_deg": 11.148575293411485,
+      "count": 335,
+      "length_ratio_median": 1.0120502987834585,
+      "length_ratio_pooled": 1.0520537547554802,
+      "length_ratio_pooled_ci95": [
+        1.0130933033958431,
+        1.0902142573791664
+      ],
+      "parallel_ratio_pooled": 0.9515703825077638,
+      "projection_slope": 0.9634804672556688,
+      "undefined_angle_count": 0
+    },
+    "episode_bootstrap": {
+      "ratio": {
+        "ci95": [
+          0.9957533483702649,
+          1.0329890745941246
+        ],
+        "clusters": 331,
+        "estimate": 1.0143827851146294,
+        "rows": 335
+      },
+      "slope_pred": {
+        "ci95": [
+          0.9316375726206074,
+          0.9933335904194197
+        ],
+        "clusters": 331,
+        "estimate": 0.9634804672556688,
+        "rows": 335
+      },
+      "slope_real": {
+        "ci95": [
+          0.9223586109493324,
+          0.9756781856638173
+        ],
+        "clusters": 331,
+        "estimate": 0.9498194186593886,
+        "rows": 335
+      }
+    },
+    "episodes": 584,
+    "moved_episodes": 331,
+    "moved_windows": 335,
+    "window_bootstrap": {
+      "ratio": {
+        "ci95": [
+          0.9959509571847053,
+          1.0317656623005744
+        ],
+        "clusters": 335,
+        "estimate": 1.0143827851146294,
+        "rows": 335
+      },
+      "slope_pred": {
+        "ci95": [
+          0.9332051815001864,
+          0.9948837575331684
+        ],
+        "clusters": 335,
+        "estimate": 0.9634804672556688,
+        "rows": 335
+      },
+      "slope_real": {
+        "ci95": [
+          0.92081624666392,
+          0.9752741835041232
+        ],
+        "clusters": 335,
+        "estimate": 0.9498194186593887,
+        "rows": 335
+      }
+    },
+    "windows": 600
+  },
+  "phys": {
+    "develop_challenge": {
+      "abs_pred": {
+        "ci95": [
+          17.395493456824788,
+          18.876750793364785
+        ],
+        "clusters": 200,
+        "estimate": 18.1263404219694,
+        "rows": 200
+      },
+      "abs_real": {
+        "ci95": [
+          3.521023960730125,
+          3.815127738669796
+        ],
+        "clusters": 200,
+        "estimate": 3.662009850970537,
+        "rows": 200
+      },
+      "decompose_pred": {
+        "abs_angle_mean_deg": 20.33533865649546,
+        "abs_angle_mean_deg_ci95": [
+          17.888587193731432,
+          23.06488769308987
+        ],
+        "abs_angle_median_deg": 14.183890449269807,
+        "count": 607,
+        "length_ratio_median": 0.6702856685793814,
+        "length_ratio_pooled": 0.6627545127096082,
+        "length_ratio_pooled_ci95": [
+          0.6317886683660799,
+          0.6968146744054085
+        ],
+        "parallel_ratio_pooled": 0.6122104368099043,
+        "projection_slope": 0.5916204425889654,
+        "undefined_angle_count": 0
+      },
+      "decompose_real": {
+        "abs_angle_mean_deg": 6.315802395027863,
+        "abs_angle_mean_deg_ci95": [
+          5.645305222173428,
+          7.02116691250501
+        ],
+        "abs_angle_median_deg": 3.3446263580498523,
+        "count": 607,
+        "length_ratio_median": 1.0249153224472938,
+        "length_ratio_pooled": 1.022110908699537,
+        "length_ratio_pooled_ci95": [
+          1.012240052364123,
+          1.0328130063584575
+        ],
+        "parallel_ratio_pooled": 1.016659492239047,
+        "projection_slope": 1.0142150598053992,
+        "undefined_angle_count": 0
+      },
+      "disp_pred": {
+        "ci95": [
+          17.16771751662381,
+          18.67802820379202
+        ],
+        "clusters": 200,
+        "estimate": 17.896694624089495,
+        "rows": 200
+      },
+      "disp_real": {
+        "ci95": [
+          3.9026523646345437,
+          4.45815695877033
+        ],
+        "clusters": 200,
+        "estimate": 4.166216073708674,
+        "rows": 200
+      },
+      "families": 200,
+      "ratio": {
+        "ci95": [
+          0.5523995109113374,
+          0.6155657823757003
+        ],
+        "clusters": 200,
+        "estimate": 0.5833283945739098,
+        "rows": 607
+      },
+      "slope_pred": {
+        "ci95": [
+          0.5601992912162886,
+          0.6254274998622353
+        ],
+        "clusters": 200,
+        "estimate": 0.5916204425889654,
+        "rows": 607
+      },
+      "slope_real": {
+        "ci95": [
+          1.005608004317314,
+          1.0226154489464845
+        ],
+        "clusters": 200,
+        "estimate": 1.0142150598053992,
+        "rows": 607
+      }
+    },
+    "develop_pooled": {
+      "abs_pred": {
+        "ci95": [
+          13.718452513898635,
+          15.3316023917106
+        ],
+        "clusters": 300,
+        "estimate": 14.500852518281015,
+        "rows": 300
+      },
+      "abs_real": {
+        "ci95": [
+          3.4779790560683685,
+          3.789432223439537
+        ],
+        "clusters": 300,
+        "estimate": 3.627072978999599,
+        "rows": 300
+      },
+      "decompose_pred": {
+        "abs_angle_mean_deg": 21.016953747621898,
+        "abs_angle_mean_deg_ci95": [
+          18.53132230824297,
+          23.49441980719586
+        ],
+        "abs_angle_median_deg": 14.521657238952727,
+        "count": 656,
+        "length_ratio_median": 0.6791646800313926,
+        "length_ratio_pooled": 0.6691747764068933,
+        "length_ratio_pooled_ci95": [
+          0.6369331372780361,
+          0.7010778481874474
+        ],
+        "parallel_ratio_pooled": 0.6160621912321144,
+        "projection_slope": 0.5955662900905043,
+        "undefined_angle_count": 0
+      },
+      "decompose_real": {
+        "abs_angle_mean_deg": 6.424973188702671,
+        "abs_angle_mean_deg_ci95": [
+          5.783028927573754,
+          7.0891268644012815
+        ],
+        "abs_angle_median_deg": 3.4244346701849944,
+        "count": 656,
+        "length_ratio_median": 1.0241872761053323,
+        "length_ratio_pooled": 1.0205881430532655,
+        "length_ratio_pooled_ci95": [
+          1.010718960794462,
+          1.0305916595656197
+        ],
+        "parallel_ratio_pooled": 1.0150501292709833,
+        "projection_slope": 1.0133795987996015,
+        "undefined_angle_count": 0
+      },
+      "disp_pred": {
+        "ci95": [
+          13.354818126012914,
+          14.992107607210881
+        ],
+        "clusters": 300,
+        "estimate": 14.149387723775007,
+        "rows": 300
+      },
+      "disp_real": {
+        "ci95": [
+          3.2986576419963063,
+          3.742777259431652
+        ],
+        "clusters": 300,
+        "estimate": 3.515791140238965,
+        "rows": 300
+      },
+      "families": 300,
+      "ratio": {
+        "ci95": [
+          0.5568547012763811,
+          0.6191576488326187
+        ],
+        "clusters": 222,
+        "estimate": 0.5877030589484752,
+        "rows": 656
+      },
+      "slope_pred": {
+        "ci95": [
+          0.5645035776575951,
+          0.6281597342520588
+        ],
+        "clusters": 222,
+        "estimate": 0.5955662900905043,
+        "rows": 656
+      },
+      "slope_real": {
+        "ci95": [
+          1.0051662705783218,
+          1.022217552838352
+        ],
+        "clusters": 222,
+        "estimate": 1.0133795987996015,
+        "rows": 656
+      }
+    },
+    "reserved_challenge": {
+      "abs_pred": {
+        "ci95": [
+          16.884096344053212,
+          18.96945111880918
+        ],
+        "clusters": 100,
+        "estimate": 17.895411629334173,
+        "rows": 100
+      },
+      "abs_real": {
+        "ci95": [
+          3.4107795537851784,
+          3.8190357446493524
+        ],
+        "clusters": 100,
+        "estimate": 3.6129394575984346,
+        "rows": 100
+      },
+      "decompose_pred": {
+        "abs_angle_mean_deg": 19.04447992720468,
+        "abs_angle_mean_deg_ci95": [
+          16.14600320236748,
+          22.4117797424562
+        ],
+        "abs_angle_median_deg": 11.786573624750197,
+        "count": 304,
+        "length_ratio_median": 0.6460456701449327,
+        "length_ratio_pooled": 0.6286133423378943,
+        "length_ratio_pooled_ci95": [
+          0.5833606295694073,
+          0.6729864133826526
+        ],
+        "parallel_ratio_pooled": 0.5874594333362682,
+        "projection_slope": 0.5610256756747055,
+        "undefined_angle_count": 0
+      },
+      "decompose_real": {
+        "abs_angle_mean_deg": 4.948699727052249,
+        "abs_angle_mean_deg_ci95": [
+          4.29404427797925,
+          5.694529888886587
+        ],
+        "abs_angle_median_deg": 2.840376628718066,
+        "count": 304,
+        "length_ratio_median": 1.004182219186069,
+        "length_ratio_pooled": 1.0112678569037528,
+        "length_ratio_pooled_ci95": [
+          0.997123135970276,
+          1.0251615868633253
+        ],
+        "parallel_ratio_pooled": 1.008022020907825,
+        "projection_slope": 1.006318235589391,
+        "undefined_angle_count": 0
+      },
+      "disp_pred": {
+        "ci95": [
+          16.805671197738334,
+          18.945382999418523
+        ],
+        "clusters": 100,
+        "estimate": 17.856620221593975,
+        "rows": 100
+      },
+      "disp_real": {
+        "ci95": [
+          3.6434465862511622,
+          4.217562846433746
+        ],
+        "clusters": 100,
+        "estimate": 3.9347553961047987,
+        "rows": 100
+      },
+      "families": 100,
+      "ratio": {
+        "ci95": [
+          0.5134712159798888,
+          0.6007865112547986
+        ],
+        "clusters": 100,
+        "estimate": 0.5575032388696785,
+        "rows": 304
+      },
+      "slope_pred": {
+        "ci95": [
+          0.517309600627638,
+          0.6053925150567174
+        ],
+        "clusters": 100,
+        "estimate": 0.5610256756747055,
+        "rows": 304
+      },
+      "slope_real": {
+        "ci95": [
+          0.9952874073357479,
+          1.0171892454811633
+        ],
+        "clusters": 100,
+        "estimate": 1.006318235589391,
+        "rows": 304
+      }
+    },
+    "reserved_pooled": {
+      "abs_pred": {
+        "ci95": [
+          13.010645873890224,
+          15.30234778509819
+        ],
+        "clusters": 150,
+        "estimate": 14.09115970045005,
+        "rows": 150
+      },
+      "abs_real": {
+        "ci95": [
+          3.4183017309937047,
+          3.855896001774832
+        ],
+        "clusters": 150,
+        "estimate": 3.6361683947862016,
+        "rows": 150
+      },
+      "decompose_pred": {
+        "abs_angle_mean_deg": 19.553664914614625,
+        "abs_angle_mean_deg_ci95": [
+          16.48076761254999,
+          23.044526369183174
+        ],
+        "abs_angle_median_deg": 11.66668196219039,
+        "count": 333,
+        "length_ratio_median": 0.657204579775094,
+        "length_ratio_pooled": 0.6460233168038244,
+        "length_ratio_pooled_ci95": [
+          0.6009792560378249,
+          0.692336946520232
+        ],
+        "parallel_ratio_pooled": 0.6045750427802273,
+        "projection_slope": 0.5754000728613091,
+        "undefined_angle_count": 0
+      },
+      "decompose_real": {
+        "abs_angle_mean_deg": 5.967106763149789,
+        "abs_angle_mean_deg_ci95": [
+          4.798005847858204,
+          7.49986637428068
+        ],
+        "abs_angle_median_deg": 3.0272423563019015,
+        "count": 333,
+        "length_ratio_median": 1.0041803915181489,
+        "length_ratio_pooled": 1.0120321977979851,
+        "length_ratio_pooled_ci95": [
+          0.9984326167810078,
+          1.025363545045661
+        ],
+        "parallel_ratio_pooled": 1.0068573839553543,
+        "projection_slope": 1.0061580965960593,
+        "undefined_angle_count": 0
+      },
+      "disp_pred": {
+        "ci95": [
+          12.714680943663486,
+          15.069026148967918
+        ],
+        "clusters": 150,
+        "estimate": 13.885781421067252,
+        "rows": 150
+      },
+      "disp_real": {
+        "ci95": [
+          3.2487865778877407,
+          3.829141818972893
+        ],
+        "clusters": 150,
+        "estimate": 3.5323643172427843,
+        "rows": 150
+      },
+      "families": 150,
+      "ratio": {
+        "ci95": [
+          0.5266480146245122,
+          0.6150343227074428
+        ],
+        "clusters": 113,
+        "estimate": 0.5718783904914638,
+        "rows": 333
+      },
+      "slope_pred": {
+        "ci95": [
+          0.5326513792866617,
+          0.6187631472688615
+        ],
+        "clusters": 113,
+        "estimate": 0.5754000728613091,
+        "rows": 333
+      },
+      "slope_real": {
+        "ci95": [
+          0.994940559637893,
+          1.017473076259592
+        ],
+        "clusters": 113,
+        "estimate": 1.0061580965960593,
+        "rows": 333
+      }
+    }
+  },
+  "rerun": {
+    "phys002_reserved": {
+      "criteria_rerun": {
+        "floor": "passed",
+        "h1": "not_established",
+        "physical_failure": "supported",
+        "shrinkage": "supported"
+      },
+      "families": 150,
+      "max_embedding_difference": 0.0,
+      "max_record_difference": 0.0,
+      "max_summary_difference": 0.0
+    },
+    "shift002_reserved_subset": {
+      "families": 30,
+      "max_record_difference": 0.0
+    }
+  },
+  "runtime": {
+    "device": "cpu",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "precision": "float32",
+    "python": "3.10.21",
+    "torch": "2.14.0"
+  },
+  "shift": {
+    "development_archive_x1.0_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 34.71370045079761,
+        "abs_angle_mean_deg_ci95": [
+          23.657269445510003,
+          46.91594234869396
+        ],
+        "abs_angle_median_deg": 12.260781058936605,
+        "count": 59,
+        "length_ratio_median": 1.1690996229689867,
+        "length_ratio_pooled": 1.0763043948184343,
+        "length_ratio_pooled_ci95": [
+          0.9819590969706287,
+          1.1750559123476458
+        ],
+        "parallel_ratio_pooled": 0.8823050856462599,
+        "projection_slope": 0.9343084887106461,
+        "undefined_angle_count": 0
+      },
+      "families": 59,
+      "ratio": {
+        "ci95": [
+          0.9991780606523911,
+          1.0800922411415885
+        ],
+        "clusters": 59,
+        "estimate": 1.037949313746695,
+        "rows": 59
+      },
+      "slope_pred": {
+        "ci95": [
+          0.85013087771276,
+          1.0195114550906692
+        ],
+        "clusters": 59,
+        "estimate": 0.9343084887106461,
+        "rows": 59
+      },
+      "slope_real": {
+        "ci95": [
+          0.8179974331282283,
+          0.9814349499508533
+        ],
+        "clusters": 59,
+        "estimate": 0.9001484719307384,
+        "rows": 59
+      }
+    },
+    "development_archive_x1.0_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 36.6254557082943,
+        "abs_angle_mean_deg_ci95": [
+          25.404836903220367,
+          49.63419010572848
+        ],
+        "abs_angle_median_deg": 14.476261680271001,
+        "count": 60,
+        "length_ratio_median": 1.130937429349244,
+        "length_ratio_pooled": 1.0980289401211687,
+        "length_ratio_pooled_ci95": [
+          1.0074643198866007,
+          1.1971590876384022
+        ],
+        "parallel_ratio_pooled": 0.8803233012854147,
+        "projection_slope": 0.9395879307490089,
+        "undefined_angle_count": 0
+      },
+      "families": 60,
+      "ratio": {
+        "ci95": [
+          1.021671168826044,
+          1.077169118460838
+        ],
+        "clusters": 60,
+        "estimate": 1.0447782224036883,
+        "rows": 60
+      },
+      "slope_pred": {
+        "ci95": [
+          0.8541735539015176,
+          1.0250651664026926
+        ],
+        "clusters": 60,
+        "estimate": 0.9395879307490089,
+        "rows": 60
+      },
+      "slope_real": {
+        "ci95": [
+          0.806597850597334,
+          0.9810185517152333
+        ],
+        "clusters": 60,
+        "estimate": 0.899318066361805,
+        "rows": 60
+      }
+    },
+    "development_archive_x1.5_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 27.746219262617974,
+        "abs_angle_mean_deg_ci95": [
+          18.754840058447947,
+          37.94614447420276
+        ],
+        "abs_angle_median_deg": 13.79759645383523,
+        "count": 60,
+        "length_ratio_median": 0.986201917430322,
+        "length_ratio_pooled": 0.9714058675121511,
+        "length_ratio_pooled_ci95": [
+          0.8951475158774307,
+          1.0491583057448632
+        ],
+        "parallel_ratio_pooled": 0.8725925655362493,
+        "projection_slope": 0.9028209996488663,
+        "undefined_angle_count": 0
+      },
+      "families": 60,
+      "ratio": {
+        "ci95": [
+          0.9187402868681293,
+          1.0269119606546786
+        ],
+        "clusters": 60,
+        "estimate": 0.9691409072654421,
+        "rows": 60
+      },
+      "slope_pred": {
+        "ci95": [
+          0.8296486774608963,
+          0.9669558659512508
+        ],
+        "clusters": 60,
+        "estimate": 0.9028209996488663,
+        "rows": 60
+      },
+      "slope_real": {
+        "ci95": [
+          0.872849272670963,
+          0.9774198702352418
+        ],
+        "clusters": 60,
+        "estimate": 0.9315683538695048,
+        "rows": 60
+      }
+    },
+    "development_archive_x1.5_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 28.28189541029173,
+        "abs_angle_mean_deg_ci95": [
+          18.861608723766413,
+          39.67664832683927
+        ],
+        "abs_angle_median_deg": 13.213962095499094,
+        "count": 59,
+        "length_ratio_median": 0.9449746971350867,
+        "length_ratio_pooled": 0.9689637092199167,
+        "length_ratio_pooled_ci95": [
+          0.8924204886399131,
+          1.0518417179379829
+        ],
+        "parallel_ratio_pooled": 0.8641535702621352,
+        "projection_slope": 0.8979984299574659,
+        "undefined_angle_count": 0
+      },
+      "families": 59,
+      "ratio": {
+        "ci95": [
+          0.9247639908028176,
+          1.0102674224862194
+        ],
+        "clusters": 59,
+        "estimate": 0.9647501526695231,
+        "rows": 59
+      },
+      "slope_pred": {
+        "ci95": [
+          0.824946528633494,
+          0.9600619083745653
+        ],
+        "clusters": 59,
+        "estimate": 0.8979984299574659,
+        "rows": 59
+      },
+      "slope_real": {
+        "ci95": [
+          0.867365917529935,
+          0.9785974900501809
+        ],
+        "clusters": 59,
+        "estimate": 0.9308093162490297,
+        "rows": 59
+      }
+    },
+    "development_archive_x2.0_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 20.641480497815916,
+        "abs_angle_mean_deg_ci95": [
+          13.080480963124275,
+          29.993998060641246
+        ],
+        "abs_angle_median_deg": 7.795736311522154,
+        "count": 60,
+        "length_ratio_median": 0.9069010139651436,
+        "length_ratio_pooled": 0.9186323337510018,
+        "length_ratio_pooled_ci95": [
+          0.8461856222968985,
+          0.9990775339958585
+        ],
+        "parallel_ratio_pooled": 0.8593850958854634,
+        "projection_slope": 0.8252931272439826,
+        "undefined_angle_count": 0
+      },
+      "families": 60,
+      "ratio": {
+        "ci95": [
+          0.7823666457367443,
+          0.9015418839150884
+        ],
+        "clusters": 60,
+        "estimate": 0.8368311456806505,
+        "rows": 60
+      },
+      "slope_pred": {
+        "ci95": [
+          0.7622991736322818,
+          0.8893914211693689
+        ],
+        "clusters": 60,
+        "estimate": 0.8252931272439826,
+        "rows": 60
+      },
+      "slope_real": {
+        "ci95": [
+          0.9454252465291775,
+          1.0196288737524426
+        ],
+        "clusters": 60,
+        "estimate": 0.9862122502296646,
+        "rows": 60
+      }
+    },
+    "development_archive_x2.0_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 21.93918371122856,
+        "abs_angle_mean_deg_ci95": [
+          14.932351932140444,
+          30.560988077844588
+        ],
+        "abs_angle_median_deg": 11.173284220003945,
+        "count": 57,
+        "length_ratio_median": 0.8753185397307668,
+        "length_ratio_pooled": 0.8935124088628611,
+        "length_ratio_pooled_ci95": [
+          0.812257676053747,
+          0.9926629371239682
+        ],
+        "parallel_ratio_pooled": 0.8237206269977486,
+        "projection_slope": 0.7942574759824543,
+        "undefined_angle_count": 0
+      },
+      "families": 57,
+      "ratio": {
+        "ci95": [
+          0.7308644602834357,
+          0.8752126367025681
+        ],
+        "clusters": 57,
+        "estimate": 0.804136221631452,
+        "rows": 57
+      },
+      "slope_pred": {
+        "ci95": [
+          0.7258981628564394,
+          0.8610285643185408
+        ],
+        "clusters": 57,
+        "estimate": 0.7942574759824543,
+        "rows": 57
+      },
+      "slope_real": {
+        "ci95": [
+          0.9471139876006934,
+          1.0223666401992708
+        ],
+        "clusters": 57,
+        "estimate": 0.9877150843560367,
+        "rows": 57
+      }
+    },
+    "development_challenge_m0.30_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 34.657897027878725,
+        "abs_angle_mean_deg_ci95": [
+          25.570639215157257,
+          44.370665556330856
+        ],
+        "abs_angle_median_deg": 23.402180512000253,
+        "count": 60,
+        "length_ratio_median": 1.2213544235887346,
+        "length_ratio_pooled": 1.2624346710802774,
+        "length_ratio_pooled_ci95": [
+          1.0984487956879754,
+          1.4494349137626692
+        ],
+        "parallel_ratio_pooled": 1.0195092714190834,
+        "projection_slope": 0.9762706755658812,
+        "undefined_angle_count": 0
+      },
+      "families": 60,
+      "ratio": {
+        "ci95": [
+          0.7728357518093298,
+          1.0443183899337134
+        ],
+        "clusters": 60,
+        "estimate": 0.9041534665292241,
+        "rows": 60
+      },
+      "slope_pred": {
+        "ci95": [
+          0.8328676299560456,
+          1.1269668045676857
+        ],
+        "clusters": 60,
+        "estimate": 0.9762706755658812,
+        "rows": 60
+      },
+      "slope_real": {
+        "ci95": [
+          1.0068152241480641,
+          1.1493657279596907
+        ],
+        "clusters": 60,
+        "estimate": 1.0797621329855578,
+        "rows": 60
+      }
+    },
+    "development_challenge_m0.30_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 31.51185569324951,
+        "abs_angle_mean_deg_ci95": [
+          22.869973639284,
+          41.0749380993012
+        ],
+        "abs_angle_median_deg": 22.691847417981613,
+        "count": 58,
+        "length_ratio_median": 1.260679097920038,
+        "length_ratio_pooled": 1.2419436241487538,
+        "length_ratio_pooled_ci95": [
+          1.080021245781737,
+          1.433235215048202
+        ],
+        "parallel_ratio_pooled": 1.0132265884541294,
+        "projection_slope": 0.9424071467366272,
+        "undefined_angle_count": 0
+      },
+      "families": 58,
+      "ratio": {
+        "ci95": [
+          0.7429561539710349,
+          1.0277519566966131
+        ],
+        "clusters": 58,
+        "estimate": 0.873105948613422,
+        "rows": 58
+      },
+      "slope_pred": {
+        "ci95": [
+          0.7934909387140971,
+          1.1059030775740104
+        ],
+        "clusters": 58,
+        "estimate": 0.9424071467366272,
+        "rows": 58
+      },
+      "slope_real": {
+        "ci95": [
+          1.009879989857609,
+          1.1414534202207935
+        ],
+        "clusters": 58,
+        "estimate": 1.079373182868886,
+        "rows": 58
+      }
+    },
+    "development_challenge_m0.45_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 29.19896366811184,
+        "abs_angle_mean_deg_ci95": [
+          22.65941475785752,
+          37.14035844491637
+        ],
+        "abs_angle_median_deg": 20.93720970046232,
+        "count": 60,
+        "length_ratio_median": 0.906637076547461,
+        "length_ratio_pooled": 1.1044202573787079,
+        "length_ratio_pooled_ci95": [
+          0.9313425657206841,
+          1.3013149455048563
+        ],
+        "parallel_ratio_pooled": 0.9210363821492605,
+        "projection_slope": 0.8483561573047504,
+        "undefined_angle_count": 0
+      },
+      "families": 60,
+      "ratio": {
+        "ci95": [
+          0.690890501735165,
+          0.958219663405004
+        ],
+        "clusters": 60,
+        "estimate": 0.8175793537259639,
+        "rows": 60
+      },
+      "slope_pred": {
+        "ci95": [
+          0.7169520380668012,
+          1.0034138291119281
+        ],
+        "clusters": 60,
+        "estimate": 0.8483561573047504,
+        "rows": 60
+      },
+      "slope_real": {
+        "ci95": [
+          0.9887866707796449,
+          1.091185009194773
+        ],
+        "clusters": 60,
+        "estimate": 1.0376438121125822,
+        "rows": 60
+      }
+    },
+    "development_challenge_m0.60_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 32.42743846554723,
+        "abs_angle_mean_deg_ci95": [
+          25.62041930621492,
+          40.04779371610104
+        ],
+        "abs_angle_median_deg": 24.319008214014936,
+        "count": 60,
+        "length_ratio_median": 0.9651982582532339,
+        "length_ratio_pooled": 0.9952892043813591,
+        "length_ratio_pooled_ci95": [
+          0.8362735969214501,
+          1.1917945477131526
+        ],
+        "parallel_ratio_pooled": 0.806736892900448,
+        "projection_slope": 0.7169972567271266,
+        "undefined_angle_count": 0
+      },
+      "families": 60,
+      "ratio": {
+        "ci95": [
+          0.569849395891063,
+          0.8109164992095848
+        ],
+        "clusters": 60,
+        "estimate": 0.6842667186553875,
+        "rows": 60
+      },
+      "slope_pred": {
+        "ci95": [
+          0.5877029028338924,
+          0.8605669295402949
+        ],
+        "clusters": 60,
+        "estimate": 0.7169972567271266,
+        "rows": 60
+      },
+      "slope_real": {
+        "ci95": [
+          1.0016527663019097,
+          1.0946986559806897
+        ],
+        "clusters": 60,
+        "estimate": 1.0478330118642274,
+        "rows": 60
+      }
+    },
+    "development_challenge_m0.60_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 34.589132782186795,
+        "abs_angle_mean_deg_ci95": [
+          26.768548081371133,
+          43.182347510807936
+        ],
+        "abs_angle_median_deg": 25.525300234532736,
+        "count": 58,
+        "length_ratio_median": 0.7873056889002521,
+        "length_ratio_pooled": 0.878162432802048,
+        "length_ratio_pooled_ci95": [
+          0.7302990742979619,
+          1.0440662232299291
+        ],
+        "parallel_ratio_pooled": 0.7200005700660788,
+        "projection_slope": 0.6536466392860075,
+        "undefined_angle_count": 0
+      },
+      "families": 58,
+      "ratio": {
+        "ci95": [
+          0.5058671068040183,
+          0.7747503151738191
+        ],
+        "clusters": 58,
+        "estimate": 0.6377043933676372,
+        "rows": 58
+      },
+      "slope_pred": {
+        "ci95": [
+          0.5203749163557276,
+          0.8061570915415927
+        ],
+        "clusters": 58,
+        "estimate": 0.6536466392860075,
+        "rows": 58
+      },
+      "slope_real": {
+        "ci95": [
+          0.9851942077628832,
+          1.0609247736111835
+        ],
+        "clusters": 58,
+        "estimate": 1.024999429334619,
+        "rows": 58
+      }
+    },
+    "reserved_archive_x1.0_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 31.47076192387263,
+        "abs_angle_mean_deg_ci95": [
+          24.30115952450695,
+          39.39324736839572
+        ],
+        "abs_angle_median_deg": 14.410556175738627,
+        "count": 114,
+        "length_ratio_median": 1.130020825030583,
+        "length_ratio_pooled": 1.1018984227031159,
+        "length_ratio_pooled_ci95": [
+          1.0331242336155029,
+          1.1840402967626866
+        ],
+        "parallel_ratio_pooled": 0.9415845596113798,
+        "projection_slope": 0.964483948846056,
+        "undefined_angle_count": 0
+      },
+      "families": 114,
+      "ratio": {
+        "ci95": [
+          0.9812597955257392,
+          1.0713222107822526
+        ],
+        "clusters": 114,
+        "estimate": 1.0275113717270146,
+        "rows": 114
+      },
+      "slope_pred": {
+        "ci95": [
+          0.8973302856481951,
+          1.0272863683134883
+        ],
+        "clusters": 114,
+        "estimate": 0.964483948846056,
+        "rows": 114
+      },
+      "slope_real": {
+        "ci95": [
+          0.883432267280217,
+          0.9854498001301485
+        ],
+        "clusters": 114,
+        "estimate": 0.9386601213230139,
+        "rows": 114
+      }
+    },
+    "reserved_archive_x1.0_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 34.44456602739899,
+        "abs_angle_mean_deg_ci95": [
+          26.78491757272413,
+          42.3274190072149
+        ],
+        "abs_angle_median_deg": 16.57431847847603,
+        "count": 120,
+        "length_ratio_median": 1.113972374771338,
+        "length_ratio_pooled": 1.1186391859237272,
+        "length_ratio_pooled_ci95": [
+          1.0464809630647633,
+          1.1958013324824035
+        ],
+        "parallel_ratio_pooled": 0.9397981166706616,
+        "projection_slope": 0.9723456842534984,
+        "undefined_angle_count": 0
+      },
+      "families": 120,
+      "ratio": {
+        "ci95": [
+          1.0053767240487355,
+          1.084294013331157
+        ],
+        "clusters": 120,
+        "estimate": 1.0420255142832084,
+        "rows": 120
+      },
+      "slope_pred": {
+        "ci95": [
+          0.9096156301495868,
+          1.0286847551390066
+        ],
+        "clusters": 120,
+        "estimate": 0.9723456842534984,
+        "rows": 120
+      },
+      "slope_real": {
+        "ci95": [
+          0.8761006019985645,
+          0.9814501245975348
+        ],
+        "clusters": 120,
+        "estimate": 0.9331303993284257,
+        "rows": 120
+      }
+    },
+    "reserved_archive_x1.5_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 22.960437008684007,
+        "abs_angle_mean_deg_ci95": [
+          16.929041954106097,
+          29.426784428768237
+        ],
+        "abs_angle_median_deg": 10.596400346022486,
+        "count": 117,
+        "length_ratio_median": 0.9879489440355845,
+        "length_ratio_pooled": 1.0069366869751648,
+        "length_ratio_pooled_ci95": [
+          0.9423747675674322,
+          1.0774866310799949
+        ],
+        "parallel_ratio_pooled": 0.9442810467545864,
+        "projection_slope": 0.923158687744791,
+        "undefined_angle_count": 0
+      },
+      "families": 117,
+      "ratio": {
+        "ci95": [
+          0.9231177704520567,
+          1.0004557495235473
+        ],
+        "clusters": 117,
+        "estimate": 0.9589178496837064,
+        "rows": 117
+      },
+      "slope_pred": {
+        "ci95": [
+          0.8599228590410363,
+          0.9853285627865759
+        ],
+        "clusters": 117,
+        "estimate": 0.923158687744791,
+        "rows": 117
+      },
+      "slope_real": {
+        "ci95": [
+          0.9205858228816552,
+          1.0021073280997361
+        ],
+        "clusters": 117,
+        "estimate": 0.9627088368928471,
+        "rows": 117
+      }
+    },
+    "reserved_archive_x1.5_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 21.00886655299018,
+        "abs_angle_mean_deg_ci95": [
+          16.11449184445878,
+          27.023211947327233
+        ],
+        "abs_angle_median_deg": 11.059752550849717,
+        "count": 119,
+        "length_ratio_median": 1.0036464237843399,
+        "length_ratio_pooled": 1.0072552791973035,
+        "length_ratio_pooled_ci95": [
+          0.9407321708264066,
+          1.0764628184012668
+        ],
+        "parallel_ratio_pooled": 0.9432883199928379,
+        "projection_slope": 0.9208128762107773,
+        "undefined_angle_count": 0
+      },
+      "families": 119,
+      "ratio": {
+        "ci95": [
+          0.9275782111006572,
+          1.0000214566994117
+        ],
+        "clusters": 119,
+        "estimate": 0.9636356860924051,
+        "rows": 119
+      },
+      "slope_pred": {
+        "ci95": [
+          0.8553451133054335,
+          0.9806805405302778
+        ],
+        "clusters": 119,
+        "estimate": 0.9208128762107773,
+        "rows": 119
+      },
+      "slope_real": {
+        "ci95": [
+          0.9118635136295672,
+          0.997154574296327
+        ],
+        "clusters": 119,
+        "estimate": 0.9555612037830639,
+        "rows": 119
+      }
+    },
+    "reserved_archive_x2.0_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 17.45119666187999,
+        "abs_angle_mean_deg_ci95": [
+          13.136350049005719,
+          22.54427179389496
+        ],
+        "abs_angle_median_deg": 7.644785203015161,
+        "count": 119,
+        "length_ratio_median": 0.981021189908478,
+        "length_ratio_pooled": 0.9543055179379799,
+        "length_ratio_pooled_ci95": [
+          0.8982614642390473,
+          1.0140731751146848
+        ],
+        "parallel_ratio_pooled": 0.9059456159229753,
+        "projection_slope": 0.855271014839576,
+        "undefined_angle_count": 0
+      },
+      "families": 119,
+      "ratio": {
+        "ci95": [
+          0.8186343556606884,
+          0.9419886914579944
+        ],
+        "clusters": 119,
+        "estimate": 0.8843251111907658,
+        "rows": 119
+      },
+      "slope_pred": {
+        "ci95": [
+          0.7804724397061499,
+          0.91627972839771
+        ],
+        "clusters": 119,
+        "estimate": 0.855271014839576,
+        "rows": 119
+      },
+      "slope_real": {
+        "ci95": [
+          0.9391027900951964,
+          0.9926012140149574
+        ],
+        "clusters": 119,
+        "estimate": 0.9671454581764982,
+        "rows": 119
+      }
+    },
+    "reserved_archive_x2.0_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 19.855050854902167,
+        "abs_angle_mean_deg_ci95": [
+          15.108995739385515,
+          24.943287448008277
+        ],
+        "abs_angle_median_deg": 10.276533853010722,
+        "count": 113,
+        "length_ratio_median": 0.9953256184282742,
+        "length_ratio_pooled": 0.9443421032514179,
+        "length_ratio_pooled_ci95": [
+          0.8870676264455045,
+          1.0002778712359564
+        ],
+        "parallel_ratio_pooled": 0.8782163823714246,
+        "projection_slope": 0.8441883950159504,
+        "undefined_angle_count": 0
+      },
+      "families": 113,
+      "ratio": {
+        "ci95": [
+          0.8107819030840624,
+          0.9387744650635794
+        ],
+        "clusters": 113,
+        "estimate": 0.8767258930659155,
+        "rows": 113
+      },
+      "slope_pred": {
+        "ci95": [
+          0.768707509465782,
+          0.9108047075030887
+        ],
+        "clusters": 113,
+        "estimate": 0.8441883950159504,
+        "rows": 113
+      },
+      "slope_real": {
+        "ci95": [
+          0.931236140763153,
+          0.992709844004403
+        ],
+        "clusters": 113,
+        "estimate": 0.9628874904832784,
+        "rows": 113
+      }
+    },
+    "reserved_challenge_m0.30_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 26.64789202339615,
+        "abs_angle_mean_deg_ci95": [
+          22.70085051555119,
+          31.072785079491872
+        ],
+        "abs_angle_median_deg": 19.12599781686736,
+        "count": 120,
+        "length_ratio_median": 1.2529856492576898,
+        "length_ratio_pooled": 1.271105619302071,
+        "length_ratio_pooled_ci95": [
+          1.1507162131639466,
+          1.400013186521558
+        ],
+        "parallel_ratio_pooled": 1.04515514980092,
+        "projection_slope": 0.9541021642598776,
+        "undefined_angle_count": 0
+      },
+      "families": 120,
+      "ratio": {
+        "ci95": [
+          0.8355525943163002,
+          0.9896671076552769
+        ],
+        "clusters": 120,
+        "estimate": 0.9126804223094052,
+        "rows": 120
+      },
+      "slope_pred": {
+        "ci95": [
+          0.8736090636278101,
+          1.0395584842320342
+        ],
+        "clusters": 120,
+        "estimate": 0.9541021642598776,
+        "rows": 120
+      },
+      "slope_real": {
+        "ci95": [
+          1.0077127972637112,
+          1.0838673071613343
+        ],
+        "clusters": 120,
+        "estimate": 1.0453847162029188,
+        "rows": 120
+      }
+    },
+    "reserved_challenge_m0.30_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 26.282059843221298,
+        "abs_angle_mean_deg_ci95": [
+          21.9020485598914,
+          31.126280229607527
+        ],
+        "abs_angle_median_deg": 19.64102142371728,
+        "count": 115,
+        "length_ratio_median": 1.2944496201200926,
+        "length_ratio_pooled": 1.214470020844511,
+        "length_ratio_pooled_ci95": [
+          1.0968019977758865,
+          1.3431458220050776
+        ],
+        "parallel_ratio_pooled": 1.0338765731683237,
+        "projection_slope": 0.9261717789939233,
+        "undefined_angle_count": 0
+      },
+      "families": 115,
+      "ratio": {
+        "ci95": [
+          0.8087432604085117,
+          0.9755311810621331
+        ],
+        "clusters": 115,
+        "estimate": 0.8871593622850064,
+        "rows": 115
+      },
+      "slope_pred": {
+        "ci95": [
+          0.8423473026002744,
+          1.0283167465859406
+        ],
+        "clusters": 115,
+        "estimate": 0.9261717789939233,
+        "rows": 115
+      },
+      "slope_real": {
+        "ci95": [
+          1.0033130417911016,
+          1.0799204519576955
+        ],
+        "clusters": 115,
+        "estimate": 1.0439745308085742,
+        "rows": 115
+      }
+    },
+    "reserved_challenge_m0.45_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 25.78311698814043,
+        "abs_angle_mean_deg_ci95": [
+          21.34323144208229,
+          30.137631769997714
+        ],
+        "abs_angle_median_deg": 18.189538566286362,
+        "count": 119,
+        "length_ratio_median": 1.0887122803701712,
+        "length_ratio_pooled": 1.025140839729501,
+        "length_ratio_pooled_ci95": [
+          0.9204771157290677,
+          1.1371946400489743
+        ],
+        "parallel_ratio_pooled": 0.8658425971023244,
+        "projection_slope": 0.8032160887132693,
+        "undefined_angle_count": 0
+      },
+      "families": 119,
+      "ratio": {
+        "ci95": [
+          0.7274494246595171,
+          0.89308298875127
+        ],
+        "clusters": 119,
+        "estimate": 0.8068517854459836,
+        "rows": 119
+      },
+      "slope_pred": {
+        "ci95": [
+          0.7216418668509108,
+          0.8923707292269355
+        ],
+        "clusters": 119,
+        "estimate": 0.8032160887132693,
+        "rows": 119
+      },
+      "slope_real": {
+        "ci95": [
+          0.9651622315210229,
+          1.0264240155930382
+        ],
+        "clusters": 119,
+        "estimate": 0.9954939720053979,
+        "rows": 119
+      }
+    },
+    "reserved_challenge_m0.60_constant": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 27.487951740716237,
+        "abs_angle_mean_deg_ci95": [
+          23.4364609673735,
+          31.733186563643955
+        ],
+        "abs_angle_median_deg": 20.51017405930649,
+        "count": 120,
+        "length_ratio_median": 0.9326540420019414,
+        "length_ratio_pooled": 0.9586615599014487,
+        "length_ratio_pooled_ci95": [
+          0.8630916835501637,
+          1.067748781836077
+        ],
+        "parallel_ratio_pooled": 0.8116024944341171,
+        "projection_slope": 0.7392916903580654,
+        "undefined_angle_count": 0
+      },
+      "families": 120,
+      "ratio": {
+        "ci95": [
+          0.6722568907209372,
+          0.82250604821603
+        ],
+        "clusters": 120,
+        "estimate": 0.7443186642389426,
+        "rows": 120
+      },
+      "slope_pred": {
+        "ci95": [
+          0.6643545027934343,
+          0.8171406726132722
+        ],
+        "clusters": 120,
+        "estimate": 0.7392916903580654,
+        "rows": 120
+      },
+      "slope_real": {
+        "ci95": [
+          0.9640455644259212,
+          1.0217688101190794
+        ],
+        "clusters": 120,
+        "estimate": 0.9932462074076603,
+        "rows": 120
+      }
+    },
+    "reserved_challenge_m0.60_varying": {
+      "decompose_pred": {
+        "abs_angle_mean_deg": 27.70819224121419,
+        "abs_angle_mean_deg_ci95": [
+          23.385790307329966,
+          32.42330158343281
+        ],
+        "abs_angle_median_deg": 19.057751973248955,
+        "count": 114,
+        "length_ratio_median": 0.8370733729184643,
+        "length_ratio_pooled": 0.8752632350659915,
+        "length_ratio_pooled_ci95": [
+          0.7873936175807504,
+          0.9723179090791839
+        ],
+        "parallel_ratio_pooled": 0.7327169855665405,
+        "projection_slope": 0.6763971871019343,
+        "undefined_angle_count": 0
+      },
+      "families": 114,
+      "ratio": {
+        "ci95": [
+          0.5977680582837627,
+          0.7361718998688469
+        ],
+        "clusters": 114,
+        "estimate": 0.6674588991727273,
+        "rows": 114
+      },
+      "slope_pred": {
+        "ci95": [
+          0.6105954714505297,
+          0.7476230726176636
+        ],
+        "clusters": 114,
+        "estimate": 0.6763971871019343,
+        "rows": 114
+      },
+      "slope_real": {
+        "ci95": [
+          0.988896269176552,
+          1.038250192907623
+        ],
+        "clusters": 114,
+        "estimate": 1.0133915180998943,
+        "rows": 114
+      }
+    }
+  },
+  "sources": {
+    "metrics": "7ebbb69ea7bf416289c212ab10a21b10ba02e180f4292eda3759e176049747e9",
+    "runner": "b77a561c63b8f67caa0af73f9f3bf63c9e169fb5bf3d541bea4b0ac737ad60cc",
+    "uv_lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+  },
+  "status": "exploratory (families already opened; D026)",
+  "task": "REVIEW-FIX-001"
+}

@@ -1,0 +1,522 @@
+\documentclass[10pt,twocolumn,a4paper]{article}
+\usepackage[a4paper,margin=1.65cm,columnsep=0.55cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{graphicx,booktabs,microtype,xcolor,amsmath,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage[font=small,labelfont=bf,skip=4pt]{caption}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\raggedbottom
+\setlength{\textfloatsep}{9pt plus 2pt minus 2pt}
+\setlength{\floatsep}{7pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{9pt plus 2pt minus 2pt}
+\graphicspath{{../../outputs/report001/figures/}}
+\input{../../outputs/report001/numbers.tex}
+
+% One accent colour for structure; the figure palette for the model names.
+\definecolor{accent}{HTML}{0B3C6E}
+\definecolor{released}{HTML}{D55E00}
+\definecolor{ftall}{HTML}{0072B2}
+\definecolor{confirmed}{HTML}{1A7A45}
+\definecolor{exploratory}{HTML}{9A6A00}
+\definecolor{descriptive}{HTML}{4F6D8A}
+\definecolor{nullres}{HTML}{6B6963}
+\newcommand{\status}[2]{\textcolor{#1}{\bfseries\scriptsize #2}}
+\newcommand{\conf}{\status{confirmed}{CONFIRMED}}
+\newcommand{\expl}{\status{exploratory}{EXPLORATORY}}
+\newcommand{\desc}{\status{descriptive}{DESCRIPTIVE}}
+\newcommand{\notest}{\status{nullres}{NOT ESTABLISHED}}
+\newcommand{\R}{\ensuremath{R}}
+
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-1.7ex plus -0.4ex minus -0.2ex}{0.7ex plus 0.2ex}%
+  {\normalfont\large\bfseries\color{accent}}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-1.2ex plus -0.3ex minus -0.2ex}{0.4ex plus 0.1ex}%
+  {\normalfont\normalsize\bfseries\color{accent}}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {0.9ex plus 0.3ex minus 0.2ex}{-0.6em}{\normalfont\normalsize\bfseries}}
+\makeatother
+
+\title{\vspace{-1.6em}\textbf{Large Commands, Small Effects}\\[0.2em]
+{\large A JEPA world model under-predicts block motion under large commands,\\[-0.15em]
+and targeted fine-tuning largely repairs it\par}\vspace{-0.6em}}
+\author{Omer Torres \qquad Inbal Solway\\[-0.1em]
+{\small Deep Learning course project, 2026 \quad
+\url{https://github.com/OmerTorres/jepa-action-effects}}\vspace{-0.6em}}
+\date{}
+
+\begin{document}
+\twocolumn[{%
+\renewcommand\twocolumn[1][]{#1}%
+\maketitle
+\begin{center}
+\includegraphics[width=\textwidth]{teaser.pdf}
+\captionof{figure}{\textbf{Large movement commands expose under-predicted block motion.}
+``Push strength'' $m$ is command magnitude, not force.
+(a)~One designed family, selected by median true motion rather than prediction error.
+Left: real input frame; green T: goal marker. Right: block displacement along its true
+direction. True motion (black) barely changes from 0.60 to 1.00, but LeWM predicts less,
+even backwards at 1.00. Circles: readings from real end frames. This example's error is
+more extreme than average.
+(b)~Gain compares predicted with actual motion along the true direction (1: matching;
+0.5: half). Across 300 fresh families: block (vermilion; solid: designed, dashed: demo),
+agent (purple), real-frame readout (grey); bands: 95\% intervals. Strip: training-command
+frequency; shaded: beyond 99.9\% of demo clips.
+(c)~Mean block error at 0.60 on 240 fresh families (\S\ref{sec:finetune}); hatched:
+zero training-loss weight at 0.60; dotted: released model.}
+\label{fig:teaser}
+\end{center}
+\vspace{0.3em}
+}]
+
+\noindent\fcolorbox{accent!40}{accent!5}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{%
+\small\setlength{\baselineskip}{10pt}%
+\textbf{\color{accent}Key terms}\par\smallskip
+\begin{description}[nosep,leftmargin=0.6em,labelindent=0pt,font=\normalfont\bfseries]
+\item[Latent / readout] an image feature vector / a network that maps it to positions.
+\item[Released / FT] the unchanged published checkpoint / a fine-tuned copy;
+an \emph{arm} is one training condition.
+\item[Family / branch] one start with several pushes / one push; statistics group by family.
+\item[Designed / demo] a constructed contact start / a start from an expert training demo.
+\item[Real-frame check] readout accuracy on real images, required before interpreting
+predictions. \textbf{Fresh, sealed}: new starts, test rules fixed before evaluation.
+\end{description}}}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{method.pdf}
+\caption{\textbf{How we measure imagined physics.}
+(a)~One test family, also used in Fig.~\ref{fig:ft}b. Three past frames, 0.5\,s apart,
+are the input. Four one-second pushes start identically; real end frames share one zoom
+(dashed: initial block outline). Agent travel increases with command magnitude, but
+block displacement barely changes from 0.45 to 0.60.
+(b)~Two predictor steps give an end latent. The block readout minus its start reading
+gives $p$; real end frames give $r$; simulator motion gives $t$ (Eq.~\ref{eq:displacements}).
+Real future frames are training targets only, never predictor inputs.
+(c)~Gain $b$ (\S\ref{sec:readout}).}
+\label{fig:method}
+\end{figure*}
+
+\begin{abstract}
+\noindent Can a learned world model predict what happens when a robot receives movement
+commands larger than those common in its training data? We test LeWorldModel (LeWM) in
+PushT, a simulator where a disk pushes a T-shaped block. Starting repeatedly from the
+same state, we vary the magnitude of a movement command held for one second and compare
+the model's predicted block displacement with the simulator's actual outcome.
+LeWM predicts feature vectors rather than positions, so a separately trained network
+converts these vectors into positions; we check that network on real images too.
+As command magnitude increases, decoded predictions increasingly understate block motion,
+including designed scenes with nearly unchanged true displacement. The trend
+recurs on fresh test sets and across five readouts. Fine-tuning on targeted
+pushes reduces mean block-position error from \tdMeanFrozen{} to \tdMeanBalanced{} units
+at command magnitude 0.60; equally long training on ordinary demonstrations shows no
+established improvement. Most of the improvement remains when 0.60 is excluded from the
+training loss. A short-horizon planning test does not establish a decision penalty.
+\end{abstract}
+
+\section{Introduction}
+A world model predicts action outcomes to help a planner choose commands.
+We ask whether its predictions correctly describe how a robot moves a block.
+
+We test LeWM~\cite{maes2026lewm}, a joint-embedding predictive architecture (JEPA).
+It encodes images into numerical feature vectors, called \emph{latents}, and predicts
+future latents instead of images~\cite{assran2023ijepa,assran2025vjepa2}.
+Like DINO-WM~\cite{zhou2024dinowm}, it can plan by comparing a predicted latent with
+one encoded from a goal image. Good scores in this representation do not necessarily
+guarantee accurate physical predictions~\cite{lambert2020objective}. We therefore train a
+\emph{readout}: a network converting latents into positions, checked on real images
+with simulator-supplied positions.
+
+Our intervention changes the size of the robot's movement command, called \emph{push
+strength} in the figures. This is not a force applied to the block. With the same start
+state and commanded direction, a larger command changes how the robot approaches and
+passes the block; contact geometry and contact time also affect the resulting motion.
+We compare each prediction with its own simulator outcome, without assuming that larger
+commands must cause larger block displacements. We hold each command for one second;
+\S\ref{sec:task} explains this choice and the model's separate timing constraints.
+
+\textbf{Q1:} does LeWM predict block motion accurately as commands become larger and
+less common in its training demos? \textbf{Q2:} does an apparent shortfall survive
+changes to the readout? \textbf{Q3:} can fine-tuning repair it, and with which data?
+We summarise motion with a \emph{gain}: for example, predicting 6 units to the right
+when the block really moves 10 gives gain 0.6. The aggregate version measures motion
+along the true direction, not sideways errors (\S\ref{sec:readout}); it is not a measure
+of improvement from training. Our training includes the readout and twelve fine-tuning
+runs of LeWM's \ftParameters-parameter predictor.
+
+\section{Background and related work}
+LeWM trains its image encoder and action-conditioned predictor end to end from
+pixels~\cite{maes2026lewm}. The Intervention Gap~\cite{vakalis2026gap} also audits LeWM's
+response to actions, in DMC Cheetah. AD-WM~\cite{qiu2026adwm} and
+Do-JEPA~\cite{resani2026dojepa} instead change training objectives to improve action
+sensitivity. Kang et al.~\cite{kang2023extrapolate} report that networks can approach
+constant predictions far outside their training inputs, motivating one explanation we
+test. We follow PhysWeep~\cite{khanbayov2026physweep} in comparing explanations on
+held-out data. Most are recent preprints; we have not reproduced their results.
+Our contribution combines controlled pushes from identical starts, physical measurement
+checks and targeted fine-tuning of the released PushT model.
+
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}>{\raggedright}p{1.7cm}>{\raggedright}p{2.95cm}>{\raggedright}p{2.8cm}>{\raggedright}p{3.85cm}>{\raggedright}p{2.95cm}l@{}}
+\toprule
+Test & Question it answers & Fresh test set & Check on the readout, before scoring & Answer & Status\tabularnewline
+\midrule
+E1 Strong push & Does LeWM get a strong push right? & 100 designed families, push 0.60 & readout error below 25\% of the true effect & No: gain \physSlopePredPt{} vs \physSlopeRealPt{} on real frames & \conf\tabularnewline
+E2 Strength sweep & Is it the push strength or our unusual scenes? & 240 families: designed 0.30--0.60; demo commands $\times$1--$\times$2 & Real images recover 85--115\% of true motion (strengths pooled); $\geq$30 moving families per group; baseline checks* & Larger commands worsen motion underestimation in both scene types & \conf\tabularnewline
+E3 Beyond range & What happens past the demos' range? & 300 families, six strengths up to 1.00 & At each strength 0.60--1.00, per scene: real-image error $<$25\% of true motion; 85--115\% motion recovered; $\geq$50 moving families & Motion recovery keeps falling ($R=\supSlopeArchiveHundredPt{}$ at 1.00); no explanation wins & \conf\tabularnewline
+E4 Readouts & Could it be our measuring instrument? & re-decoding of E1--E2 & as in E1--E2 & All five readouts agree; shared bias remains possible & \expl\tabularnewline
+E5 Agent vs block & Do agent and block behave alike? & E3 families & real-frame agent gain 0.85--1.15 & No: agent gain \supAgentChallengeSixtyPt, block \supSlopeChallengeSixtyPt{} at 0.60 & \desc\tabularnewline
+E6 Fine-tuning & Can training fix it, and with which data? & 240 families + 120 ordinary clips & as E3, at 0.45 and 0.60 & Push families fix most; ordinary data does not & \conf\tabularnewline
+E7 Planning & Does it change decisions? & 148 families & --- & No cost detected; test is coarse & \notest\tabularnewline
+\bottomrule
+\end{tabular}
+\caption{\textbf{The study as a chain of questions.}
+We check the readout on real images first. ``85--115\%'' requires the entire 95\% interval
+for motion gain within 0.85--1.15 (1: correct motion along its true direction).
+``Moving'': block displacement $>5.12$ units. $R$ is predicted-motion gain divided by
+real-image gain (1: matching that reference; lower: less motion recovered).
+E1 checks differences between pushes, so shared position offsets cancel.
+*E2 also checks that strong designed pushes are under-predicted and unscaled recorded
+commands are predicted faithfully. The four count groups are weak/strong designed
+pushes and original/doubled recorded commands.
+Status: \conf{}: prespecified test passed on fresh data; \expl{}: reanalysis;
+\desc{}: not prespecified; \notest{}: prespecified effect not detected.}
+\label{tab:studies}
+\end{table*}
+
+\section{Setup: task, data and measurement}
+\nopagebreak[4]
+\subsection{Task, model and training demos}\label{sec:task}
+In PushT an agent disk of radius 15 pushes a T-shaped block (120 units across) on a
+512$\times$512-unit table. Observations are 224$\times$224 RGB renders. Each command is a
+two-dimensional vector in $[-1,1]^2$ that sets a target $100\times$ the command away from
+the agent, which a proportional--derivative (PD) controller tracks. We use
+the released checkpoint (\texttt{quentinll/lewm-pusht}: ViT-tiny encoder, 192-dimensional
+latent, six-layer predictor with adaLN action conditioning, about 15M parameters) and the
+pinned stable-worldmodel PushT simulator~\cite{maes2026swm}.
+
+\paragraph{Why five commands, and why one second?} The simulator accepts a command every
+0.1\,s. LeWM was trained with five consecutive commands per prediction step (0.5\,s),
+and three input images spaced 0.5\,s apart; these are inherited interface choices.
+We chose a two-prediction-step horizon: ten future commands, or one second, feeding the
+first prediction back without future images. In a simulator-only pilot, 88 of 120 start
+states produced block endpoints more than 5.12 units apart under different commands.
+We retained this horizon as sufficient to reveal action-dependent motion;
+we did not test its optimality.
+
+\emph{Push strength} is command magnitude $m=\sqrt{x^2+y^2}$, not force, speed or
+distance. Constant-command tests repeat the vector ten times. Each component lies
+in $[-1,1]$, so length 1 is allowed in every direction (diagonals reach $\sqrt2$).
+In Fig.~\ref{fig:method}a, raising $m$ from 0.45 to 0.60 increases agent travel
+from 178 to 238 units, but the block moves about 24 in both cases: measurements,
+not a distance formula.
+The training demos comprise \demoEpisodes{} episodes and
+\demoFrames{} frames. Over \demoWindows{} sampled one-second clips, the mean command has
+median \demoCommandMedian, 90th percentile \demoCommandNinety{} and 99th percentile
+\demoCommandNinetynine; only \supMapAbove{} clips exceed \supMapPninetynine, and none exceeds
+\supMapMax. Our test pushes span 0.15 to 1.00, so 0.80 and 1.00 lie at and beyond the edge
+of what the demos contain (mean command is not contact speed, so this does not prove such
+interactions never occurred in training).
+
+\subsection{Counterfactual families and fresh test sets}\label{sec:families}
+A \emph{family} branches from one start into alternative pushes. Each branch resets
+with the same random seed (fixing random choices), then replays the same earlier
+commands (the \emph{warm-up}). Replay checks found identical starts. Agent--block
+contacts are recorded every 0.01\,s: ten \emph{physics substeps} per 0.1\,s command.
+
+\emph{Designed} scenes place the agent beside the block, offset sideways, and command
+it toward the block. \emph{Demo} starts come from demonstrations with a nearly stationary
+block. We either repeat a command in the demonstrator's average next direction at
+different magnitudes, or multiply the next ten recorded commands by $1$, $1.5$ or $2$,
+preserving their direction sequence. A branch is \emph{moved} if its final block
+position is over 5.12 units from its start (1\% of table width).
+
+Confirmatory hypotheses, metrics and decision rules were hash-sealed before collecting
+fresh starts disjoint from earlier studies. Estimates carry 95\% intervals from 2,000
+family bootstrap resamples, stratified by scene and paired across models; branches
+share a start and are not independent. Figure examples follow a rule fixed before
+plotting: true displacement closest to the cohort median.
+
+\subsection{Reading physics out of latents}\label{sec:readout}
+The readout $g$ is a PyTorch multilayer perceptron (Fig.~\ref{fig:readout}). With
+$\rho=\mathrm{ReLU}$ and standardised input $\tilde z=(z-\mu_z)\oslash\sigma_z$,
+\begin{equation}\label{eq:readout}
+\begin{aligned}
+h_1&=\rho(W_1\tilde z+b_1),\quad h_2=\rho(W_2h_1+b_2),\\
+g(z)&=\mu_y+\sigma_y\odot(W_3h_2+b_3).
+\end{aligned}
+\end{equation}
+Here $\odot,\oslash$ act elementwise; means and scales are fitted on training frames
+only. The six outputs, in order, are block $(x,y)$, $\sin\phi,\cos\phi$ for block angle
+$\phi$, and agent $(x,y)$. Let $g_{\mathrm{B}}$ select the first two outputs.
+Adam ($10^{-3}$, batch 512, standardised targets, early-stop patience 20, at most 300 epochs)
+fits \readoutTrainFrames{} uniformly sampled pose renders. We select among three MLP
+seeds and a linear readout by validation block error: \readoutBlockError{} vs
+\readoutRidgeError{} units on \readoutValFrames{} frames.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{readout.pdf}
+\caption{\textbf{Readout architecture} (Eq.~\ref{eq:readout}). Two 256-unit hidden layers
+use ReLU; the final layer is linear. Standardisation and its inverse use training-set
+statistics. The same frozen readout measures real and predicted latents.}
+\label{fig:readout}
+\end{figure}
+
+For branch $i$, let $z_{0i}$ be the start latent, $\hat z_i$ the predicted end latent,
+$o_i$ the real end image, and $q_{0i},q_i$ the simulator's start/end block positions.
+We compare imagined, real-frame and true displacements:
+\begin{equation}\label{eq:displacements}
+\begin{aligned}
+p_i&=g_{\mathrm B}(\hat z_i)-g_{\mathrm B}(z_{0i}),\\
+r_i&=g_{\mathrm B}(E(o_i))-g_{\mathrm B}(z_{0i}),\quad t_i=q_i-q_{0i}.
+\end{aligned}
+\end{equation}
+Eq.~\ref{eq:gains} pools the scored branches $i\in\mathcal I$:
+\begin{equation}\label{eq:gains}
+\begin{aligned}
+b&=\frac{\sum_i p_i^\top t_i}{\sum_i\lVert t_i\rVert^2},\quad
+b_{\mathrm{real}}=\frac{\sum_i r_i^\top t_i}{\sum_i\lVert t_i\rVert^2},\\
+R&=b/b_{\mathrm{real}},\quad
+\eta=\frac{\sum_i\lVert p_i\rVert^2}{\sum_i\lVert t_i\rVert^2}.
+\end{aligned}
+\end{equation}
+Gain $b$ is a least-squares slope through the origin (1: matching motion along the true
+direction); $R$ is a ratio of gains. Pooling avoids dividing by each small move; scores
+require positive denominators. $R$ normalises by real-frame gain, but imagined-latent
+readout bias can remain. $\mathcal I$ contains moved branches, except in the six-strength
+study, which uses all branches. Gains ignore sideways error; alignment tracks it.
+For endpoint accuracy we use
+\begin{equation}\label{eq:endpoint}
+e_i=\lVert g_{\mathrm B}(\hat z_i)-q_i\rVert_2,
+\end{equation}
+including unmoved branches. Fine-tuning results average training seeds and weight
+families within each scene equally, then scenes equally. Real-frame readings provide
+the reference through the same readout.
+
+
+\section{What goes wrong}\label{sec:results}
+\paragraph{E1: a strong push is under-predicted.} On 100 fresh designed families at
+strength 0.60, predicted block gain is \physSlopePred, against
+\physSlopeReal{} through the same readout on real end frames.
+
+\paragraph{E2: the trend occurs in both scene types.} Across 240 new families,
+designed-scene \R{} falls from \shiftRchThirty{} at 0.30 to
+\shiftRchSixty{} at 0.60; when the demonstrators' own commands are scaled from $\times1$ to
+$\times2$, it falls from \shiftRarOne{} to \shiftRarTwo{} (Table~\ref{tab:studies}).
+Holding commands constant rather than varying them made no established difference
+(\shiftdSar), within the prespecified equivalence band.
+
+\paragraph{E3: the shortfall grows beyond the training range.} On 300 new families
+pushed at six strengths up to 1.00 (Fig.~\ref{fig:teaser}b), the block gain falls from
+\supSlopeChallengeSixty{} at 0.60 to \supSlopeChallengeHundred{} at 1.00 in designed scenes
+and from \supSlopeArchiveSixty{} to \supSlopeArchiveHundred{} in demo scenes.
+Median true displacement changes little (\supTrueChallengeSixty{} vs
+\supTrueChallengeHundred{} units in designed scenes, \supTrueArchiveSixty{} vs
+\supTrueArchiveHundred{} in demo scenes). Designed endpoints also barely change;
+some demo families move further despite their stable median. Alignment changes
+little until the strongest push, indicating mainly magnitude error. Three preregistered
+explanations, fitted up to 0.60 and tested above, compare proportional shrinkage,
+drift toward typical demo motion, and saturation at the strongest demo command. None fitted clearly
+best: saturation beat proportional shrinkage (difference in squared error \supCminusA) but
+not drift (\supCminusB); these differences are in squared table units.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{robustness.pdf}
+\caption{\textbf{Five different readouts see the same trend.} Change from weak to strong
+pushes in energy ratio $\eta$ (Eq.~\ref{eq:gains}; squared, direction-free magnitude)
+when the saved predictions of E1--E2 are re-decoded by
+five readouts that extrapolate differently. All intervals lie below zero.}
+\label{fig:robust}
+\end{figure}
+
+\paragraph{E4: the trend survives alternative readouts.} The readout recovers real motion at
+every strength, even at 1.00 (real-frame gain \supRealChallengeHundred{} in designed and
+\supRealArchiveHundred{} in demo scenes). Five readouts (three MLP seeds, linear ridge,
+and non-extrapolating nearest neighbours) give the same downward trend
+(Fig.~\ref{fig:robust}). Agreement supports the trend but cannot exclude shared
+encoder/frame-bank bias. A readout-free method (render-and-encode pose inversion)
+failed engineering checks; restricting predictions to those resembling real latents
+left one readout inconclusive
+(\robustOnChallengeRidge).
+
+\paragraph{E5: agent and block behave differently.} Decoding the \emph{agent} from the
+same imagined latents gives agent gains of \supAgentChallengeSixty{} (designed) and
+\supAgentArchiveSixty{} (demo) at strength 0.60, and \supAgentChallengeEighty{} at 0.80,
+while block gains are \supSlopeChallengeSixtyPt{} and \supSlopeArchiveSixtyPt. This
+agent--block difference suggests interaction error, but aggregate agent gain cannot
+rule out command-processing problems. We report agent gains only where real-frame
+checks pass; at 1.00 most agents leave the table (only
+\inViewChallengeHundred{} of designed and \inViewArchiveHundred{} of demo agents stay in
+view). Extending this rule to the agent after seeing values makes E5 descriptive.
+
+\section{Can training fix it?}\label{sec:finetune}
+If rare strong interactions explain compression, targeted training should help more
+than ordinary-data training, and nearby strengths might suffice. We test these predictions
+by fine-tuning.
+
+\paragraph{Setup.} We train the predictor $P_\theta$, the action encoder $A_\theta$ and the
+prediction projector (\ftParameters{} parameters). The encoder, its projector, all
+BatchNorm statistics and the readouts stay frozen. With cached real history latents and
+action-block embeddings $\alpha_k=A_\theta(a_k)$ for two past and two candidate command
+blocks (normalised and flattened), the rollout is
+\begin{equation}\label{eq:rollout}
+\begin{aligned}
+\hat z_1 &= P_\theta\big([z_{-2},z_{-1},z_0],[\alpha_{-2},\alpha_{-1},\alpha_0]\big),\\
+\hat z_2 &= P_\theta\big([z_{-1},z_0,\hat z_1],[\alpha_{-1},\alpha_0,\alpha_1]\big).
+\end{aligned}
+\end{equation}
+$P_\theta$ here includes the prediction projector; gradients flow through $\hat z_1$.
+For family $f$ and magnitude $m$, the branch loss and training objective are
+\begin{equation}\label{eq:loss}
+\begin{aligned}
+\ell_{fm}&=\frac{1}{2\cdot192}\sum_{k=1}^2\lVert\hat z_{fmk}-E(o_{fmk})\rVert_2^2,\\
+\mathcal L&=\frac{1}{2}\sum_{s=1}^2\frac{1}{|\mathcal F_s|}
+\sum_{f\in\mathcal F_s}\sum_m w_m\ell_{fm}.
+\end{aligned}
+\end{equation}
+Here $\mathcal F_s$ is the batch's families in scene $s$ and $\sum_m w_m=1$;
+the weights define each training condition (\emph{arm}, Table~\ref{tab:ft}). AdamW (learning
+rate $10^{-5}$, selected from $\{10^{-5},3{\cdot}10^{-5},10^{-4}\}$ by validation latent
+error; weight decay 0.01; clipping 1.0) runs 2,000 updates, each with 16 families
+$\times$ 4 strengths. Push-family arms pair batches by seed (three seeds). Training uses 600 families
+(300 per scene), strengths 0.15--0.60, and 120 validation families. All-strength and
+demo-weighted runs are reused from the earlier study. The ordinary arm averages loss
+over 64 recorded demo clips per update, from 2,400 clips. Testing uses 240 fresh
+families and 120 ordinary clips; all four readout checks passed. The omitted arm uses
+$w=(1/3,1/3,1/3,0)$ in ascending magnitude order: Eq.~\ref{eq:loss} does not divide by
+four again, leaving 48 nonzero-weight branches out of 64 per update. Strength
+0.60 still informed family admission and the earlier learning-rate
+choice, and appears in validation. Every arm uses its fixed final checkpoint.
+Thus 0.60 is excluded from updates, not all development.
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{2.25cm}rrrr@{}}
+\toprule
+& & \multicolumn{3}{c}{strength 0.60} & ordinary \\
+\cmidrule(lr){3-5}
+Model & fine-tuned on & error & \R{} des. & \R{} demo & error \\
+\midrule
+\textcolor{released}{released} & --- & \tdMeanFrozen & \tdRatioChallengeFrozen & \tdRatioArchiveFrozen & \tdOrdMeanFrozen \\
+FT ordinary & 2,400 ordinary demo clips & \tdMeanArchOnly & \tdRatioChallengeArchOnly & \tdRatioArchiveArchOnly & \tdOrdMeanArchOnly \\
+FT demo-wt. & push families, weighted like the demos & \tdMeanArchWeighted & \tdRatioChallengeArchWeighted & \tdRatioArchiveArchWeighted & \tdOrdMeanArchWeighted \\
+FT w/o 0.60 & push families, 0.15--0.45 only & \tdMeanOmitted & \tdRatioChallengeOmitted & \tdRatioArchiveOmitted & \tdOrdMeanOmitted \\
+\textcolor{ftall}{FT all} & push families, all four strengths & \tdMeanBalanced & \tdRatioChallengeBalanced & \tdRatioArchiveBalanced & \tdOrdMeanBalanced \\
+\midrule
+real frames & --- & & & & \tdOrdMeanReal \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Fine-tuning arms and results} (fresh data, seeds averaged). Error: mean
+block endpoint error (Eq.~\ref{eq:endpoint}) in table units (table: 512; block: 120), scenes weighted
+equally. FT ordinary controls for training as such. \R: gain relative to real
+frames (1 = as good as the instrument). Demo weights are the frequencies of the four
+strengths in demo clips (.51/.34/.13/.02).}
+\label{tab:ft}
+\end{table}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{finetuning.pdf}
+\caption{\textbf{Push-family fine-tuning removes most compression, including at a strength
+excluded from the loss; ordinary data does not.} Seed means.
+(a)~\R{} on 240 fresh families; shaded: zero loss weight at 0.60 in ``w/o 0.60''.
+(b)~Fig.~\ref{fig:method}a's family at 0.60.
+(c)~Validation latent error during training: 120 families (60 designed, 60 demo).}
+\label{fig:ft}
+\end{figure*}
+
+\paragraph{Results.} Fine-tuning on all four strengths lowers the mean block error at
+strength 0.60 from \tdMeanFrozen{} to \tdMeanBalanced{} units (difference
+\tdFrozenMinusBal) and raises \R{} from \tdRatioChallengeFrozen{} to \tdRatioChallengeBalanced{} in designed and
+from \tdRatioArchiveFrozen{} to \tdRatioArchiveBalanced{} in demo scenes
+(Table~\ref{tab:ft}, Fig.~\ref{fig:ft}a). Fine-tuning as long on ordinary demo clips gives
+no established improvement (\tdFrozenMinusArchOnly); its interval rules out improvements above
+\tdArchOnlyBound{} units, against \tdFrozenMinusBalPt{} for push families. Leaving
+strength 0.60 out of the training loss leaves a small but preregistered deficit there
+(\tdOmitMinusBal{} units) and no established deficit at the trained strength 0.45
+(\tdOmitMinusBalInSupport); the held-out model still recovers \tdTransferPercent{} of the
+full error reduction (\tdTransfer, descriptive). Its deficit does not separate coverage
+from the number of nonzero-weight branches. Weighting
+the strengths like the demos changed little (\tdMeanArchWeighted). The improvement has a
+price: on ordinary demo clips the all-strength model is \tdOrdBalMinusFrozen{} units worse
+than the released one (\tdOrdMeanBalanced{} vs \tdOrdMeanFrozen; real frames give
+\tdOrdMeanReal). Its cause is not isolated; mixing ordinary clips into targeted training
+is a candidate mitigation. Validation curves (Fig.~\ref{fig:ft}c) show stable optimisation. An
+earlier fine-tuning study agrees (\trainBalMinusFrozen{} units) but is only descriptive,
+because its readout check failed in demo scenes.
+
+\section{Does it matter for decisions?}
+We rank six candidates $c\in\mathcal C$ by predicted-end-to-goal latent distance.
+For goal position $q^*$, let $d_c=\lVert q_c-q^*\rVert_2$ be candidate $c$'s true
+block-to-goal distance. The chosen candidate $\hat c$ incurs
+\begin{equation}\label{eq:regret}
+\mathrm{regret}(\hat c)=d_{\hat c}-\min_{c\in\mathcal C}d_c.
+\end{equation}
+On 148 fresh families, real-latent choice beats random (regret difference
+\planRealMinusRandom{} units; Eq.~\ref{eq:regret}). Imagined-minus-real regret is
+\planJepaMinusReal: no positive penalty is established, but the interval allows costs
+up to \planBound{} units. Each candidate's privileged goal image preserves its realised final
+agent position and block angle, moving only the block to the goal. Predicted agent/angle
+errors can still affect rankings, so this tests total latent prediction error, not block
+error alone. Six candidates and a two-step horizon make the test coarse; the null does
+not establish that compression is harmless.
+
+\section{Discussion}
+\paragraph{What we can conclude.} LeWM increasingly under-predicts block motion under
+large commands while agent gain stays near one, even where designed-scene outcomes
+barely change. Targeted fine-tuning removes most compression, including at a strength
+excluded from the loss; equally long ordinary-data training does not. This favours
+interaction coverage over an architectural limit, but neither proves pretraining-data
+causation nor locates the repair's mechanism.
+
+\paragraph{Insights.} Ordinary clips hide the shortfall: model error
+(\tdOrdMeanFrozen{}) is near readout error (\tdOrdMeanReal). Controlled pushes expose
+it; targeted training trades push accuracy for ordinary-data accuracy.
+Three earlier readouts failed their real-frame checks.
+
+\paragraph{Limitations and next steps.} One checkpoint and environment; a two-step horizon
+and constant pushes; readouts that share one encoder and frame bank; some exploratory
+analyses on opened data; fewer nonzero-weight examples in the omitted-strength arm; fine-tuning
+seeds rather than independently pretrained models; a coarse planning test. Next: a
+readout-free instrument, more environments and checkpoints, and pretraining without the
+strongest commands.
+
+\paragraph{Reproduction.} \texttt{reports/report001/REPRODUCE.md} gives commands to
+rebuild all numbers, tables, figures and this PDF from tracked sources.
+
+{\footnotesize
+\begin{thebibliography}{99}\setlength{\itemsep}{0pt}
+\bibitem{assran2023ijepa} M.~Assran et al. Self-supervised learning from images with a
+joint-embedding predictive architecture. arXiv:2301.08243, 2023.
+\bibitem{assran2025vjepa2} M.~Assran et al. V-JEPA 2: Self-supervised video models
+enable understanding, prediction and planning. arXiv:2506.09985, 2025.
+\bibitem{maes2026lewm} L.~Maes, Q.~Le~Lidec, D.~Scieur, Y.~LeCun, R.~Balestriero.
+LeWorldModel: Stable end-to-end joint-embedding predictive architecture from pixels.
+arXiv:2603.19312, 2026.
+\bibitem{maes2026swm} L.~Maes et al. stable-worldmodel: A platform for reproducible world
+modeling research and evaluation. arXiv:2605.21800, 2026.
+\bibitem{zhou2024dinowm} G.~Zhou, H.~Pan, Y.~LeCun, L.~Pinto. DINO-WM: World models on
+pre-trained visual features enable zero-shot planning. arXiv:2411.04983, 2024.
+\bibitem{lambert2020objective} N.~Lambert, B.~Amos, O.~Yadan, R.~Calandra. Objective
+mismatch in model-based reinforcement learning. arXiv:2002.04523, 2020.
+\bibitem{vakalis2026gap} D.~Vakalis. The intervention gap in latent world models.
+arXiv:2608.29998, 2026.
+\bibitem{kang2023extrapolate} K.~Kang, A.~Setlur, C.~Tomlin, S.~Levine. Deep neural
+networks tend to extrapolate predictably. ICLR 2024 (arXiv:2310.00873).
+\bibitem{khanbayov2026physweep} R.~Khanbayov, H.~Kurban. PhysWeep: Does a video generator
+realize the physics you ask for? arXiv:2609.06207, 2026.
+\bibitem{resani2026dojepa} H.~Resani, J.~Q.~Shi. Do-JEPA: From masking to intervention in
+latent world models. arXiv:2609.37378, 2026.
+\bibitem{qiu2026adwm} J.~Qiu et al. AD-WM: Action-discriminative world models for
+counterfactual model predictive control. arXiv:2609.30264, 2026.
+\end{thebibliography}}
+\end{document}

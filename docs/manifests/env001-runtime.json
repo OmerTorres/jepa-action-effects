@@ -1,0 +1,286 @@
+{
+  "scope": "Simulator transition and checkpoint tensor audit; no model inference",
+  "python": "3.10.21",
+  "platform": "macOS-15.7.3-arm64-arm-64bit",
+  "packages": {
+    "stable-worldmodel": "0.0.5",
+    "torch": "2.14.0",
+    "torchvision": "0.29.0",
+    "numpy": "2.2.6",
+    "gymnasium": "1.3.0",
+    "pymunk": "7.3.0",
+    "pygame": "2.6.1",
+    "opencv-python-headless": "4.11.0.86",
+    "shapely": "2.1.2",
+    "h5py": "3.16.0",
+    "hdf5plugin": "7.1.0"
+  },
+  "git_head": "706365b33c0ca208dd1362a58017833c7c9eec61",
+  "git_dirty": true,
+  "uv_lock_sha256": "dbf2f3de2876e3f575d0abd7341825a349ce1b2e2d86d6f3e11bda618ac89691",
+  "simulator_revision": "44c45bd1f774995aac0cc2b41444ebea24c1d5ad",
+  "checkpoint": {
+    "repository": "quentinll/lewm-pusht",
+    "revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+    "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+    "config_sha256": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+    "weights_bytes": 72290721,
+    "state_dict_entries": 303,
+    "tensor_elements_including_buffers": 18042672,
+    "checked_tensor_shapes": {
+      "encoder.embeddings.cls_token": [
+        1,
+        1,
+        192
+      ],
+      "encoder.embeddings.position_embeddings": [
+        1,
+        257,
+        192
+      ],
+      "encoder.embeddings.patch_embeddings.projection.weight": [
+        192,
+        3,
+        14,
+        14
+      ],
+      "predictor.pos_embedding": [
+        1,
+        3,
+        192
+      ],
+      "action_encoder.patch_embed.weight": [
+        10,
+        10,
+        1
+      ]
+    },
+    "config": {
+      "_target_": "stable_worldmodel.wm.lewm.LeWM",
+      "encoder": {
+        "_target_": "stable_pretraining.backbone.utils.vit_hf",
+        "size": "tiny",
+        "patch_size": 14,
+        "image_size": 224,
+        "pretrained": false,
+        "use_mask_token": false
+      },
+      "predictor": {
+        "_target_": "stable_worldmodel.wm.lewm.module.Predictor",
+        "num_frames": 3,
+        "input_dim": 192,
+        "hidden_dim": 192,
+        "output_dim": 192,
+        "depth": 6,
+        "heads": 16,
+        "mlp_dim": 2048,
+        "dim_head": 64,
+        "dropout": 0.1,
+        "emb_dropout": 0.0
+      },
+      "action_encoder": {
+        "_target_": "stable_worldmodel.wm.lewm.module.Embedder",
+        "input_dim": 10,
+        "emb_dim": 192
+      },
+      "projector": {
+        "_target_": "stable_worldmodel.wm.lewm.module.MLP",
+        "input_dim": 192,
+        "output_dim": 192,
+        "hidden_dim": 2048,
+        "norm_fn": {
+          "_target_": "torch.nn.BatchNorm1d",
+          "_partial_": true
+        }
+      },
+      "pred_proj": {
+        "_target_": "stable_worldmodel.wm.lewm.module.MLP",
+        "input_dim": 192,
+        "output_dim": 192,
+        "hidden_dim": 2048,
+        "norm_fn": {
+          "_target_": "torch.nn.BatchNorm1d",
+          "_partial_": true
+        }
+      }
+    },
+    "all_tensors_finite": true,
+    "strict_model_load_performed": false,
+    "inference_performed": false
+  },
+  "transition": {
+    "seed": 42,
+    "context_control_indices": [
+      0,
+      5,
+      10
+    ],
+    "target_control_indices": [
+      15
+    ],
+    "context_shape": [
+      1,
+      3,
+      3,
+      224,
+      224
+    ],
+    "target_shape": [
+      1,
+      1,
+      3,
+      224,
+      224
+    ],
+    "action_history_raw": [
+      [
+        0.20000000298023224,
+        0.0,
+        0.20000000298023224,
+        0.0,
+        0.20000000298023224,
+        0.0,
+        0.20000000298023224,
+        0.0,
+        0.20000000298023224,
+        0.0
+      ],
+      [
+        0.0,
+        0.20000000298023224,
+        0.0,
+        0.20000000298023224,
+        0.0,
+        0.20000000298023224,
+        0.0,
+        0.20000000298023224,
+        0.0,
+        0.20000000298023224
+      ]
+    ],
+    "candidate_actions_raw": [
+      [
+        -0.20000000298023224,
+        0.0,
+        -0.20000000298023224,
+        0.0,
+        -0.20000000298023224,
+        0.0,
+        -0.20000000298023224,
+        0.0,
+        -0.20000000298023224,
+        0.0
+      ]
+    ],
+    "states": [
+      [
+        281.8691105304458,
+        104.93927620590564,
+        268.82044006477963,
+        356.61757712885924,
+        4.204962955399923,
+        0.0,
+        0.0
+      ],
+      [
+        320.3515879474378,
+        104.93927620590564,
+        268.82044006477963,
+        356.61757712885924,
+        4.204962955399923,
+        74.34245300292969,
+        0.0
+      ],
+      [
+        322.5623100387652,
+        143.4217525547826,
+        268.82044006477963,
+        356.61757712885924,
+        4.204962955399923,
+        2.0969525849068305e-07,
+        74.3423843383789
+      ],
+      [
+        284.07983903046454,
+        145.63247009538105,
+        268.82044006477963,
+        356.61757712885924,
+        4.204962955399923,
+        -74.34242248535156,
+        1.3451824543153634e-06
+      ]
+    ],
+    "termination_flags": [
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ]
+    ],
+    "physics_dt": 0.01,
+    "control_hz": 10,
+    "native_prediction_seconds": 0.5,
+    "frame_sha256": [
+      "322579680b3fb121a19c836b4a133a4012117fcd65eb9ff7dba6cdaa930c51e6",
+      "10fa22292c910b15db650db5dc8bb04aa3317820ad4205ea9b86938bccf4dc1f",
+      "da72aaaf808f0b087305bae704ed8b5458d924e44f2fb13b7a6c79acccbcbf96",
+      "a58ed6b66555bdd0b55d159837765df6feb84c26beeca9d467f57ff995731fcf"
+    ],
+    "action_normalization": "UNRESOLVED: raw controls only; not inference-ready"
+  }
+}

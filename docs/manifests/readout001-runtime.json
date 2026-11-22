@@ -1,0 +1,106 @@
+{
+  "task": "READOUT-001",
+  "date": "2026-09-27",
+  "status": "complete",
+  "recommendation": "narrow_or_revise_measurement",
+  "runtime": {
+    "python": "3.10.21",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "device": "cpu",
+    "precision": "float32",
+    "git_head_before_changes": "ad7a0e2457b3ec4d74f3799f36b77e8c924140de",
+    "git_dirty_during_run": true,
+    "uv_lock_sha256": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00",
+    "checkpoint_weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+    "historical_training_simulator_identity_proven": false
+  },
+  "source_sha256": {
+    "pilot.py": "f7f4615048c3c9967fd794ec7921139d43dee35f7c5b79bf8317a184432591f5",
+    "pilot_collection.py": "9b2fdcb7ebee9911c181e3ce7a786b8a79013293632151a2fcee96d6b61d5237",
+    "pilot_readouts.py": "404af9f3f7567d04971e2840b8df9e3f723c15bed44cb50c7dfecd0a1731fcba",
+    "readout_diagnostic.py": "32539bbd32b3493ce52d386877833318896034b36d954be6ebcb23f5557e4b47",
+    "readout_recovery.py": "ebf8b757f37b5d27ec6505f0bf128120dba72b2b8982bd647c7264bdfb220207"
+  },
+  "pilot_inputs_sha256": {
+    "collection_manifest": "35e9443432b86534e8e01b3f07079596d89dee308e0a0154ce896761e8049674",
+    "evaluation_report": "494441d92e830cb007709eb6af17e31d001e066a3ae34eb82f4e768dc3801c18",
+    "ridge_readouts": "cc47600faba0863db8e141f2e9f1a702a7c81cd355f430a77443f80b4d973185",
+    "final_report": "3d70c382d1d448ff2453c3b00e2889d201c443e4fcffe0b28d11166e04b11424"
+  },
+  "audit": {
+    "status": "passed",
+    "elapsed_seconds": 4.403911415953189,
+    "replayed_families_balanced_across_cohorts_and_splits": 12,
+    "rgb_mismatches": 0,
+    "maximum_state_alignment_error": 0.0,
+    "projected_cls_agreement_max_error": 0.0,
+    "manual_rollout_agreement_max_error": 0.0,
+    "identical_frame_agent_label_conflicts": 14,
+    "identical_frame_block_label_conflicts": 0,
+    "original_ridge_validation_mean_reproduced": 18.41681750671733,
+    "original_ridge_validation_p95_reproduced": 42.122866288232615,
+    "tiny_32_frame_least_squares_max_error_below": 0.000001,
+    "tiny_selected_distinct_projected_embeddings": 32,
+    "audit_sha256": "76693ecfea1a8cabf9aac585ab1353563687c255ae538bbcdd9df5b7888e8039"
+  },
+  "collection": {
+    "master_seed": 20260927,
+    "two_native_step_horizon": true,
+    "delta": 5.12,
+    "new_challenge_families": 200,
+    "new_ordinary_families": 100,
+    "new_fit_tuning_confirmation": [180, 60, 60],
+    "attempts_challenge_ordinary": [200, 100],
+    "rejections": 0,
+    "within_attempt_caps_challenge_ordinary": [2000, 1000],
+    "cross_pilot_reset_seed_overlap": 0,
+    "cross_pilot_recipe_overlap": 0,
+    "within_recovery_duplicate_recipes": 0,
+    "elapsed_seconds": 47.7788422498852,
+    "config_sha256": "17e403b25cce875b8bc653981f91c9dd087c70ad1d1edc6e38b76032e77e8713",
+    "manifest_sha256": "98bd169c8bb9e32ca21c0cc39f6283ee2a784923cffa3f52e707eae29df509d0"
+  },
+  "readout": {
+    "nested_fit_families": [60, 120, 240],
+    "tuning_families": 60,
+    "confirmation_families_reserved_and_unopened": 60,
+    "mean_gate": 1.28,
+    "p95_gate": 2.56,
+    "minimum_families_per_regime": 10,
+    "projected_ridge_tuning_mean": [19.962245395261036, 15.675274405276017, 11.682487867546454],
+    "projected_ridge_tuning_p95": [47.69603742010572, 38.96509610050704, 29.024694482016546],
+    "projected_nonlinear_240_mean_by_seed": [10.178101234789532, 11.062350067738585, 9.884000839413565],
+    "raw_cls_ridge_240_mean": 8.596294053710166,
+    "projected_gate_passed": false,
+    "selected_configuration": null,
+    "confirmation_labels_opened": false,
+    "fit_run_signature": "8766322f09114f9ff1833aa26f766efa2cebae41e9e4951063e5a235ae60804b",
+    "final_fit_elapsed_seconds": 71.77678062487394,
+    "nonlinear_curve_count": 9,
+    "development_real_cache_entries": 600,
+    "before_family_weighting_correction_fit_report_sha256": "e1d10e0b5fea67f78b09e543eed0665db7fd7965d279ff1e1cae339eb9292ac6",
+    "corrected_fit_report_sha256": "5fe80a79b2f8d7c30ce08c0287fd3b9fb6ec1945d1db6c9827ab77cf34041eb6"
+  },
+  "generated_artifacts": {
+    "root": "outputs/readout001",
+    "storage_bytes": 21911663,
+    "original_ridge_breakdown_sha256": "75e06064cb7a3bc4cdf1b1d4003aa2bca608675ca04ddddf9acc7b7deb1637fb",
+    "geometry_alignment_sha256": "615b821c2f7428aa902d40177bc9f9dfa1f51f73655c4ec597d5eb8cd92e510f",
+    "pilot_report_correction_sha256": "b2bcd09f15af9e34f034825de6e251ba9abe0e518fbecdcf7b108bb1146e1692",
+    "selection_manifest_sha256": "9fbecb7d4dca96df1d0209fd574d4895a25629996d485f034745b8c74346a053",
+    "final_report_sha256": "a5d98d5873c37a73b4a628a9cfc4355b789e2d750c91b9beb2485cca7ae6e14c",
+    "markdown_report_sha256": "ccb129ff7827b817cc80ced005a9c211d0e698e9d50640c1e36e53ff1413657e"
+  },
+  "validation": {
+    "make_check": "passed",
+    "make_test": "50 passed; 11 non-failing Gymnasium warnings",
+    "uv_lock_check": "passed; 118 packages resolved",
+    "git_diff_check": "passed"
+  },
+  "limitations": [
+    "Probe failure does not prove block information is absent from the representation.",
+    "The unprojected CLS readout cannot decode projected predictor outputs.",
+    "The historical training-simulator identity remains unproven.",
+    "No main-study locked-test inference was performed."
+  ]
+}

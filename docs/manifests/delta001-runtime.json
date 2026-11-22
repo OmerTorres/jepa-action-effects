@@ -1,0 +1,87 @@
+{
+  "task": "DELTA-001",
+  "date": "2026-09-27",
+  "status": "measurement_failed",
+  "recommendation": "close_physical_readout_recovery",
+  "scope": "Exploratory existing-family displacement measurement; no new collection or main-test inference",
+  "runtime": {
+    "python": "3.10.21",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "device": "cpu",
+    "precision": "float32",
+    "budget_seconds": 7200,
+    "cumulative_experiment_seconds": 29.148931957315654,
+    "audit_seconds": 0.29344358295202255,
+    "complete_fit_seconds": 26.52349599963054,
+    "cohort_regime_reporting_seconds": 2.154365499969572,
+    "checkpoint_weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+    "uv_lock_sha256": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00",
+    "historical_training_simulator_identity_proven": false
+  },
+  "source_sha256": {
+    "plan": "dd83818d24df68af26a48c85e990a816ac4ad1221e726beeb55b1c9401ecad6a",
+    "delta_probe.py": "f7850e34f58e0f59d2356cb48289c49493f7a3f858ac34f9a538b072aaaa2a43",
+    "delta_readout.py": "b53a2c6a647e36388a681843e94a24c9ad10c587426226794e4d3e8e966b4e29",
+    "delta_breakdown.py": "fa77bc7da5b91d03e2a31f18aa5592f88ef27ebfd4cca3ebdf23d1eb5a2be070"
+  },
+  "inputs_sha256": {
+    "pilot_collection_manifest": "35e9443432b86534e8e01b3f07079596d89dee308e0a0154ce896761e8049674",
+    "readout_collection_manifest": "98bd169c8bb9e32ca21c0cc39f6283ee2a784923cffa3f52e707eae29df509d0",
+    "readout_fit_report": "5fe80a79b2f8d7c30ce08c0287fd3b9fb6ec1945d1db6c9827ab77cf34041eb6",
+    "action_statistics": "af2d276efc5c3da162aec27d97d8f77f6c9fae5439268849372fc6be976fad06"
+  },
+  "protocol": {
+    "master_seed": 20260928,
+    "native_steps": 2,
+    "delta": 5.12,
+    "fit_families": 240,
+    "tuning_families": 60,
+    "reserved_confirmation_families": 60,
+    "mean_gate": 1.28,
+    "p95_gate": 2.56,
+    "minimum_families_per_required_subset": 10,
+    "ridge_alpha_grid": [0.01, 0.1, 1, 10, 100, 1000],
+    "nonlinear_seeds": [20260931, 20260932, 20260933],
+    "selected_configuration": null,
+    "confirmation_opened": false,
+    "predictor_evaluation_status": "unavailable"
+  },
+  "fit_evidence": {
+    "retained_real_transition_pairs": 1424,
+    "duplicate_frame_pairs": 16,
+    "conflicting_block_displacement_labels": 0,
+    "distinct_tiny_diagnostic_differences": 32,
+    "meaningful_effect_tuning_families": 43,
+    "zero_reference_endpoint_mean_p95": [19.035134257673842, 97.22851004786091],
+    "existing_ridge_difference_endpoint_mean_p95": [9.389266716917742, 26.777686826740496],
+    "direct_ridge_endpoint_mean_p95": [4.8328254881680035, 13.026098932091406],
+    "anchored_nonlinear_endpoint_mean_by_seed": [4.287122854645231, 4.3905019090956365, 4.006038028004978],
+    "anchored_nonlinear_meaningful_effect_mean_by_seed": [8.79094931314869, 8.745711971661558, 8.252430282132561],
+    "all_required_gates_passed": false,
+    "seed_training_status": ["epoch_cap", "early_stopped", "epoch_cap"]
+  },
+  "artifacts": {
+    "root": "outputs/delta001",
+    "bytes": 3313827,
+    "config_sha256": "fc58b6b9ced77bf8254a998a3302cf027ad3d32389aec93b78c422556391d54f",
+    "audit_sha256": "a6b5f11015645b2377998a1f4520331ac9d9c7a2f1695c525850516eddc0d84d",
+    "fit_report_sha256": "33ecfa2a6e7b73a57a77773d433cfe59dd57ebe76979e793b92196978f25f23f",
+    "selection_sha256": "93da9aa64dbd11aed6ba58371eb7fd8aa3e82253f6426caefe1316c8bb8e348d",
+    "final_report_sha256": "511d4fb255b1c6f9c1767bffc482f23ce722d95223fa7b5ebfe601e965432e67",
+    "markdown_report_sha256": "2bc9253f84c54dcf5ef930f40dc50df0321180a0f48936274f7651ce9e31defe",
+    "cohort_regime_breakdown_sha256": "bfd2d90a53876e3a5f2acd978b8126aa2eceb581b325a0db2ec482971bb49bdf"
+  },
+  "verification": {
+    "focused_tests": "10 passed",
+    "make_check": "passed",
+    "make_test": "60 passed; 11 non-failing Gymnasium warnings",
+    "uv_lock_check": "passed; 118 locked packages resolved",
+    "git_diff_check": "passed"
+  },
+  "limitations": [
+    "Confirmation and conditional frozen-predictor evaluation were not run because no readout passed tuning.",
+    "A failed readout does not prove missing block state information or predictor physics failure.",
+    "The historical training-simulator identity remains unproven.",
+    "Main-study locked-test data were not inspected."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "task": "LATENT-001",
+  "date": "2026-09-27",
+  "status": "complete_exploratory",
+  "git_head": "ad7a0e2457b3ec4d74f3799f36b77e8c924140de",
+  "git_dirty_during_run": true,
+  "runtime": {
+    "python": "3.10.21",
+    "device": "cpu",
+    "model_precision": "float32",
+    "metric_precision": "float64",
+    "audit_seconds": 0.19298262521624565,
+    "evaluate_seconds": 9.506960708182305,
+    "report_seconds": 0.03056512540206313,
+    "cumulative_seconds": 9.730508458800614,
+    "budget_seconds": 1800,
+    "storage_bytes": 1115889
+  },
+  "inputs": {
+    "pilot_collection_manifest_sha256": "35e9443432b86534e8e01b3f07079596d89dee308e0a0154ce896761e8049674",
+    "readout_collection_manifest_sha256": "98bd169c8bb9e32ca21c0cc39f6283ee2a784923cffa3f52e707eae29df509d0",
+    "readout_fit_report_sha256": "5fe80a79b2f8d7c30ce08c0287fd3b9fb6ec1945d1db6c9827ab77cf34041eb6",
+    "checkpoint_weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+    "uv_lock_sha256": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00",
+    "plan_sha256": "4a42519078b558cda2befeb01d1430944bf8283c9e4aace93eea8984cba05c22"
+  },
+  "artifacts": {
+    "root": "outputs/latent001",
+    "config_sha256": "a7f4536c6e5470d9678fcc15ae92d1269ef6edeea3d62f49cb362baded3768c8",
+    "audit_sha256": "5ce697b2fb486b77bc7206f097336f10f094af0e970ee46bb8dc9330549b390e",
+    "evaluation_sha256": "bac5d9fc3d960f238244754416f1716b2cf0c0dbe3da354f3de2df0def562435",
+    "report_sha256": "73cbc9d0484edf7c95eaa4f9746745c59112a5882ca490bcb7db1d866cfe9afe",
+    "markdown_report_sha256": "2c7a6c90f7a8a8a9530a4b713218d5e029c2bd51a2d42b285607d67abf9abf32",
+    "family_records": 60,
+    "prediction_cache_entries": 60,
+    "new_real_cache_entries": 0
+  },
+  "membership": {
+    "tuning": "Exact 40 challenge and 20 ordinary IDs, family hashes and excluded confirmation IDs in sealed outputs/latent001/config.json",
+    "confirmation_evaluated": false,
+    "excluded_due_to_model_error": 0
+  },
+  "verification": {
+    "duplicate_and_reversed_order_families": 12,
+    "maximum_absolute_discrepancy_at_most": 0.000001,
+    "sealed_resume": "Repeated evaluation reused all 60 family records; aggregate record hash unchanged at 4546fb56690397b9afe74eba994524afddc1f48d0581d773dc0d3c91cbae9b7e",
+    "focused_tests": "21 passed",
+    "make_check": "passed",
+    "make_test": "66 passed; 11 nonfailing Gymnasium warnings",
+    "uv_lock_check": "passed; 118 packages resolved",
+    "git_diff_check": "passed"
+  },
+  "limitations": [
+    "Readout confirmation families remain reserved; this is exploratory tuning-family reuse.",
+    "Global projected CLS may be driven by agent motion rather than block physics.",
+    "Physical competence remains unassessable because real-frame readout gates failed.",
+    "Historical training-simulator identity is unproven."
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "alignment": {
+    "challenge_history_motion": {
+      "fraction_at_rest": 1.0,
+      "median": 0.0
+    },
+    "develop": {
+      "families": 200,
+      "latent_slope": 0.7940576869113531,
+      "latent_slope_ci95": [
+        0.7804892457675804,
+        0.8073249714406178
+      ],
+      "pred_over_persistence_mse": 0.2393868105304049,
+      "pred_step1_vs_true1": 0.8994418100360596,
+      "pred_step1_vs_true2": 0.3731438407701873,
+      "pred_step2_vs_true1": 1.1976390184740935,
+      "pred_step2_vs_true2": 0.5916204425889654,
+      "real_step1_vs_true1": 1.0565734309701735,
+      "real_step1_vs_true2": 0.3736952960011194,
+      "real_step2_vs_true1": 2.0764816816601,
+      "real_step2_vs_true2": 1.0142150598053992
+    },
+    "develop_binned": {
+      "20-40": {
+        "count": 122,
+        "slope_pred": 0.6576349484646504
+      },
+      "40-80": {
+        "count": 218,
+        "slope_pred": 0.5503908640953239
+      },
+      "5.12-20": {
+        "count": 112,
+        "slope_pred": 1.1756467339136518
+      },
+      "80-400": {
+        "count": 155,
+        "slope_pred": 0.6014021609476233
+      }
+    },
+    "reserved": {
+      "families": 100,
+      "latent_slope": 0.7844846768723741,
+      "latent_slope_ci95": [
+        0.766339819301207,
+        0.8038961613777243
+      ],
+      "pred_over_persistence_mse": 0.24227659103395408,
+      "pred_step1_vs_true1": 0.8841404302702992,
+      "pred_step1_vs_true2": 0.3641308485172355,
+      "pred_step2_vs_true1": 1.1553641418945455,
+      "pred_step2_vs_true2": 0.5610256756747055,
+      "real_step1_vs_true1": 1.0568197878450913,
+      "real_step1_vs_true2": 0.37205343715183115,
+      "real_step2_vs_true1": 2.0448333466742716,
+      "real_step2_vs_true2": 1.006318235589391
+    }
+  },
+  "archive_control": {
+    "binned": {
+      "20-40": {
+        "count": 98,
+        "slope_pred": 0.8924324338938417
+      },
+      "40-80": {
+        "count": 103,
+        "slope_pred": 0.9872986519345229
+      },
+      "5.12-20": {
+        "count": 118,
+        "slope_pred": 0.9341347535160971
+      },
+      "80-400": {
+        "count": 16,
+        "slope_pred": 0.9568618503337669
+      }
+    },
+    "moved": {
+      "count": 335,
+      "err_pred": 13.26552767448742,
+      "err_real": 11.645774571699596,
+      "slope_pred": 0.9634804672556688,
+      "slope_pred_ci95": [
+        0.9334632956978354,
+        0.9957276072217169
+      ],
+      "slope_real": 0.9498194186593887,
+      "slope_real_ci95": [
+        0.9228828189748624,
+        0.9762163982862995
+      ]
+    },
+    "moved_block_at_rest": {
+      "count": 97,
+      "err_pred": 14.1950134719364,
+      "err_real": 12.302727209428944,
+      "slope_pred": 1.0236018544022452,
+      "slope_pred_ci95": [
+        0.9599841392256188,
+        1.0935872588030202
+      ],
+      "slope_real": 1.0042280001636732,
+      "slope_real_ci95": [
+        0.9512180673655425,
+        1.0556494185449434
+      ]
+    },
+    "moved_block_moving": {
+      "count": 238,
+      "err_pred": 12.886703630989306,
+      "err_real": 11.378024967246878,
+      "slope_pred": 0.9432043514582673,
+      "slope_pred_ci95": [
+        0.9096537751695477,
+        0.9767275153860636
+      ],
+      "slope_real": 0.9314699634769318,
+      "slope_real_ci95": [
+        0.8984457088525593,
+        0.9595036458810425
+      ]
+    },
+    "moved_displacement_median": 28.602977109445668,
+    "moved_windows": 335,
+    "skipped_out_of_bounds": 9,
+    "windows": 600
+  },
+  "probe_size": {
+    "10000": {
+      "ratio": 0.5634714498965101,
+      "real_displacement_error": 8.073609759204047,
+      "slope_pred": 0.5592486186076341,
+      "slope_real": 0.9925056872186664,
+      "validation_block_mean": 6.31573448468428
+    },
+    "2000": {
+      "ratio": 0.5570275589064476,
+      "real_displacement_error": 16.16633591309461,
+      "slope_pred": 0.5087759000300303,
+      "slope_real": 0.9133765320855136,
+      "validation_block_mean": 10.858073265185944
+    },
+    "20000": {
+      "ratio": 0.5807429508266889,
+      "real_displacement_error": 6.041445482164275,
+      "slope_pred": 0.5750621913038976,
+      "slope_real": 0.99021811712961,
+      "validation_block_mean": 4.8796811199964605
+    },
+    "5000": {
+      "ratio": 0.549617561049942,
+      "real_displacement_error": 11.197890903508702,
+      "slope_pred": 0.5234405253432505,
+      "slope_real": 0.9523722719909365,
+      "validation_block_mean": 7.769504949388192
+    },
+    "50000": {
+      "ratio": 0.5748120307214678,
+      "real_displacement_error": 4.089062514507383,
+      "slope_pred": 0.5814782766731807,
+      "slope_real": 1.0115972624013208,
+      "validation_block_mean": 3.4779558711658916
+    }
+  },
+  "readout_selection": "mlp-20261005",
+  "runtime": {
+    "device": "cpu",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "precision": "float32",
+    "python": "3.10.21",
+    "torch": "2.14.0"
+  },
+  "sources": {
+    "runner": "23a99ef0a7a616910de849b655ec02bdf919aa7691c2c94a6eb2b7fb0b5bd6f6",
+    "uv_lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+  },
+  "status": "exploratory (reserved families already opened)",
+  "task": "PHYS-002-AUDIT"
+}

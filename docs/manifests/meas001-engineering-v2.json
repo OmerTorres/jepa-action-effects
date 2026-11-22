@@ -1,0 +1,244 @@
+{
+  "diagnostics": {
+    "A:V2-S2r300": {
+      "best_error_within": {
+        "1.28": 13,
+        "2.56": 17,
+        "20.48": 23,
+        "5.12": 20
+      },
+      "better_than_truth_but_far": 0,
+      "both_converged": 23,
+      "median_best_error": 1.037035419243254,
+      "median_best_residual": 0.0005495271262705364,
+      "median_restart_distance": 6.024414632370844,
+      "median_true_pose_residual": 0.0,
+      "reached_true_basin": 0,
+      "residual_by_block_distance": [
+        {
+          "distance": [
+            0.0,
+            0.64
+          ],
+          "median_best_residual": 0.00020434572763197516,
+          "targets": 17
+        },
+        {
+          "distance": [
+            0.64,
+            1.28
+          ],
+          "median_best_residual": 0.00047872042303534246,
+          "targets": 21
+        },
+        {
+          "distance": [
+            1.28,
+            2.56
+          ],
+          "median_best_residual": 0.0010123635712563112,
+          "targets": 22
+        },
+        {
+          "distance": [
+            2.56,
+            5.12
+          ],
+          "median_best_residual": 0.0038077974241534844,
+          "targets": 23
+        },
+        {
+          "distance": [
+            5.12,
+            10.24
+          ],
+          "median_best_residual": 0.011237540882089843,
+          "targets": 24
+        },
+        {
+          "distance": [
+            10.24,
+            20.48
+          ],
+          "median_best_residual": 0.0300287785555214,
+          "targets": 24
+        },
+        {
+          "distance": [
+            20.48,
+            Infinity
+          ],
+          "median_best_residual": 0.1432610593999054,
+          "targets": 24
+        }
+      ],
+      "targets": 24,
+      "tau": 0.12934738906428836
+    }
+  },
+  "disjointness": {
+    "episode": {
+      "engineering": 0,
+      "measured": 24,
+      "shared": []
+    },
+    "reset_state": {
+      "engineering": 20,
+      "measured": 48,
+      "shared": []
+    },
+    "seed": {
+      "engineering": 30,
+      "measured": 24,
+      "shared": []
+    }
+  },
+  "engineering": {
+    "budget_used_seconds": 1747.8056590557098,
+    "engineering_seconds": 1747.8053238391876,
+    "model_fingerprint": {
+      "action_order": "control-major flattened x,y pairs",
+      "architecture": "lewm-vit-tiny-p14-h3-ca231f9",
+      "checkpoint_revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+      "config_sha256": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+      "controls_per_block": 5,
+      "device": "cpu",
+      "history_frames": 3,
+      "inference_source_sha256": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "pinned_lewm_source_sha256": "6eda82465fe7215a0d211ef452f2b1cbafab1991087db651a44ff7f6ac37430d",
+      "precision": "float32",
+      "preprocessing": "rgb-float-imagenet-normalized-224",
+      "scaler_sha256": "02bff5a098f597435dad3a570ceee9c9cdca32804b7ab4542781871ae2fb0700",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607"
+    },
+    "phases": {
+      "A:V2-S2r300": {
+        "criteria": {
+          "cohorts": {
+            "challenge": {
+              "checks": {
+                "coverage": false,
+                "mean": true,
+                "p95": true,
+                "restart": false
+              },
+              "coverage": 0.2222222222222222,
+              "mean_error": 0.47015443124540407,
+              "p95_error": 0.7849969495299742,
+              "queries": 9,
+              "restart_agreement": 0.3333333333333333
+            },
+            "ordinary": {
+              "checks": {
+                "coverage": false,
+                "mean": true,
+                "p95": true,
+                "restart": false
+              },
+              "coverage": 0.1111111111111111,
+              "mean_error": 0.5462137355748337,
+              "p95_error": 0.5462137355748337,
+              "queries": 9,
+              "restart_agreement": 0.1111111111111111
+            }
+          },
+          "passed": false,
+          "synthetic": {
+            "passed": false,
+            "queries": 6,
+            "recovered": 0.3333333333333333
+          }
+        },
+        "epsilon": 1.2586532700418693e-12,
+        "evaluations_per_target": 1334.6666666666667,
+        "seconds_per_target": 18.00912902793304,
+        "setting": "V2-S2r300",
+        "setup_seconds_per_family": 0.26685525694241125,
+        "tau": 0.12934738906428836,
+        "tau_source": "own phase"
+      }
+    },
+    "selected": null,
+    "status": "failed_selection"
+  },
+  "proposal": {
+    "budget": {
+      "engineering_seconds": 1747.8053238391876,
+      "limit_seconds": 14400.0,
+      "remaining_seconds": 12352.19434094429,
+      "used_seconds": 1747.8056590557098
+    },
+    "engineering_folder": "engineering-v2",
+    "engineering_spec_sha256": "a5da2680550d35e6dbf3e7709082c7f1aced9c2a199b5d1501ed8d929af7cf6a",
+    "gates": {
+      "displacement_mean": 2.56,
+      "endpoint_mean": 1.28,
+      "endpoint_p95": 2.56,
+      "floor_min_families": 10,
+      "floor_ratio": 0.25,
+      "min_accepted": 10,
+      "moved_delta": 5.12
+    },
+    "geometry": {
+      "agent_walls": false,
+      "tolerance": 1.0
+    },
+    "low_motion_cells": {
+      "challenge": "m0.15"
+    },
+    "membership_sha256": "130e3b80de1212fd50e1e9a8bacc72404dd8cd6f91473e8846b24b41ecdc59de",
+    "projection": {
+      "headroom": 1.5,
+      "projected_seconds": null,
+      "seconds_per_target": null,
+      "setup_seconds_per_family": null,
+      "targets": 256
+    },
+    "reasons": [
+      "engineering failed_selection"
+    ],
+    "rules": {
+      "classification": "pose_search.classify, SearchConfig.version 2",
+      "epsilon": "as v1",
+      "tau_amb": "per query, label-free: least residual increase among 8 block offsets of 1.28 units around the reported pose (pose_search.resolution)",
+      "tau_fit": "larger scene-specific 95th percentile of per-family maximum *reported* (independent-search) residuals over calibration real queries; floor \u03b5"
+    },
+    "runtime": {
+      "device": "cpu",
+      "platform": "macOS-15.7.3-arm64-arm-64bit",
+      "precision": "float32",
+      "python": "3.10.21",
+      "torch": "2.14.0"
+    },
+    "search": null,
+    "seeds": {
+      "controls": 2026100104,
+      "engineering": 2026100103,
+      "search": 2026100102,
+      "selection": 2026100101
+    },
+    "selected_setting": null,
+    "sources": {
+      "checkpoint_config": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+      "checkpoint_weights": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+      "gallery_render.py": "6061ad42bef44e0bc8646be85662edd9a6284ff2c2c7053909777c4bd54510e6",
+      "interface_audit.py": "79465960b4be26191e9e23a3bb4f6f19fec662726b9714c5c98ab2a37df6d7a5",
+      "meas001.py": "68e58a7998143b33b3091fd9e790c225ba5921aa570afc2026f17376046a21c1",
+      "meas001_metrics.py": "b0e9ef10c7aac25d06a9a7be3ea93fbb5bd13f91ade7d8f0fd05ef2bb0b3fa48",
+      "model_inference.py": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "next_common.py": "3ad8ef97c3b84d0a4e4a7df6dcde3636d08d9c4c25435ca415abdc51e1429f7e",
+      "pose_render.py": "09ccadc0d6b882b8b093c3789cfaa9391ea050eb49dcd3e7089a3b15b0aefade",
+      "pose_search.py": "ec030cc18709abb8ccee3a71246585b07e8d29262c61709ffe5da0c3746eb1bf",
+      "simulator_replay.py": "02afbdcd892fe3b77e464d08bc18c8f25f64e07e1cef2ba9517504d236467639",
+      "train001_budget.py": "8c438567697cbdedd79bad84141642dae696ed7527176a801901b2a97cd0ac00",
+      "uv_lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+    },
+    "status": "not_ready",
+    "task": "MEAS-001"
+  },
+  "proposal_sha256": "e5d10f867fe8506b9781d80e9b3762df4782f8145b8360bc3b70341a7237c9b4",
+  "spec_sha256": "a5da2680550d35e6dbf3e7709082c7f1aced9c2a199b5d1501ed8d929af7cf6a",
+  "task": "MEAS-001 engineering pass (D033)"
+}

@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-26",
+  "task": "MODEL-001",
+  "status": "passed",
+  "base_git_head": "4b0e06fb343cf2c10f4fb47410e73a73bef34b82",
+  "runtime": {
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "device": "cpu",
+    "precision": "float32",
+    "python": "3.10.21",
+    "torch": "2.14.0",
+    "transformers": "4.57.6",
+    "scikit_learn": "1.7.2",
+    "h5py": "3.16.0"
+  },
+  "checkpoint": {
+    "revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+    "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+    "config_sha256": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+    "strict_state_entries": 303,
+    "missing_keys": [],
+    "unexpected_keys": []
+  },
+  "dataset": {
+    "revision": "655cd446b9929369d7d406001da85c15d1457850",
+    "archive_bytes": 13136247974,
+    "archive_sha256": "7cfbd6d90fa2f27876379a5ff169715a36ed82edbda64f9e5b5bfa34d212f318",
+    "h5_bytes": 46300921856,
+    "h5_sha256": "b6ebd9ac94bbe9e383f6e7a9cd92d74e9aa665ea57b758ed3717b0ee7df8d4fb",
+    "rows": 2336736,
+    "episodes": 18685,
+    "nan_action_rows": 0,
+    "simulator_lineage_in_metadata": false
+  },
+  "action_scaling": {
+    "selected": "evaluation_population_std",
+    "mean": [-0.007812564379916172, 0.006860687229453032],
+    "scale": [0.20846744284501714, 0.20674862637362224],
+    "training_sample_scale": [0.2084674835205078, 0.20674866437911987]
+  },
+  "checks": {
+    "manual_rollout_max_abs_difference": 0.0,
+    "future_target_leakage": "passed",
+    "candidate_order_equivariance": "passed",
+    "batchnorm_unchanged": true,
+    "simulator_latent_mse": 0.00852880161255598,
+    "simulator_persistence_mse": 0.018635248765349388,
+    "archive_windows": 32,
+    "archive_latent_mse": 0.004974585026502609,
+    "archive_persistence_mse": 0.35486793518066406
+  },
+  "benchmark": {
+    "six_candidate_two_step_rollout_seconds": 0.08510754210874438,
+    "two_target_encoding_seconds": 0.0220833751372993,
+    "estimated_120_family_seconds_with_50_percent_contingency": 15.319357579573989
+  },
+  "generated_artifacts": {
+    "statistics": "outputs/model001/action-stats.json",
+    "report": "outputs/model001/report.json",
+    "cache": "outputs/model001/cache/"
+  },
+  "limitations": [
+    "Archive diagnostics use checkpoint training data and do not establish generalization.",
+    "The published artifacts do not identify the exact historical simulator commit.",
+    "No state readout, contact evaluation, MPS, CUDA, or mixed-precision run was performed."
+  ]
+}

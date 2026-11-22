@@ -1,0 +1,327 @@
+{
+  "H3-PLAN-002": {
+    "checks": [
+      {
+        "check": "sidecar:config.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:audit.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:develop.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:seal.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sources:audit_equals_seal",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sources:current_equals_seal",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:config_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:audit_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:develop_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:reserved_manifest_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "audit:config_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "families:present",
+        "detail": "150 files",
+        "status": "passed"
+      },
+      {
+        "check": "fingerprint:develop_equals_confirm",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "fingerprint:current_equals_develop",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:sidecars",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:known_family",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:input_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:fingerprint",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:fingerprint_recorded",
+        "detail": "150 records carry no fingerprint",
+        "status": "not_recorded"
+      }
+    ],
+    "valid": true
+  },
+  "PHYS-002": {
+    "checks": [
+      {
+        "check": "sidecar:config.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:audit.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:develop.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:seal.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sources:audit_equals_seal",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sources:current_equals_seal",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:config_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:audit_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:develop_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:reserved_manifest_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "audit:config_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:readout_selection_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "probe:artifact_sha256",
+        "detail": "outputs/readout002/models/mlp-20261005.npz",
+        "status": "passed"
+      },
+      {
+        "check": "families:present",
+        "detail": "150 files",
+        "status": "passed"
+      },
+      {
+        "check": "fingerprint:develop_equals_confirm",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "fingerprint:current_equals_develop",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:sidecars",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:known_family",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:input_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:fingerprint",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:fingerprint_recorded",
+        "detail": "150 records carry no fingerprint",
+        "status": "not_recorded"
+      }
+    ],
+    "valid": true
+  },
+  "SHIFT-002": {
+    "checks": [
+      {
+        "check": "sidecar:config.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:audit.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:develop.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sidecar:seal.json",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sources:audit_equals_seal",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "sources:current_equals_seal",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:config_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:audit_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:develop_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:collection_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "audit:config_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "seal:readout_selection_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "probe:artifact_sha256",
+        "detail": "outputs/readout002/models/mlp-20261005.npz",
+        "status": "passed"
+      },
+      {
+        "check": "families:present",
+        "detail": "240 files",
+        "status": "passed"
+      },
+      {
+        "check": "fingerprint:develop_equals_confirm",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "fingerprint:current_equals_develop",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:sidecars",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:known_family",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:input_sha256",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:fingerprint",
+        "detail": "",
+        "status": "passed"
+      },
+      {
+        "check": "records:input_sha256_recorded",
+        "detail": "240 records carry no input hash",
+        "status": "not_recorded"
+      },
+      {
+        "check": "records:fingerprint_recorded",
+        "detail": "240 records carry no fingerprint",
+        "status": "not_recorded"
+      }
+    ],
+    "valid": true
+  }
+}

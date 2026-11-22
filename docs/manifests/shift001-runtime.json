@@ -1,0 +1,289 @@
+{
+  "collection": {
+    "families": 320,
+    "rejections": {
+      "archive_attempts": 8131,
+      "block_not_at_rest": 4662,
+      "challenge_attempts": 185,
+      "identity_failed": 1068,
+      "no_moved_in_both_structures": 26,
+      "out_of_bounds": 128,
+      "own_future_static": 2110
+    }
+  },
+  "config_sha256": "7032bef238658ab4be7263478692e0002cdc71088d80ac30b79d95983ba88794",
+  "confirm": null,
+  "develop": {
+    "families": 120,
+    "fingerprint": {
+      "action_order": "control-major flattened x,y pairs",
+      "architecture": "lewm-vit-tiny-p14-h3-ca231f9",
+      "checkpoint_revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+      "config_sha256": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+      "controls_per_block": 5,
+      "device": "cpu",
+      "history_frames": 3,
+      "inference_source_sha256": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "pinned_lewm_source_sha256": "6eda82465fe7215a0d211ef452f2b1cbafab1991087db651a44ff7f6ac37430d",
+      "precision": "float32",
+      "preprocessing": "rgb-float-imagenet-normalized-224",
+      "scaler_sha256": "02bff5a098f597435dad3a570ceee9c9cdca32804b7ab4542781871ae2fb0700",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607"
+    },
+    "phase": "development (exploratory)",
+    "status": "complete",
+    "summary": {
+      "R1_archive_constant": {
+        "ci95": [
+          0.6728926333496006,
+          1.0667991950579876
+        ],
+        "estimate": 0.8003518092272484
+      },
+      "R1_archive_varying": {
+        "ci95": [
+          0.7089123915648137,
+          1.2247169745974675
+        ],
+        "estimate": 0.8349228805161948
+      },
+      "R1_challenge_constant": {
+        "ci95": [
+          0.6825418230087463,
+          0.9344733818853495
+        ],
+        "estimate": 0.8064260329786948
+      },
+      "R1_challenge_varying": {
+        "ci95": [
+          0.683441556683253,
+          0.9825834363481625
+        ],
+        "estimate": 0.8318360353707042
+      },
+      "R_archive_constant": {
+        "ci95": [
+          0.7405267881763334,
+          0.9780201586186117
+        ],
+        "estimate": 0.8432242035043259
+      },
+      "R_archive_varying": {
+        "ci95": [
+          0.7925106162325288,
+          0.9843766610628915
+        ],
+        "estimate": 0.872501155502083
+      },
+      "R_archive_varying_own": {
+        "ci95": [
+          0.8934813353404405,
+          1.0651735303023544
+        ],
+        "estimate": 0.9685509033203255
+      },
+      "R_challenge_constant": {
+        "ci95": [
+          0.6134637890188662,
+          0.8793796200914857
+        ],
+        "estimate": 0.7424396345630605
+      },
+      "R_challenge_constant_push": {
+        "ci95": [
+          0.5550564690372078,
+          0.806644043325809
+        ],
+        "estimate": 0.677293547667789
+      },
+      "R_challenge_constant_small": {
+        "ci95": [
+          0.9952445331297021,
+          1.4571711550747244
+        ],
+        "estimate": 1.2210537720607824
+      },
+      "R_challenge_varying": {
+        "ci95": [
+          0.5688868410113792,
+          0.8349770269207114
+        ],
+        "estimate": 0.6963487472541998
+      },
+      "R_challenge_varying_small": {
+        "ci95": [
+          0.9526365862034994,
+          1.4237268404050427
+        ],
+        "estimate": 1.1885073294033186
+      },
+      "criteria": {
+        "magnitude": "inconclusive_manipulation_check",
+        "manipulation_checks": {
+          "archive_own_future_faithful": true,
+          "challenge_constant_push_shrinks": false,
+          "enough_moved_families": true,
+          "floors_below_limit": false
+        },
+        "passed": false,
+        "state": "inconclusive_manipulation_check",
+        "structure": "inconclusive_manipulation_check"
+      },
+      "dM_challenge": {
+        "ci95": [
+          0.34144587415304234,
+          0.7543344681361108
+        ],
+        "estimate": 0.5437602243929933
+      },
+      "dS_archive": {
+        "ci95": [
+          -0.020024232358451112,
+          0.0653672022128915
+        ],
+        "estimate": 0.02927695199775704
+      },
+      "dS_challenge": {
+        "ci95": [
+          -0.12993891559593096,
+          0.04221283628176004
+        ],
+        "estimate": -0.046090887308860684
+      },
+      "dT_varying": {
+        "ci95": [
+          -0.5639994591754316,
+          -0.04621907696842244
+        ],
+        "estimate": -0.31600617390123564
+      },
+      "families": {
+        "archive": 60,
+        "challenge": 60
+      },
+      "floor_archive_constant": {
+        "ci95": [
+          0.3966177670753972,
+          0.7949615080541022
+        ],
+        "estimate": 0.5422667336585537
+      },
+      "floor_archive_varying": {
+        "ci95": [
+          0.4197157306088775,
+          0.7690079062847854
+        ],
+        "estimate": 0.5606680334591372
+      },
+      "floor_challenge_constant": {
+        "ci95": [
+          0.3012092492735137,
+          0.4090432138803288
+        ],
+        "estimate": 0.3562321069795455
+      },
+      "floor_challenge_varying": {
+        "ci95": [
+          0.3079456088721232,
+          0.4263079792417134
+        ],
+        "estimate": 0.36661068575370026
+      },
+      "moved_families": {
+        "archive_constant": 60,
+        "archive_varying": 60,
+        "challenge_constant": 60,
+        "challenge_varying": 60
+      },
+      "slope_pred_archive_constant": {
+        "ci95": [
+          0.6941430302469307,
+          0.9358634563843158
+        ],
+        "estimate": 0.799645675895593
+      },
+      "slope_pred_archive_varying": {
+        "ci95": [
+          0.7359164741052782,
+          0.9489288739453116
+        ],
+        "estimate": 0.8303546757004255
+      },
+      "slope_pred_challenge_constant": {
+        "ci95": [
+          0.6112454224946802,
+          0.8859768710940266
+        ],
+        "estimate": 0.7446624957606807
+      },
+      "slope_pred_challenge_varying": {
+        "ci95": [
+          0.5718601646961936,
+          0.8527296434908929
+        ],
+        "estimate": 0.7064074969730245
+      },
+      "slope_real_archive_constant": {
+        "ci95": [
+          0.8741353558570873,
+          1.0383713180821452
+        ],
+        "estimate": 0.9483191689379569
+      },
+      "slope_real_archive_varying": {
+        "ci95": [
+          0.8646947535887601,
+          1.0532559479110837
+        ],
+        "estimate": 0.9516946429974592
+      },
+      "slope_real_challenge_constant": {
+        "ci95": [
+          0.9712210788012527,
+          1.0366668770063392
+        ],
+        "estimate": 1.002993995867325
+      },
+      "slope_real_challenge_varying": {
+        "ci95": [
+          0.9830336772025632,
+          1.0473912702928996
+        ],
+        "estimate": 1.014444988604471
+      }
+    },
+    "verification_max_error": 0.0
+  },
+  "runtime": {
+    "device": "cpu",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "precision": "float32",
+    "python": "3.10.21",
+    "torch": "2.14.0"
+  },
+  "seal": null,
+  "sources": {
+    "collection": "9b2fdcb7ebee9911c181e3ce7a786b8a79013293632151a2fcee96d6b61d5237",
+    "common": "3ad8ef97c3b84d0a4e4a7df6dcde3636d08d9c4c25435ca415abdc51e1429f7e",
+    "inference": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+    "metrics": "e93ab9763344d38d5ea428e3db266cf5aeb2049e47084ffd7a3143ca54e1d6b4",
+    "readout": "b654e70d2dd981122f7dd8cf5cecdf926895b474e518a0dacc070ad051fd8c68",
+    "replay": "02afbdcd892fe3b77e464d08bc18c8f25f64e07e1cef2ba9517504d236467639",
+    "runner": "01443d34ad508586cc856b346c2386539629b1e30e81e9fb32d476576c2d4543",
+    "uv_lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+  },
+  "stage_seconds": {
+    "audit": [
+      0.6324669583700597
+    ],
+    "collect": [
+      192.15494004217908
+    ],
+    "develop": [
+      27.44036399992183
+    ]
+  },
+  "task": "SHIFT-001"
+}

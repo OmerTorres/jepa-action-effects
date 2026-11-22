@@ -1,0 +1,1060 @@
+{
+  "config_sha256": "8f6441be4ab8d97a0b823515f2533c5a213b835d0c43473b4b26d3ff7fca0c6e",
+  "confirm": {
+    "choices": {
+      "challenge": {
+        "jepa": [
+          31,
+          134,
+          20,
+          10,
+          12,
+          17
+        ],
+        "real_latent": [
+          63,
+          79,
+          25,
+          16,
+          21,
+          20
+        ]
+      },
+      "ordinary": {
+        "jepa": [
+          25,
+          11,
+          22,
+          23,
+          22,
+          34
+        ],
+        "real_latent": [
+          26,
+          16,
+          22,
+          19,
+          24,
+          30
+        ]
+      }
+    },
+    "fingerprint": {
+      "action_order": "control-major flattened x,y pairs",
+      "architecture": "lewm-vit-tiny-p14-h3-ca231f9",
+      "checkpoint_revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+      "config_sha256": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+      "controls_per_block": 5,
+      "device": "cpu",
+      "history_frames": 3,
+      "inference_source_sha256": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "pinned_lewm_source_sha256": "6eda82465fe7215a0d211ef452f2b1cbafab1991087db651a44ff7f6ac37430d",
+      "precision": "float32",
+      "preprocessing": "rgb-float-imagenet-normalized-224",
+      "scaler_sha256": "02bff5a098f597435dad3a570ceee9c9cdca32804b7ab4542781871ae2fb0700",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607"
+    },
+    "status": "complete",
+    "summary": {
+      "challenge": {
+        "criteria": {
+          "checks": {
+            "enough_families": true,
+            "latent_cost_beats_random": true
+          },
+          "h3": "not_established",
+          "passed": true
+        },
+        "families": 98,
+        "jepa_minus_random_all": {
+          "ci95": [
+            -11.858809263280216,
+            0.24224268382198041
+          ],
+          "estimate": -5.6703921946563405,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "jepa_minus_random_informative": {
+          "ci95": [
+            -12.125144271802982,
+            0.4148033993746135
+          ],
+          "estimate": -5.6703921946563405,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_all": {
+          "ci95": [
+            -1.4302764387607796,
+            8.546881357537384
+          ],
+          "estimate": 3.4140870833414962,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_informative": {
+          "ci95": [
+            -1.306229999212128,
+            8.149211426452881
+          ],
+          "estimate": 3.4140870833414962,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "real_minus_random_all": {
+          "ci95": [
+            -14.428913058048469,
+            -3.7617084477482017
+          ],
+          "estimate": -9.084479277997836,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "real_minus_random_informative": {
+          "ci95": [
+            -14.361471011355196,
+            -3.999303381287762
+          ],
+          "estimate": -9.084479277997836,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_jepa_all": {
+          "ci95": [
+            17.704604468532803,
+            27.28807439794195
+          ],
+          "estimate": 22.320619224674076,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_jepa_informative": {
+          "ci95": [
+            17.73990540564669,
+            27.09454737131287
+          ],
+          "estimate": 22.320619224674076,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_random_all": {
+          "ci95": [
+            25.075118961542323,
+            31.079682792739288
+          ],
+          "estimate": 27.991011419330423,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_random_informative": {
+          "ci95": [
+            24.99949196160447,
+            31.146701309810286
+          ],
+          "estimate": 27.991011419330423,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_all": {
+          "ci95": [
+            14.576964345924557,
+            23.877758736252222
+          ],
+          "estimate": 18.906532141332583,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_informative": {
+          "ci95": [
+            14.390459686450258,
+            23.714685648172146
+          ],
+          "estimate": 18.906532141332583,
+          "families": 98,
+          "valid_draws": 2000
+        }
+      },
+      "goals": {
+        "families_without_valid_goal": 2,
+        "informative": 240,
+        "valid": 361
+      },
+      "ordinary": {
+        "criteria": {
+          "checks": {
+            "enough_families": true,
+            "latent_cost_beats_random": false
+          },
+          "h3": "inconclusive_check_failed",
+          "passed": false
+        },
+        "families": 50,
+        "jepa_minus_random_all": {
+          "ci95": [
+            -2.3869415439946082,
+            0.9784612439257717
+          ],
+          "estimate": -0.6263723741241363,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "jepa_minus_random_informative": {
+          "ci95": [
+            -17.310009134986196,
+            9.334461603646501
+          ],
+          "estimate": -4.005781575125789,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_all": {
+          "ci95": [
+            -1.7668886490672497,
+            0.33435842300836655
+          ],
+          "estimate": -0.5719861863391875,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_informative": {
+          "ci95": [
+            -11.950014397468912,
+            4.300051260459952
+          ],
+          "estimate": -3.435269886345446,
+          "families": 50,
+          "valid_draws": 1999
+        },
+        "real_minus_random_all": {
+          "ci95": [
+            -2.3516612845919376,
+            2.3975718423614336
+          ],
+          "estimate": -0.054386187784948775,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "real_minus_random_informative": {
+          "ci95": [
+            -16.878778723541124,
+            18.857507952968827
+          ],
+          "estimate": -0.5705116887803422,
+          "families": 50,
+          "valid_draws": 1999
+        },
+        "regret_jepa_all": {
+          "ci95": [
+            0.048319700545659906,
+            4.81370146716333
+          ],
+          "estimate": 1.6979831590764782,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "regret_jepa_informative": {
+          "ci95": [
+            0.25390570205944146,
+            35.990994096961614
+          ],
+          "estimate": 12.56037496172532,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "regret_random_all": {
+          "ci95": [
+            0.3569145816451585,
+            4.940765167250936
+          ],
+          "estimate": 2.3243555332006145,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "regret_random_informative": {
+          "ci95": [
+            3.8835918066615847,
+            30.610936828976964
+          ],
+          "estimate": 16.566156536851107,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_all": {
+          "ci95": [
+            0.045453344949960305,
+            6.634033674762353
+          ],
+          "estimate": 2.269969345415666,
+          "families": 50,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_informative": {
+          "ci95": [
+            0.15288945500353462,
+            47.580959901824826
+          ],
+          "estimate": 15.995644848070768,
+          "families": 50,
+          "valid_draws": 1998
+        }
+      },
+      "pooled": {
+        "criteria": {
+          "checks": {
+            "enough_families": true,
+            "latent_cost_beats_random": true
+          },
+          "h3": "not_established",
+          "passed": true
+        },
+        "families": 148,
+        "jepa_minus_random_all": {
+          "ci95": [
+            -8.259332831191388,
+            0.08662335263159571
+          ],
+          "estimate": -3.966331444476542,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "jepa_minus_random_informative": {
+          "ci95": [
+            -11.438989704058011,
+            0.368919317866294
+          ],
+          "estimate": -5.559418153354305,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_all": {
+          "ci95": [
+            -1.3239915565216303,
+            5.587842347470697
+          ],
+          "estimate": 2.0674407084493733,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_informative": {
+          "ci95": [
+            -1.8927639633717661,
+            7.66776102709389
+          ],
+          "estimate": 2.9574632853623664,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "real_minus_random_all": {
+          "ci95": [
+            -9.284762761342858,
+            -2.444467481255322
+          ],
+          "estimate": -6.033772152925915,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "real_minus_random_informative": {
+          "ci95": [
+            -13.582276605013236,
+            -3.333295084934397
+          ],
+          "estimate": -8.516881438716672,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "regret_jepa_all": {
+          "ci95": [
+            12.241110567633532,
+            18.8130880287612
+          ],
+          "estimate": 15.353512445755971,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "regret_jepa_informative": {
+          "ci95": [
+            16.799197491797894,
+            26.326015589216443
+          ],
+          "estimate": 21.66993627381083,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "regret_random_all": {
+          "ci95": [
+            17.240643194510966,
+            21.484445578397132
+          ],
+          "estimate": 19.319843890232516,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "regret_random_informative": {
+          "ci95": [
+            24.17054432555253,
+            30.44006016711557
+          ],
+          "estimate": 27.229354427165138,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_all": {
+          "ci95": [
+            10.230783081324129,
+            16.986475099721172
+          ],
+          "estimate": 13.2860717373066,
+          "families": 148,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_informative": {
+          "ci95": [
+            14.408739099980817,
+            23.34584241060732
+          ],
+          "estimate": 18.712472988448464,
+          "families": 148,
+          "valid_draws": 2000
+        }
+      }
+    }
+  },
+  "develop": {
+    "choices": {
+      "challenge": {
+        "jepa": [
+          67,
+          256,
+          39,
+          15,
+          36,
+          33
+        ],
+        "real_latent": [
+          129,
+          143,
+          56,
+          26,
+          54,
+          38
+        ]
+      },
+      "ordinary": {
+        "jepa": [
+          67,
+          49,
+          37,
+          51,
+          41,
+          46
+        ],
+        "real_latent": [
+          66,
+          56,
+          45,
+          47,
+          39,
+          38
+        ]
+      }
+    },
+    "fingerprint": {
+      "action_order": "control-major flattened x,y pairs",
+      "architecture": "lewm-vit-tiny-p14-h3-ca231f9",
+      "checkpoint_revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+      "config_sha256": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+      "controls_per_block": 5,
+      "device": "cpu",
+      "history_frames": 3,
+      "inference_source_sha256": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "pinned_lewm_source_sha256": "6eda82465fe7215a0d211ef452f2b1cbafab1991087db651a44ff7f6ac37430d",
+      "precision": "float32",
+      "preprocessing": "rgb-float-imagenet-normalized-224",
+      "scaler_sha256": "02bff5a098f597435dad3a570ceee9c9cdca32804b7ab4542781871ae2fb0700",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607"
+    },
+    "phase": "development (exploratory; PHYS-002 development families)",
+    "status": "complete",
+    "summary": {
+      "challenge": {
+        "criteria": {
+          "checks": {
+            "enough_families": true,
+            "latent_cost_beats_random": true
+          },
+          "h3": "supported",
+          "passed": true
+        },
+        "families": 197,
+        "jepa_minus_random_all": {
+          "ci95": [
+            -11.227102571582467,
+            -4.043613419816313
+          ],
+          "estimate": -7.723028186575197,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "jepa_minus_random_informative": {
+          "ci95": [
+            -11.409788340267095,
+            -4.062802371952285
+          ],
+          "estimate": -7.74789367650537,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_all": {
+          "ci95": [
+            2.7776989195705477,
+            8.976507919999369
+          ],
+          "estimate": 5.813033181707014,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_informative": {
+          "ci95": [
+            2.715004198169513,
+            8.868342287706916
+          ],
+          "estimate": 5.827834135681714,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "real_minus_random_all": {
+          "ci95": [
+            -16.658884776783456,
+            -10.304273371825806
+          ],
+          "estimate": -13.53606136828221,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "real_minus_random_informative": {
+          "ci95": [
+            -16.575330154703938,
+            -10.376116633635219
+          ],
+          "estimate": -13.575727812187084,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "regret_jepa_all": {
+          "ci95": [
+            17.157851713404074,
+            23.42493204685457
+          ],
+          "estimate": 20.174918336486336,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "regret_jepa_informative": {
+          "ci95": [
+            17.116446188722207,
+            23.62697808674454
+          ],
+          "estimate": 20.22084438700661,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "regret_random_all": {
+          "ci95": [
+            26.003294943548507,
+            29.867698343768037
+          ],
+          "estimate": 27.897946523061535,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "regret_random_informative": {
+          "ci95": [
+            26.123702828646444,
+            29.949877074779174
+          ],
+          "estimate": 27.96873806351198,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_all": {
+          "ci95": [
+            11.71019261801827,
+            17.08534601937587
+          ],
+          "estimate": 14.361885154779321,
+          "families": 197,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_informative": {
+          "ci95": [
+            11.799556750668119,
+            17.3807166826407
+          ],
+          "estimate": 14.393010251324897,
+          "families": 197,
+          "valid_draws": 2000
+        }
+      },
+      "goals": {
+        "families_without_valid_goal": 5,
+        "informative": 497,
+        "valid": 737
+      },
+      "ordinary": {
+        "criteria": {
+          "checks": {
+            "enough_families": true,
+            "latent_cost_beats_random": false
+          },
+          "h3": "inconclusive_check_failed",
+          "passed": false
+        },
+        "families": 98,
+        "jepa_minus_random_all": {
+          "ci95": [
+            -0.2781475312958555,
+            2.94896316933887
+          ],
+          "estimate": 1.1391827121061426,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "jepa_minus_random_informative": {
+          "ci95": [
+            -1.7794768376498655,
+            14.496067860383189
+          ],
+          "estimate": 5.492812616607767,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_all": {
+          "ci95": [
+            0.28783792994795016,
+            2.4429881424106132
+          ],
+          "estimate": 1.2585656693176541,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_informative": {
+          "ci95": [
+            0.9226789480475973,
+            11.454442135355569
+          ],
+          "estimate": 5.992617188077086,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "real_minus_random_all": {
+          "ci95": [
+            -1.093712377294228,
+            0.9355057138902769
+          ],
+          "estimate": -0.11938295721151165,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "real_minus_random_informative": {
+          "ci95": [
+            -5.462366666238368,
+            4.727794532713117
+          ],
+          "estimate": -0.49980457146931806,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_jepa_all": {
+          "ci95": [
+            1.4583692351930428,
+            6.3939872042426575
+          ],
+          "estimate": 3.6340697852000257,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_jepa_informative": {
+          "ci95": [
+            9.116391900408688,
+            29.56539273618083
+          ],
+          "estimate": 18.03784641387034,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_random_all": {
+          "ci95": [
+            1.2858633723630797,
+            4.090409093594759
+          ],
+          "estimate": 2.4948870730938824,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_random_informative": {
+          "ci95": [
+            8.032709289445034,
+            17.738393341041306
+          ],
+          "estimate": 12.545033797262573,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_all": {
+          "ci95": [
+            0.9723898346607992,
+            4.316710242097455
+          ],
+          "estimate": 2.375504115882371,
+          "families": 98,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_informative": {
+          "ci95": [
+            5.973489346821023,
+            19.140349423654925
+          ],
+          "estimate": 12.045229225793255,
+          "families": 98,
+          "valid_draws": 2000
+        }
+      },
+      "pooled": {
+        "criteria": {
+          "checks": {
+            "enough_families": true,
+            "latent_cost_beats_random": true
+          },
+          "h3": "supported",
+          "passed": true
+        },
+        "families": 295,
+        "jepa_minus_random_all": {
+          "ci95": [
+            -7.236737999589114,
+            -2.250220498219175
+          ],
+          "estimate": -4.778971684640379,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "jepa_minus_random_informative": {
+          "ci95": [
+            -9.93105020438266,
+            -3.0503677411894192
+          ],
+          "estimate": -6.527552082670058,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_all": {
+          "ci95": [
+            2.232534445116808,
+            6.493652922200699
+          ],
+          "estimate": 4.300023635218345,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "jepa_minus_real_informative": {
+          "ci95": [
+            2.9862413071343585,
+            8.686393224693942
+          ],
+          "estimate": 5.84302151378267,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "real_minus_random_all": {
+          "ci95": [
+            -11.263076230928391,
+            -7.001134814622162
+          ],
+          "estimate": -9.078995319858725,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "real_minus_random_informative": {
+          "ci95": [
+            -15.079428654562268,
+            -9.325827802224943
+          ],
+          "estimate": -12.37057359645273,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "regret_jepa_all": {
+          "ci95": [
+            12.616441328287596,
+            17.034471384425665
+          ],
+          "estimate": 14.679992377075967,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "regret_jepa_informative": {
+          "ci95": [
+            17.02029745223195,
+            23.098857323817022
+          ],
+          "estimate": 20.019646417132304,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "regret_random_all": {
+          "ci95": [
+            18.123331850026535,
+            20.87986704600565
+          ],
+          "estimate": 19.458964061716348,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "regret_random_informative": {
+          "ci95": [
+            24.77972574944914,
+            28.369403986999398
+          ],
+          "estimate": 26.547198499802363,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_all": {
+          "ci95": [
+            8.577220521718864,
+            12.432643965750579
+          ],
+          "estimate": 10.379968741857622,
+          "families": 295,
+          "valid_draws": 2000
+        },
+        "regret_real_latent_informative": {
+          "ci95": [
+            11.693625847318328,
+            17.03822231648471
+          ],
+          "estimate": 14.176624903349632,
+          "families": 295,
+          "valid_draws": 2000
+        }
+      }
+    }
+  },
+  "runtime": {
+    "device": "cpu",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "precision": "float32",
+    "python": "3.10.21",
+    "torch": "2.14.0"
+  },
+  "seal": {
+    "audit_sha256": "9b732aaf643213d16edc34f2372d6bbe14a49ac1aa89ba8bde7a3e496d20616a",
+    "config_sha256": "8f6441be4ab8d97a0b823515f2533c5a213b835d0c43473b4b26d3ff7fca0c6e",
+    "decision_rules": "planning_metrics.apply_planning_criteria on pooled reserved families",
+    "develop_sha256": "45fc948d59d60abab09a1957321fc8602cdb6210294e7934f4405cef58707b50",
+    "reserved_ids": [
+      "challenge-000",
+      "challenge-001",
+      "challenge-002",
+      "challenge-003",
+      "challenge-004",
+      "challenge-005",
+      "challenge-006",
+      "challenge-007",
+      "challenge-008",
+      "challenge-009",
+      "challenge-010",
+      "challenge-011",
+      "challenge-012",
+      "challenge-013",
+      "challenge-014",
+      "challenge-015",
+      "challenge-016",
+      "challenge-017",
+      "challenge-018",
+      "challenge-019",
+      "challenge-020",
+      "challenge-021",
+      "challenge-022",
+      "challenge-023",
+      "challenge-024",
+      "challenge-025",
+      "challenge-026",
+      "challenge-027",
+      "challenge-028",
+      "challenge-029",
+      "challenge-030",
+      "challenge-031",
+      "challenge-032",
+      "challenge-033",
+      "challenge-034",
+      "challenge-035",
+      "challenge-036",
+      "challenge-037",
+      "challenge-038",
+      "challenge-039",
+      "challenge-040",
+      "challenge-041",
+      "challenge-042",
+      "challenge-043",
+      "challenge-044",
+      "challenge-045",
+      "challenge-046",
+      "challenge-047",
+      "challenge-048",
+      "challenge-049",
+      "challenge-050",
+      "challenge-051",
+      "challenge-052",
+      "challenge-053",
+      "challenge-054",
+      "challenge-055",
+      "challenge-056",
+      "challenge-057",
+      "challenge-058",
+      "challenge-059",
+      "challenge-060",
+      "challenge-061",
+      "challenge-062",
+      "challenge-063",
+      "challenge-064",
+      "challenge-065",
+      "challenge-066",
+      "challenge-067",
+      "challenge-068",
+      "challenge-069",
+      "challenge-070",
+      "challenge-071",
+      "challenge-072",
+      "challenge-073",
+      "challenge-074",
+      "challenge-075",
+      "challenge-076",
+      "challenge-077",
+      "challenge-078",
+      "challenge-079",
+      "challenge-080",
+      "challenge-081",
+      "challenge-082",
+      "challenge-083",
+      "challenge-084",
+      "challenge-085",
+      "challenge-086",
+      "challenge-087",
+      "challenge-088",
+      "challenge-089",
+      "challenge-090",
+      "challenge-091",
+      "challenge-092",
+      "challenge-093",
+      "challenge-094",
+      "challenge-095",
+      "challenge-096",
+      "challenge-097",
+      "challenge-098",
+      "challenge-099",
+      "ordinary-000",
+      "ordinary-001",
+      "ordinary-002",
+      "ordinary-003",
+      "ordinary-004",
+      "ordinary-005",
+      "ordinary-006",
+      "ordinary-007",
+      "ordinary-008",
+      "ordinary-009",
+      "ordinary-010",
+      "ordinary-011",
+      "ordinary-012",
+      "ordinary-013",
+      "ordinary-014",
+      "ordinary-015",
+      "ordinary-016",
+      "ordinary-017",
+      "ordinary-018",
+      "ordinary-019",
+      "ordinary-020",
+      "ordinary-021",
+      "ordinary-022",
+      "ordinary-023",
+      "ordinary-024",
+      "ordinary-025",
+      "ordinary-026",
+      "ordinary-027",
+      "ordinary-028",
+      "ordinary-029",
+      "ordinary-030",
+      "ordinary-031",
+      "ordinary-032",
+      "ordinary-033",
+      "ordinary-034",
+      "ordinary-035",
+      "ordinary-036",
+      "ordinary-037",
+      "ordinary-038",
+      "ordinary-039",
+      "ordinary-040",
+      "ordinary-041",
+      "ordinary-042",
+      "ordinary-043",
+      "ordinary-044",
+      "ordinary-045",
+      "ordinary-046",
+      "ordinary-047",
+      "ordinary-048",
+      "ordinary-049"
+    ],
+    "reserved_manifest_sha256": "ea1b3f136b9f89d441366e3692bb0fa808d7bf27a43ebcfd290eb8f900be5829",
+    "sources": {
+      "collection": "9b2fdcb7ebee9911c181e3ce7a786b8a79013293632151a2fcee96d6b61d5237",
+      "common": "3ad8ef97c3b84d0a4e4a7df6dcde3636d08d9c4c25435ca415abdc51e1429f7e",
+      "gallery": "6061ad42bef44e0bc8646be85662edd9a6284ff2c2c7053909777c4bd54510e6",
+      "inference": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "metrics": "42c2011dd9857345d74657b851066fb25a2fc5772751954db2455017fed0d439",
+      "next_metrics": "38df7546ebd3166c554df1ffddcd86d43d7440d180f1755625715a24453d9912",
+      "planning_metrics": "9ee9792bf0ef456e4d746656d93d963e89dda0c8e9bd05e43ce66f47fac8303a",
+      "planning_regret": "221509b6070039678ecaeceff25e9ff14f70f28b3b5fbc7d11337744b4b06140",
+      "readout": "b654e70d2dd981122f7dd8cf5cecdf926895b474e518a0dacc070ad051fd8c68",
+      "replay": "02afbdcd892fe3b77e464d08bc18c8f25f64e07e1cef2ba9517504d236467639",
+      "runner": "dba042ce46b99faededa05490b3ba4d7f1f891fa913f025bace053b74282ef72",
+      "uv_lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+    }
+  },
+  "sources": {
+    "collection": "9b2fdcb7ebee9911c181e3ce7a786b8a79013293632151a2fcee96d6b61d5237",
+    "common": "3ad8ef97c3b84d0a4e4a7df6dcde3636d08d9c4c25435ca415abdc51e1429f7e",
+    "gallery": "6061ad42bef44e0bc8646be85662edd9a6284ff2c2c7053909777c4bd54510e6",
+    "inference": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+    "metrics": "42c2011dd9857345d74657b851066fb25a2fc5772751954db2455017fed0d439",
+    "next_metrics": "38df7546ebd3166c554df1ffddcd86d43d7440d180f1755625715a24453d9912",
+    "planning_metrics": "9ee9792bf0ef456e4d746656d93d963e89dda0c8e9bd05e43ce66f47fac8303a",
+    "planning_regret": "221509b6070039678ecaeceff25e9ff14f70f28b3b5fbc7d11337744b4b06140",
+    "readout": "b654e70d2dd981122f7dd8cf5cecdf926895b474e518a0dacc070ad051fd8c68",
+    "replay": "02afbdcd892fe3b77e464d08bc18c8f25f64e07e1cef2ba9517504d236467639",
+    "runner": "dba042ce46b99faededa05490b3ba4d7f1f891fa913f025bace053b74282ef72",
+    "uv_lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+  },
+  "stage_seconds": {
+    "audit": [
+      0.19565245835110545
+    ],
+    "collect": [
+      27.195488791912794
+    ],
+    "confirm": [
+      72.55046545807272
+    ],
+    "develop": [
+      144.22634329181165
+    ],
+    "seal": [
+      0.004330124706029892
+    ]
+  },
+  "task": "H3-PLAN-002"
+}

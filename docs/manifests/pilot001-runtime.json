@@ -1,0 +1,92 @@
+{
+  "task": "PILOT-001",
+  "status": "complete",
+  "decision": "stop",
+  "date": "2026-09-27",
+  "scope": "Exploratory 120-family feasibility pilot; no locked test inference",
+  "runtime": {
+    "python": "3.10.21",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "device": "cpu",
+    "precision": "float32",
+    "git_head_before_changes": "ad7a0e2457b3ec4d74f3799f36b77e8c924140de",
+    "git_dirty_during_run": true,
+    "uv_lock_sha256": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+  },
+  "checkpoint": {
+    "revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+    "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+    "historical_training_simulator_identity_proven": false
+  },
+  "collection": {
+    "master_seed": 20260926,
+    "families": 120,
+    "challenge_families": 80,
+    "ordinary_families": 40,
+    "branches_per_family": 6,
+    "splits": {"fit": 60, "validation": 30, "development": 30},
+    "attempts": {"challenge": 80, "ordinary": 40},
+    "selected_horizon_native_steps": 2,
+    "delta": 5.12,
+    "meaningful_family_count_at_two_steps": 88,
+    "meaningful_family_fraction_at_two_steps": 0.7333333333333333,
+    "elapsed_seconds_including_replay_audit": 24.14512208290398,
+    "balanced_replay_audit_families": 12,
+    "replay_audit_passed": true
+  },
+  "readout": {
+    "selected_ridge_alpha": 0.1,
+    "validation_family_count": 30,
+    "overall_mean_block_error": 18.41681750671733,
+    "overall_p95_block_error": 42.122866288232615,
+    "mean_gate": 1.28,
+    "p95_gate": 2.56,
+    "ridge_gate_passed": false,
+    "nonlinear_seeds": [20260931, 20260932, 20260933],
+    "nonlinear_validation_mean_errors": [
+      25.3948241113792,
+      24.195916588628986,
+      23.401202605385983
+    ],
+    "nonlinear_all_seeds_passed": false
+  },
+  "development_results": {
+    "challenge_family_count": 20,
+    "ordinary_family_count": 10,
+    "challenge_jepa_mean_endpoint_error": 30.670900699154657,
+    "challenge_persistence_mean_endpoint_error": 29.562163873814683,
+    "ordinary_jepa_mean_endpoint_error": 24.940171094463345,
+    "ordinary_persistence_mean_endpoint_error": 2.426326530926829,
+    "ordinary_real_frame_readout_mean_endpoint_error": 20.683841773090602,
+    "interpretation": "Physical predictor comparisons are inconclusive because the real-frame readout gate failed."
+  },
+  "timing_and_storage": {
+    "cold_real_encoding_seconds": 17.392819499596953,
+    "cold_prediction_seconds": 5.414672919083387,
+    "cold_readout_fitting_seconds": 1.6556857503019273,
+    "cold_total_evaluation_seconds": 26.756037042010576,
+    "projected_900_family_seconds_with_50_percent_contingency": 572.6380401552888,
+    "artifact_bytes": 9702358
+  },
+  "generated_artifacts": {
+    "root": "outputs/pilot001",
+    "config_sha256": "9a94d963a2ed093acef22afde599c2176098d371872bbe70db4fb08a79d3ff32",
+    "collection_manifest_sha256": "35e9443432b86534e8e01b3f07079596d89dee308e0a0154ce896761e8049674",
+    "replay_audit_sha256": "24ecc64e8ad037b71652d5bbd09b95b114ae2c7f166a35572d366e083da3d20c",
+    "evaluation_report_sha256": "494441d92e830cb007709eb6af17e31d001e066a3ae34eb82f4e768dc3801c18",
+    "final_report_sha256": "3d70c382d1d448ff2453c3b00e2889d201c443e4fcffe0b28d11166e04b11424",
+    "markdown_report_sha256": "de03f096ce64d3f07ba01c3711e0400ab18a9e38db9b0a7a8b743f545f593956"
+  },
+  "validation": {
+    "make_check": "passed",
+    "make_test": "41 passed",
+    "uv_lock_check": "passed",
+    "git_diff_check": "passed"
+  },
+  "limitations": [
+    "The pilot is exploratory and did not inspect locked test families.",
+    "The failed readout prevents fine-grained physical reasoning claims.",
+    "The historical training-simulator identity remains unproven.",
+    "One checkpoint does not establish training-seed variability."
+  ]
+}

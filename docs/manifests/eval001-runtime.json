@@ -1,0 +1,35 @@
+{
+  "base_git_head": "22c41e9da56804bdee82b3a4631bc163d61383a8",
+  "configuration": {
+    "delta": 5.12,
+    "delta_formula": "max(0.01 * workspace_width, 10 * sim_epsilon)",
+    "horizon_native_steps": 2,
+    "informative_goal": "true candidate cost spread > delta",
+    "pair_policy": "all unordered pairs, canonical candidate ID order",
+    "sim_epsilon": 0.0,
+    "threshold_boundary": "negligible and stationary use <= delta",
+    "tie_policy": "canonical candidate ID",
+    "workspace_width": 512.0
+  },
+  "git_dirty": true,
+  "limitations": [
+    "Mock predictors validate calculations but provide no model-performance evidence.",
+    "The physical relevance of delta and the two-step horizon remain provisional.",
+    "Candidate generation, goal-grid sampling, readouts, and bootstrap inference are downstream."
+  ],
+  "numpy": "2.2.6",
+  "platform": "macOS-15.7.3-arm64-arm-64bit",
+  "python": "3.10.21",
+  "report": "outputs/eval001/report.json",
+  "source_sha256": {
+    "src/jepa_action_effects/evaluation.py": "c7669ac946a15cf8717b5aabab2827394182ddd93f527f8ac5607aced393a70d",
+    "src/jepa_action_effects/evaluation_audit.py": "8b1bfb5038a7518a29add1945c7eb2ebc49205767446b1a6d24166e983e143e5",
+    "src/jepa_action_effects/evaluation_replay.py": "1f0c686cbda6ffe03b8a23ab79e4b42221081d38d982683670c55e7faaf6f12d",
+    "tests/test_evaluation.py": "a843f0177118120750a45225651b54d2a4b1d07a34eb34cfd6ab3945628c9d4d",
+    "tests/test_evaluation_replay.py": "f7a0c976630625e7afe8740d9617e852298f7de798d31b35480b10dabbe13c30"
+  },
+  "stable_worldmodel": "0.0.5",
+  "status": "passed",
+  "task": "EVAL-001",
+  "uv_lock_sha256": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+}

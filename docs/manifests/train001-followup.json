@@ -1,0 +1,522 @@
+{
+  "contrast_sensitivity": {
+    "confirmation_gates": {
+      "agree": true,
+      "per_readout": {
+        "mlp-20261004": {
+          "archive:m0.45": true,
+          "archive:m0.60": true,
+          "challenge:m0.45": true,
+          "challenge:m0.60": true
+        },
+        "mlp-20261005": {
+          "archive:m0.45": true,
+          "archive:m0.60": true,
+          "challenge:m0.45": true,
+          "challenge:m0.60": true
+        },
+        "mlp-20261006": {
+          "archive:m0.45": true,
+          "archive:m0.60": true,
+          "challenge:m0.45": true,
+          "challenge:m0.60": true
+        }
+      }
+    },
+    "contrast_level_measurement_dependent": true,
+    "note": "Development eligibility is computed once with the primary readout, so the pooled verdict string is identical across readouts by construction and is not a sensitivity test. Sensitivity is assessed per contrast (interval sign), per ordinary outcome and per confirmation gate.",
+    "ordinary_outcome": {
+      "agree": true,
+      "per_readout": {
+        "mlp-20261004": "non_inferiority_not_established",
+        "mlp-20261005": "non_inferiority_not_established",
+        "mlp-20261006": "non_inferiority_not_established"
+      }
+    },
+    "quantities": {
+      "ordinary:archive_minus_frozen": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -0.4767079960744682,
+              1.4319713360613266
+            ],
+            "estimate": 0.443542346966549,
+            "sign": "spans_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -0.21362830567983584,
+              1.6186709568845563
+            ],
+            "estimate": 0.6687916970476236,
+            "sign": "spans_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -0.1272963334870983,
+              1.5841841991398617
+            ],
+            "estimate": 0.6947819670057716,
+            "sign": "spans_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "ordinary:balanced_minus_archive": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              0.010397079593632902,
+              0.7307076277995722
+            ],
+            "estimate": 0.36831634378649036,
+            "sign": "above_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              0.0503146013568655,
+              0.6935156212943582
+            ],
+            "estimate": 0.38108890549835767,
+            "sign": "above_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              0.0441858328786411,
+              0.5942972371191599
+            ],
+            "estimate": 0.3226595552775558,
+            "sign": "above_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "ordinary:balanced_minus_frozen": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -0.14865277771065347,
+              1.8223269852088777
+            ],
+            "estimate": 0.8118586907530395,
+            "sign": "spans_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              0.11078403554730953,
+              1.9925487957584094
+            ],
+            "estimate": 1.0498806025459813,
+            "sign": "above_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              0.12441925004813544,
+              1.9579789301354706
+            ],
+            "estimate": 1.017441522283327,
+            "sign": "above_zero"
+          }
+        },
+        "signs_agree": false
+      },
+      "primary:archive_minus_frozen": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -14.274045484796373,
+              -9.539047642834975
+            ],
+            "estimate": -11.84801486003716,
+            "sign": "below_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -14.037822474914359,
+              -9.167168870181795
+            ],
+            "estimate": -11.572404891271482,
+            "sign": "below_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -14.534267795943935,
+              -9.56451730821579
+            ],
+            "estimate": -11.99234474463415,
+            "sign": "below_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "primary:balanced_minus_archive": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -0.6535073159025944,
+              0.2848512463414729
+            ],
+            "estimate": -0.19225525078114405,
+            "sign": "spans_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -0.5293424167618728,
+              0.37630531500244085
+            ],
+            "estimate": -0.09145276582115333,
+            "sign": "spans_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -0.6315654757904552,
+              0.3585442880533724
+            ],
+            "estimate": -0.14874505359766016,
+            "sign": "spans_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "primary:balanced_minus_frozen": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -14.583721920079643,
+              -9.58539040456747
+            ],
+            "estimate": -12.040270110818307,
+            "sign": "below_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -14.291073060897212,
+              -9.114182916624726
+            ],
+            "estimate": -11.663857657092635,
+            "sign": "below_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -14.891459043260612,
+              -9.54536372258257
+            ],
+            "estimate": -12.141089798231807,
+            "sign": "below_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "primary:calibrated_frozen_minus_frozen": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -0.3948912530035455,
+              -0.10458225051662197
+            ],
+            "estimate": -0.2545129903689045,
+            "sign": "below_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -0.45023102828207656,
+              -0.155805928640076
+            ],
+            "estimate": -0.30553143203302985,
+            "sign": "below_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -0.5030325425473301,
+              -0.13402609642743496
+            ],
+            "estimate": -0.3239929635641812,
+            "sign": "below_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "subgroup_exploratory:archive:balanced_minus_archive": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -0.7221202681773414,
+              1.0034417625940295
+            ],
+            "estimate": 0.11527322827143971,
+            "sign": "spans_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -0.6902394792821686,
+              1.0163008540300076
+            ],
+            "estimate": 0.14528240483795607,
+            "sign": "spans_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -0.8231662230774999,
+              1.01938546910809
+            ],
+            "estimate": 0.11597071675304083,
+            "sign": "spans_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "subgroup_exploratory:archive:balanced_minus_frozen": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -21.93030743462563,
+              -11.988347475914816
+            ],
+            "estimate": -16.869577953756504,
+            "sign": "below_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -22.118687868348754,
+              -11.834977280324035
+            ],
+            "estimate": -16.81193912714212,
+            "sign": "below_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -22.522402366520193,
+              -12.14758304971634
+            ],
+            "estimate": -17.151047892567433,
+            "sign": "below_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "subgroup_exploratory:challenge:balanced_minus_archive": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -0.8169902952037787,
+              -0.1926210824328765
+            ],
+            "estimate": -0.4997837298337278,
+            "sign": "below_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -0.6179816989999394,
+              -0.0416810025210328
+            ],
+            "estimate": -0.32818793648026273,
+            "sign": "below_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -0.7447331534076874,
+              -0.08965469923276159
+            ],
+            "estimate": -0.41346082394836114,
+            "sign": "below_zero"
+          }
+        },
+        "signs_agree": true
+      },
+      "subgroup_exploratory:challenge:balanced_minus_frozen": {
+        "per_readout": {
+          "mlp-20261004": {
+            "ci": [
+              -8.539913905227689,
+              -5.907060305405829
+            ],
+            "estimate": -7.210962267880109,
+            "sign": "below_zero"
+          },
+          "mlp-20261005": {
+            "ci": [
+              -7.857665478255381,
+              -5.181146667836463
+            ],
+            "estimate": -6.51577618704315,
+            "sign": "below_zero"
+          },
+          "mlp-20261006": {
+            "ci": [
+              -8.702271247035249,
+              -5.650842920363823
+            ],
+            "estimate": -7.131131703896182,
+            "sign": "below_zero"
+          }
+        },
+        "signs_agree": true
+      }
+    },
+    "sign_disagreements": [
+      "ordinary:balanced_minus_frozen"
+    ]
+  },
+  "exact_numbers": {
+    "latent": {
+      "archive_minus_frozen": {
+        "ci": [
+          -0.28670582745282447,
+          -0.19797317039388065
+        ],
+        "estimate": -0.2419317348394543,
+        "sign": "below_zero"
+      },
+      "balanced_minus_archive": {
+        "ci": [
+          -0.01275693254396578,
+          -0.0011002090318814048
+        ],
+        "estimate": -0.006837694139944182,
+        "sign": "below_zero"
+      },
+      "balanced_minus_frozen": {
+        "ci": [
+          -0.29496025539645215,
+          -0.20349998306630165
+        ],
+        "estimate": -0.2487694289793985,
+        "sign": "below_zero"
+      }
+    },
+    "ordinary": {
+      "archive_minus_frozen": {
+        "ci": [
+          -0.21362830567983584,
+          1.6186709568845563
+        ],
+        "estimate": 0.6687916970476236,
+        "sign": "spans_zero"
+      },
+      "balanced_minus_archive": {
+        "ci": [
+          0.0503146013568655,
+          0.6935156212943582
+        ],
+        "estimate": 0.38108890549835767,
+        "sign": "above_zero"
+      },
+      "balanced_minus_frozen": {
+        "ci": [
+          0.11078403554730953,
+          1.9925487957584094
+        ],
+        "estimate": 1.0498806025459813,
+        "sign": "above_zero"
+      }
+    },
+    "primary": {
+      "archive_minus_frozen": {
+        "ci": [
+          -14.037822474914359,
+          -9.167168870181795
+        ],
+        "estimate": -11.572404891271482,
+        "sign": "below_zero"
+      },
+      "balanced_minus_archive": {
+        "ci": [
+          -0.5293424167618728,
+          0.37630531500244085
+        ],
+        "estimate": -0.09145276582115333,
+        "sign": "spans_zero"
+      },
+      "balanced_minus_frozen": {
+        "ci": [
+          -14.291073060897212,
+          -9.114182916624726
+        ],
+        "estimate": -11.663857657092635,
+        "sign": "below_zero"
+      },
+      "calibrated_frozen_minus_frozen": {
+        "ci": [
+          -0.45023102828207656,
+          -0.155805928640076
+        ],
+        "estimate": -0.30553143203302985,
+        "sign": "below_zero"
+      }
+    }
+  },
+  "followup_source_sha256": "095decf5df96218e72bda5dfb048bb5a1ce7cc1c1575edb93d857f9052cc25e3",
+  "label": "Read-only reanalysis of sealed outputs; no sealed artifact or verdict changed",
+  "presentation": {
+    "draft": "docs/TRAIN-001_RESULT_DRAFT.md",
+    "figures": [
+      "docs/figures/train001/learning_curves.png",
+      "docs/figures/train001/magnitude_response.png",
+      "docs/figures/train001/paired_errors.png"
+    ]
+  },
+  "report_source_sha256": "675de175a35d0e4a85e6c07c042aa83ba9c4ccb149bc387932263be2b3ee24cc",
+  "seal_sha256": "e2cceaca9d7c451c78d70091c5acd37de130775aa8fe3ca8ff6e7427049a27c6",
+  "sealed_measurement_dependent_flag": {
+    "measurement_dependent": false,
+    "verdicts": {
+      "mlp-20261004": "not_assessable_under_measurement_protocol",
+      "mlp-20261005": "not_assessable_under_measurement_protocol",
+      "mlp-20261006": "not_assessable_under_measurement_protocol"
+    }
+  },
+  "seconds": 4.097198375035077,
+  "smoke_run_seconds_outside_production_ledger": 105.153005361557,
+  "summary_sha256": "01c1ad9e371c7844b1276d45be25ed22aa5ad294d3aeb477e91abbf8e09a5bef",
+  "task": "TRAIN-001 review follow-up (D029)",
+  "validation_with_lineage": {
+    "checks": 58,
+    "failed": [],
+    "lineage": [
+      {
+        "check": "lineage:trained_models",
+        "detail": [
+          "archive_weighted-20261111",
+          "archive_weighted-20261112",
+          "archive_weighted-20261113",
+          "balanced-20261111",
+          "balanced-20261112",
+          "balanced-20261113"
+        ],
+        "status": "passed"
+      },
+      {
+        "check": "lineage:archive_weighted-20261111",
+        "detail": [],
+        "status": "passed"
+      },
+      {
+        "check": "lineage:archive_weighted-20261112",
+        "detail": [],
+        "status": "passed"
+      },
+      {
+        "check": "lineage:archive_weighted-20261113",
+        "detail": [],
+        "status": "passed"
+      },
+      {
+        "check": "lineage:balanced-20261111",
+        "detail": [],
+        "status": "passed"
+      },
+      {
+        "check": "lineage:balanced-20261112",
+        "detail": [],
+        "status": "passed"
+      },
+      {
+        "check": "lineage:balanced-20261113",
+        "detail": [],
+        "status": "passed"
+      }
+    ],
+    "valid": true
+  }
+}

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jepa-action-effects"
+version = "0.1.0"
+description = "Contact-conditioned evaluation of latent JEPA action effects"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "numpy>=1.26,<3",
+    "scipy>=1.12,<2",
+    "scikit-learn>=1.4,<2",
+    "matplotlib>=3.8,<4",
+    "pyyaml>=6,<7",
+    "stable-worldmodel",
+    "pygame>=2.6,<3",
+    "pymunk>=7,<8",
+    "opencv-python-headless==4.11.0.86",
+    "shapely>=2,<3",
+    "transformers>=4.52,<5",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+notebook = ["ipykernel>=6,<8"]
+
+[project.scripts]
+jepa-doctor = "jepa_action_effects.doctor:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jepa_action_effects"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.uv.sources]
+stable-worldmodel = { git = "https://github.com/galilai-group/stable-worldmodel.git", rev = "44c45bd1f774995aac0cc2b41444ebea24c1d5ad" }

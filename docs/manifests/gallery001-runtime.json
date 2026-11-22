@@ -1,0 +1,354 @@
+{
+  "artifacts": {
+    "audit.json": {
+      "path": "outputs/gallery001/audit.json",
+      "sha256": "4803813a7f636753181a45d4d99841c866080854f7fbb9c770c065f72ec9dd33"
+    },
+    "config.json": {
+      "path": "outputs/gallery001/config.json",
+      "sha256": "3b602f58afd76274487765f294e4d84ac583bc15e878421b1c40ed53bcdbac79"
+    },
+    "encode-manifest.json": {
+      "path": "outputs/gallery001/encode-manifest.json",
+      "sha256": "c54b0993ee7a75e03783e7ba48b7998453585a4d9bc9543d108ed7b2ae09c72b"
+    },
+    "encoded": {
+      "bytes": 261064,
+      "files": 360,
+      "path": "outputs/gallery001/encoded"
+    },
+    "examples": {
+      "bytes": 73187,
+      "files": 4,
+      "path": "outputs/gallery001/examples"
+    },
+    "latent-cache": {
+      "bytes": 1734935,
+      "files": 180,
+      "path": "outputs/gallery001/latent-cache"
+    },
+    "render-manifest.json": {
+      "path": "outputs/gallery001/render-manifest.json",
+      "sha256": "2ed8006b39d0b7d6e96acb0edd9308d3d26713661a2397de1b33e40dfd6945fb"
+    },
+    "renders": {
+      "bytes": 6311254,
+      "files": 180,
+      "path": "outputs/gallery001/renders"
+    },
+    "report.json": {
+      "path": "outputs/gallery001/report.json",
+      "sha256": "403f49624235eacdc31141cf65ce95cdd84e5031c04e260e972b450dd5f88e98"
+    },
+    "runtime.json": {
+      "path": "outputs/gallery001/runtime.json",
+      "sha256": "234db2ef6a40ead894877972d511481edd6009cd895a9798794a99d2aceaae43"
+    }
+  },
+  "commands": {
+    "audit": "UV_CACHE_DIR=.cache/uv UV_PYTHON_INSTALL_DIR=.cache/python uv run --locked --no-sync python -m jepa_action_effects.gallery_audit audit",
+    "encode": "PYTHONWARNINGS=ignore UV_CACHE_DIR=.cache/uv UV_PYTHON_INSTALL_DIR=.cache/python uv run --locked --no-sync python -m jepa_action_effects.gallery_audit encode",
+    "render": "PYTHONWARNINGS=ignore UV_CACHE_DIR=.cache/uv UV_PYTHON_INSTALL_DIR=.cache/python uv run --locked --no-sync python -m jepa_action_effects.gallery_audit render",
+    "report": "PYTHONWARNINGS=ignore UV_CACHE_DIR=.cache/uv UV_PYTHON_INSTALL_DIR=.cache/python uv run --locked --no-sync python -m jepa_action_effects.gallery_audit report",
+    "verification": [
+      "make check",
+      "UV_CACHE_DIR=.cache/uv UV_PYTHON_INSTALL_DIR=.cache/python uv run --locked --no-sync pytest tests/test_gallery_audit.py -q",
+      "make test",
+      "UV_CACHE_DIR=.cache/uv UV_PYTHON_INSTALL_DIR=.cache/python uv sync --locked --check",
+      "git diff --check"
+    ]
+  },
+  "configuration": {
+    "bootstrap": 2000,
+    "candidate_count": 6,
+    "example_ids": [
+      "new:challenge-108",
+      "new:challenge-160",
+      "new:ordinary-086",
+      "new:ordinary-097"
+    ],
+    "excluded_ids": [
+      "new:challenge-006",
+      "new:challenge-009",
+      "new:challenge-014",
+      "new:challenge-019",
+      "new:challenge-022",
+      "new:challenge-025",
+      "new:challenge-026",
+      "new:challenge-032",
+      "new:challenge-037",
+      "new:challenge-039",
+      "new:challenge-045",
+      "new:challenge-046",
+      "new:challenge-051",
+      "new:challenge-055",
+      "new:challenge-056",
+      "new:challenge-058",
+      "new:challenge-076",
+      "new:challenge-078",
+      "new:challenge-079",
+      "new:challenge-088",
+      "new:challenge-090",
+      "new:challenge-097",
+      "new:challenge-107",
+      "new:challenge-110",
+      "new:challenge-115",
+      "new:challenge-120",
+      "new:challenge-121",
+      "new:challenge-124",
+      "new:challenge-126",
+      "new:challenge-129",
+      "new:challenge-135",
+      "new:challenge-141",
+      "new:challenge-155",
+      "new:challenge-159",
+      "new:challenge-167",
+      "new:challenge-170",
+      "new:challenge-173",
+      "new:challenge-182",
+      "new:challenge-187",
+      "new:challenge-195",
+      "new:ordinary-006",
+      "new:ordinary-014",
+      "new:ordinary-015",
+      "new:ordinary-025",
+      "new:ordinary-030",
+      "new:ordinary-031",
+      "new:ordinary-032",
+      "new:ordinary-036",
+      "new:ordinary-041",
+      "new:ordinary-042",
+      "new:ordinary-057",
+      "new:ordinary-061",
+      "new:ordinary-064",
+      "new:ordinary-066",
+      "new:ordinary-073",
+      "new:ordinary-074",
+      "new:ordinary-077",
+      "new:ordinary-081",
+      "new:ordinary-083",
+      "new:ordinary-091"
+    ],
+    "experiment_limit_seconds": 1740,
+    "family_hashes": {
+      "new:challenge-005": "d635c5820e9136e6e4674a6bb1ca3de6209e510575926854a5eae4d1a01695aa",
+      "new:challenge-011": "b5407deb48c909e3b4d47999dde36b68f5c8879ad3bdf8d3a57d1042436450cc",
+      "new:challenge-041": "b429d0eedb07a60a30793f2fa1bbb277fea076f20f26b7d3957576a751e68092",
+      "new:challenge-042": "76dd1844fddb55a6acc44517b939871ca88151db306b32c96b35e3066aa087a2",
+      "new:challenge-043": "541c601e2f4dc4b0292d58c0562b206feddb0de095b61805dc2cf476e407ceca",
+      "new:challenge-048": "5d0fce75b31f3e75bbf54d630989356368623f1cb29078035295a56cb4f27f95",
+      "new:challenge-057": "5e771bc1bd1c4d286bd2eafc1a7f654c9e2707bcd909868b4521bcf9cd67b353",
+      "new:challenge-067": "1d85fc9da29ff5e4a8f2afc1dfd4f6426b753f3d77da6d459ce39d7ff8c34f6b",
+      "new:challenge-068": "dffb763618b1ea0967efc79b7d1a619f265d1b0acbd545189a72b334b297040b",
+      "new:challenge-094": "1b2af2aa6eae199424937daf2420518551fca726511877b6a4bf088b72c5d887",
+      "new:challenge-101": "10c3f5ffd84d62d06cd6ca81a14dc282c9dcbedb0ab12b562390d2d86183d380",
+      "new:challenge-108": "7eae20eaffd96a1d8c874fd5882c93b62f2bf1db05f85d00ba0ee49f8874c064",
+      "new:challenge-113": "5e79b225894097eee9111f741699eb837dbb9fda9254a59aee0a02d6406a6ea4",
+      "new:challenge-114": "48d99b34cba1a131542b3cea766cba0256ebb3acabbf56b1838e39cabbc5957d",
+      "new:challenge-116": "63efa450953a846a2c559f25e794c7eaf0cfafe84f646378b37e6afdfb43c860",
+      "new:challenge-117": "f01b0ed15bc8b34af71b7356ad95b0c0ba326b8f77565922c27d5d69c7ef46f7",
+      "new:challenge-119": "b0b4dcca4a9f1e283331931b9d17c745be1d66a93a1c9fd7320f3403ec8ee127",
+      "new:challenge-132": "dd450c065f20dafd5fd413efbfaaadf41435c083a36567bffb209ba47bff93c7",
+      "new:challenge-160": "b63a4a099a820245527e11fdd8a07578bd6b60144572d1df2170a39ee5d340cf",
+      "new:challenge-171": "d00986d7d12a5c327e3068cf4ebf22baa23f4f7f246e3da31e3c5d37cae69b1f",
+      "new:ordinary-000": "6c78d5d6c67f29b705d8e8d84f38c13db7b8d33ab0ecf74836efcf9874a31512",
+      "new:ordinary-002": "4eff2d32f20981140c56b36779184dfe405a0e94a8b96d94b6e3f5bb614fecc2",
+      "new:ordinary-048": "97b3b09a4e047d06732eae8c120daad4e286874c610e48d98e3fd961e1fb10d5",
+      "new:ordinary-049": "61c0d487c8b87904463015886f829da9af1d449f2a0622efb8a3f5f471679fe0",
+      "new:ordinary-050": "b454f79d676c5984df2545620db4cdd59962125c2beb1d97b1e092db97ffbe19",
+      "new:ordinary-069": "23bf2c7113a90f68f7617048a925d5e457c9e77184faf7a811477c27c49d3f50",
+      "new:ordinary-070": "2350795572b869455da805ab77e99ebc195d70c2a37538a77e0935833c446374",
+      "new:ordinary-075": "4d47d925262cf87c485ad6edd03587fb2e3519eb2d028d1c91c2dc86f23a68be",
+      "new:ordinary-086": "21aeb1ce566c029ce7a4ce43b6a5a5ff788453c8ea7f19233c13bd156e2011b5",
+      "new:ordinary-097": "b2fc48f8199a8dcb453597c37958e98f9e825a3b29a63dc1519d2cd499817c5c"
+    },
+    "ids": [
+      "new:challenge-005",
+      "new:challenge-011",
+      "new:challenge-041",
+      "new:challenge-042",
+      "new:challenge-043",
+      "new:challenge-048",
+      "new:challenge-057",
+      "new:challenge-067",
+      "new:challenge-068",
+      "new:challenge-094",
+      "new:challenge-101",
+      "new:challenge-108",
+      "new:challenge-113",
+      "new:challenge-114",
+      "new:challenge-116",
+      "new:challenge-117",
+      "new:challenge-119",
+      "new:challenge-132",
+      "new:challenge-160",
+      "new:challenge-171",
+      "new:ordinary-000",
+      "new:ordinary-002",
+      "new:ordinary-048",
+      "new:ordinary-049",
+      "new:ordinary-050",
+      "new:ordinary-069",
+      "new:ordinary-070",
+      "new:ordinary-075",
+      "new:ordinary-086",
+      "new:ordinary-097"
+    ],
+    "master_seed": 20260930,
+    "negative_count": 4,
+    "query_radius": 1.28,
+    "scales": [
+      10.24,
+      20.48
+    ],
+    "schema": "gallery001-v1",
+    "seeds": {
+      "bootstrap": 818129200,
+      "examples": 1535340937,
+      "membership": 1830589227,
+      "queries": 4084164646,
+      "templates": 2605408883
+    },
+    "total_limit_seconds": 1800,
+    "verification_ids": [
+      "new:challenge-041",
+      "new:challenge-043",
+      "new:challenge-048",
+      "new:challenge-119",
+      "new:challenge-132",
+      "new:challenge-160",
+      "new:ordinary-000",
+      "new:ordinary-048",
+      "new:ordinary-049",
+      "new:ordinary-069",
+      "new:ordinary-070",
+      "new:ordinary-075"
+    ]
+  },
+  "date": "2026-09-28",
+  "dirty_worktree": true,
+  "environment": {
+    "architecture": "arm64",
+    "device": "cpu",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "precision": "float32",
+    "python": "3.10.21"
+  },
+  "exclusions": {
+    "negative_10.24": "ordinary-000 candidate index 4: only three valid alternatives because proposed directions penetrated wall",
+    "negative_20.48": "none"
+  },
+  "git_head": "ad7a0e2457b3ec4d74f3799f36b77e8c924140de",
+  "interruptions": [],
+  "limitations": [
+    "Tuning-family reuse is exploratory",
+    "Synthetic poses may be outside training distribution",
+    "No predictor scoring or confirmation labels",
+    "Historical training-simulator identity unproven"
+  ],
+  "outcome": {
+    "candidates": 180,
+    "families": 30,
+    "recommendation": "proceed_to_separate_predictor_plan_if_contribution_review_supports_it",
+    "scales": {
+      "negative_10.24": {
+        "groups": {
+          "challenge": {
+            "accuracy": 1.0,
+            "coverage_pass": true,
+            "eligible_endpoints": 120,
+            "families_four_candidates": 20,
+            "margin_pass": true,
+            "ratio_p05": 0.8471737549643259,
+            "retrieval_pass": true,
+            "total_endpoints": 120
+          },
+          "ordinary": {
+            "accuracy": 1.0,
+            "coverage_pass": true,
+            "eligible_endpoints": 59,
+            "families_four_candidates": 10,
+            "margin_pass": true,
+            "ratio_p05": 0.8308338406115683,
+            "retrieval_pass": true,
+            "total_endpoints": 60
+          }
+        },
+        "pass": true
+      },
+      "negative_20.48": {
+        "groups": {
+          "challenge": {
+            "accuracy": 1.0,
+            "coverage_pass": true,
+            "eligible_endpoints": 120,
+            "families_four_candidates": 20,
+            "margin_pass": true,
+            "ratio_p05": 0.9649999134913922,
+            "retrieval_pass": true,
+            "total_endpoints": 120
+          },
+          "ordinary": {
+            "accuracy": 1.0,
+            "coverage_pass": true,
+            "eligible_endpoints": 60,
+            "families_four_candidates": 10,
+            "margin_pass": true,
+            "ratio_p05": 0.9464267970804718,
+            "retrieval_pass": true,
+            "total_endpoints": 60
+          }
+        },
+        "pass": true
+      }
+    }
+  },
+  "runtime_seconds": 46.79220416722819,
+  "schema": "gallery001-runtime-v1",
+  "source_hashes": {
+    "cache": "975f64afb6ebda9cd307a2b1580cb268daf7d05d6d02e8bd58b4e0acd0fff2bb",
+    "checkpoint_config": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+    "checkpoint_weights": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607",
+    "fresh_manifest": "98bd169c8bb9e32ca21c0cc39f6283ee2a784923cffa3f52e707eae29df509d0",
+    "latent_config": "a7f4536c6e5470d9678fcc15ae92d1269ef6edeea3d62f49cb362baded3768c8",
+    "lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00",
+    "metrics": "02466eff17e883cb3fa0cbda694f9245a50ba1d347f90dd8d13299fc544f7a79",
+    "model_inference": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+    "pilot_manifest": "35e9443432b86534e8e01b3f07079596d89dee308e0a0154ce896761e8049674",
+    "plan": "ff3e625d68fe9c52099890cb2a4cd19c800b9999a9674cc63d30e3e3e9aa4fb0",
+    "preprocessing": "79465960b4be26191e9e23a3bb4f6f19fec662726b9714c5c98ab2a37df6d7a5",
+    "readout_fit": "5fe80a79b2f8d7c30ce08c0287fd3b9fb6ec1945d1db6c9827ab77cf34041eb6",
+    "renderer": "6061ad42bef44e0bc8646be85662edd9a6284ff2c2c7053909777c4bd54510e6",
+    "runner": "68402f07cb65e20372c6316e4998584bee4739089c3733fca0cc2f358721b6a9",
+    "scaler": "af2d276efc5c3da162aec27d97d8f77f6c9fae5439268849372fc6be976fad06",
+    "simulator_replay": "02afbdcd892fe3b77e464d08bc18c8f25f64e07e1cef2ba9517504d236467639"
+  },
+  "stages": {
+    "encode": [
+      {
+        "seconds": 35.93037016596645,
+        "status": "complete"
+      }
+    ],
+    "render": [
+      {
+        "seconds": 8.459885417018086,
+        "status": "complete"
+      }
+    ],
+    "report": [
+      {
+        "seconds": 2.3030785000883043,
+        "status": "complete"
+      }
+    ]
+  },
+  "status": "complete",
+  "verification_results": {
+    "focused_pytest": "9 passed, 1 simulator warning message",
+    "git_diff_check": "passed after documentation",
+    "make_check": "passed",
+    "make_test": "75 passed, 12 simulator warning messages",
+    "uv_sync_locked_check": "passed, would make no changes"
+  }
+}

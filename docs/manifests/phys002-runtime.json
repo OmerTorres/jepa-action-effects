@@ -1,0 +1,1315 @@
+{
+  "config_sha256": "77c40276d71d621ed54a720480c844e44fd741dbe41451d47f04746b6177a11f",
+  "confirm": {
+    "fingerprint": {
+      "action_order": "control-major flattened x,y pairs",
+      "architecture": "lewm-vit-tiny-p14-h3-ca231f9",
+      "checkpoint_revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+      "config_sha256": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+      "controls_per_block": 5,
+      "device": "cpu",
+      "history_frames": 3,
+      "inference_source_sha256": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "pinned_lewm_source_sha256": "6eda82465fe7215a0d211ef452f2b1cbafab1991087db651a44ff7f6ac37430d",
+      "precision": "float32",
+      "preprocessing": "rgb-float-imagenet-normalized-224",
+      "scaler_sha256": "02bff5a098f597435dad3a570ceee9c9cdca32804b7ab4542781871ae2fb0700",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607"
+    },
+    "reserved": {
+      "criteria_challenge": {
+        "floor": "passed",
+        "h1": "not_established",
+        "physical_failure": "supported",
+        "shrinkage": "supported"
+      },
+      "families": 150,
+      "summary": {
+        "challenge": {
+          "D_both": {
+            "ci95": [
+              22.222312720156847,
+              25.863902669108153
+            ],
+            "estimate": 23.990444862804537,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "D_boundary": {
+            "ci95": [
+              15.849220900548335,
+              18.14974338772733
+            ],
+            "estimate": 17.04601068310115,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "D_boundary_meaningful": {
+            "ci95": [
+              18.572703629758724,
+              21.559259456485197
+            ],
+            "estimate": 20.05800010733318,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "D_exactly_one": {
+            "ci95": [
+              10.36024131131521,
+              12.83517833908543
+            ],
+            "estimate": 11.620609426179168,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "D_meaningful_all_pairs": {
+            "ci95": [
+              23.53876543633031,
+              27.287415994851298
+            ],
+            "estimate": 25.39023117943494,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "criteria": {
+            "floor": "passed",
+            "h1": "not_established",
+            "physical_failure": "supported",
+            "shrinkage": "supported"
+          },
+          "e_real_boundary_meaningful": {
+            "ci95": [
+              4.110990793367621,
+              4.664977390632267
+            ],
+            "estimate": 4.378310986411867,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "endpoint_D_moved": {
+            "ci95": [
+              20.903496572811125,
+              24.99350477888894
+            ],
+            "estimate": 22.909960764669535,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "endpoint_err_pred": {
+            "ci95": [
+              16.797217962716676,
+              18.972796460468306
+            ],
+            "estimate": 17.856620221593975,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "endpoint_err_real": {
+            "ci95": [
+              3.6244500984618675,
+              4.236092530880831
+            ],
+            "estimate": 3.9347553961047987,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "floor_ratio": {
+            "ci95": [
+              0.11251210273603117,
+              0.1283879742884476
+            ],
+            "estimate": 0.11998745829631098,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "h1_contrast": {
+            "ci95": [
+              -14.253267220141451,
+              -10.488028549058159
+            ],
+            "estimate": -12.369835436625374,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "regret_jepa": {
+            "ci95": [
+              2.7767392424665953,
+              5.341347378149858
+            ],
+            "estimate": 3.9634169455681665,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "regret_random": {
+            "ci95": [
+              22.64242629611874,
+              25.257283577101237
+            ],
+            "estimate": 23.90861650792851,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "regret_real_frame": {
+            "ci95": [
+              0.1170017264982582,
+              0.2806922829321129
+            ],
+            "estimate": 0.19361507718171572,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "slope_pred": {
+            "ci95": [
+              0.516703691451485,
+              0.6048265997797679
+            ],
+            "estimate": 0.5610256756747053,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "slope_pred_contact": {
+            "ci95": [
+              0.5184325320411032,
+              0.6062072829851897
+            ],
+            "estimate": 0.5610256756747053,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "slope_pred_minus_real": {
+            "ci95": [
+              -0.4899651037354964,
+              -0.40085622468850507
+            ],
+            "estimate": -0.4452925599146854,
+            "families": 100,
+            "valid_draws": 2000
+          },
+          "slope_pred_no_contact": {
+            "ci95": null,
+            "estimate": null,
+            "families": 100,
+            "valid_draws": 0
+          },
+          "slope_real": {
+            "ci95": [
+              0.9950515637607796,
+              1.0182001436302535
+            ],
+            "estimate": 1.0063182355893907,
+            "families": 100,
+            "valid_draws": 2000
+          }
+        },
+        "ordinary": {
+          "D_both": {
+            "ci95": [
+              -0.09674400486187906,
+              5.7720270937466776
+            ],
+            "estimate": 2.8376415444423992,
+            "families": 50,
+            "valid_draws": 1760
+          },
+          "D_boundary": {
+            "ci95": [
+              0.15885370780444769,
+              1.4482232925677971
+            ],
+            "estimate": 0.7513122470128717,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "D_boundary_meaningful": {
+            "ci95": [
+              -0.09674400486187906,
+              5.7720270937466776
+            ],
+            "estimate": 2.8376415444423992,
+            "families": 50,
+            "valid_draws": 1735
+          },
+          "D_exactly_one": {
+            "ci95": null,
+            "estimate": null,
+            "families": 50,
+            "valid_draws": 0
+          },
+          "D_meaningful_all_pairs": {
+            "ci95": [
+              2.805059541840101,
+              15.876871288927028
+            ],
+            "estimate": 8.857635630096995,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "criteria": {
+            "floor": "failed",
+            "h1": "inconclusive_readout_floor",
+            "physical_failure": "inconclusive_readout_floor",
+            "shrinkage": "inconclusive_readout_floor"
+          },
+          "e_real_boundary_meaningful": {
+            "ci95": [
+              4.298576938108391,
+              6.62217492663936
+            ],
+            "estimate": 5.460375932373875,
+            "families": 50,
+            "valid_draws": 1715
+          },
+          "endpoint_D_moved": {
+            "ci95": [
+              3.078999026119656,
+              16.635001908296722
+            ],
+            "estimate": 9.183935038756282,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "endpoint_err_pred": {
+            "ci95": [
+              5.180721727714105,
+              6.82991833424541
+            ],
+            "estimate": 5.9441038200138046,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "endpoint_err_real": {
+            "ci95": [
+              2.1971702781789606,
+              3.298174222736739
+            ],
+            "estimate": 2.7275821595187555,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "floor_ratio": {
+            "ci95": [
+              0.27557584360544907,
+              0.575418852462971
+            ],
+            "estimate": 0.3500571760451012,
+            "families": 50,
+            "valid_draws": 1760
+          },
+          "h1_contrast": {
+            "ci95": null,
+            "estimate": null,
+            "families": 50,
+            "valid_draws": 0
+          },
+          "regret_jepa": {
+            "ci95": [
+              0.025751928037221584,
+              0.4561005538737528
+            ],
+            "estimate": 0.1832737694845268,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "regret_random": {
+            "ci95": [
+              1.64053697823654,
+              6.020560311728856
+            ],
+            "estimate": 3.6234052400323686,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "regret_real_frame": {
+            "ci95": [
+              0.015446770909911351,
+              0.196201380741379
+            ],
+            "estimate": 0.08732851344451156,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "slope_pred": {
+            "ci95": [
+              0.6789178371885325,
+              0.9895296741339482
+            ],
+            "estimate": 0.8778546292398753,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "slope_pred_contact": {
+            "ci95": [
+              0.6689906954553961,
+              0.9825079424892499
+            ],
+            "estimate": 0.8778546292398753,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "slope_pred_minus_real": {
+            "ci95": [
+              -0.33125177116443427,
+              -0.03462005171207591
+            ],
+            "estimate": -0.12493395087780257,
+            "families": 50,
+            "valid_draws": 2000
+          },
+          "slope_pred_no_contact": {
+            "ci95": null,
+            "estimate": null,
+            "families": 50,
+            "valid_draws": 0
+          },
+          "slope_real": {
+            "ci95": [
+              0.9322192024176401,
+              1.066396281589023
+            ],
+            "estimate": 1.002788580117678,
+            "families": 50,
+            "valid_draws": 2000
+          }
+        },
+        "pooled": {
+          "D_both": {
+            "ci95": [
+              21.75803583906991,
+              25.465194635727492
+            ],
+            "estimate": 23.575684013424887,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "D_boundary": {
+            "ci95": [
+              13.050249080149781,
+              15.61010823009513
+            ],
+            "estimate": 14.330227610419774,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "D_boundary_meaningful": {
+            "ci95": [
+              18.17057052439976,
+              21.22435910706603
+            ],
+            "estimate": 19.72034601786473,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "D_exactly_one": {
+            "ci95": [
+              10.392682547528018,
+              12.841969771409534
+            ],
+            "estimate": 11.620609426179168,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "D_meaningful_all_pairs": {
+            "ci95": [
+              21.51873574671747,
+              25.33849953575114
+            ],
+            "estimate": 23.48825116048456,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "criteria": {
+            "floor": "passed",
+            "h1": "not_established",
+            "physical_failure": "supported",
+            "shrinkage": "supported"
+          },
+          "e_real_boundary_meaningful": {
+            "ci95": [
+              4.131216587147798,
+              4.685968603445985
+            ],
+            "estimate": 4.399527946136613,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "endpoint_D_moved": {
+            "ci95": [
+              19.2190370809309,
+              23.438844156836485
+            ],
+            "estimate": 21.33086045991845,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "endpoint_err_pred": {
+            "ci95": [
+              13.165049635056802,
+              14.655691430069856
+            ],
+            "estimate": 13.885781421067252,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "endpoint_err_real": {
+            "ci95": [
+              3.2662512465110964,
+              3.815361380723888
+            ],
+            "estimate": 3.5323643172427843,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "floor_ratio": {
+            "ci95": [
+              0.1132044438110356,
+              0.12914828684669644
+            ],
+            "estimate": 0.12083512812548299,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "h1_contrast": {
+            "ci95": [
+              -14.24352604457687,
+              -10.511563290656373
+            ],
+            "estimate": -12.369835436625374,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "regret_jepa": {
+            "ci95": [
+              1.923794951621069,
+              3.623314309246274
+            ],
+            "estimate": 2.703369220206953,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "regret_random": {
+            "ci95": [
+              16.041019083657076,
+              18.285238154601902
+            ],
+            "estimate": 17.146879418629798,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "regret_real_frame": {
+            "ci95": [
+              0.10104626229396757,
+              0.22684494396775956
+            ],
+            "estimate": 0.15818622260264764,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "slope_pred": {
+            "ci95": [
+              0.5314038754967543,
+              0.6168485822747952
+            ],
+            "estimate": 0.5754000728613087,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "slope_pred_contact": {
+            "ci95": [
+              0.5325767702762245,
+              0.6197845306977608
+            ],
+            "estimate": 0.5754000728613087,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "slope_pred_minus_real": {
+            "ci95": [
+              -0.4744074866151832,
+              -0.38768662800365894
+            ],
+            "estimate": -0.43075802373475014,
+            "families": 150,
+            "valid_draws": 2000
+          },
+          "slope_pred_no_contact": {
+            "ci95": null,
+            "estimate": null,
+            "families": 150,
+            "valid_draws": 0
+          },
+          "slope_real": {
+            "ci95": [
+              0.9955354067385686,
+              1.017766445645301
+            ],
+            "estimate": 1.0061580965960588,
+            "families": 150,
+            "valid_draws": 2000
+          }
+        }
+      },
+      "verification_max_error": 0.0
+    },
+    "status": "complete"
+  },
+  "develop": {
+    "families": 300,
+    "fingerprint": {
+      "action_order": "control-major flattened x,y pairs",
+      "architecture": "lewm-vit-tiny-p14-h3-ca231f9",
+      "checkpoint_revision": "22b330c28c27ead4bfd1888615af1340e3fe9052",
+      "config_sha256": "2564086e961e7b5c7c04dffc451091115b389a590645ff19653c64fd0bc16e09",
+      "controls_per_block": 5,
+      "device": "cpu",
+      "history_frames": 3,
+      "inference_source_sha256": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "pinned_lewm_source_sha256": "6eda82465fe7215a0d211ef452f2b1cbafab1991087db651a44ff7f6ac37430d",
+      "precision": "float32",
+      "preprocessing": "rgb-float-imagenet-normalized-224",
+      "scaler_sha256": "02bff5a098f597435dad3a570ceee9c9cdca32804b7ab4542781871ae2fb0700",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "weights_sha256": "48938400ae3464c9680731287f583a9cb516f55a8ec64ea13a91be47fb15b607"
+    },
+    "phase": "development (exploratory; READOUT-001 families already used)",
+    "status": "complete",
+    "summary": {
+      "challenge": {
+        "D_both": {
+          "ci95": [
+            21.89424237143207,
+            24.274429666593864
+          ],
+          "estimate": 23.050123596203022,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "D_boundary": {
+          "ci95": [
+            15.875295531031295,
+            17.46697715363635
+          ],
+          "estimate": 16.676335041113315,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "D_boundary_meaningful": {
+          "ci95": [
+            18.773896830901442,
+            20.72870865640217
+          ],
+          "estimate": 19.74769553876855,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "D_exactly_one": {
+          "ci95": [
+            10.925007627620838,
+            12.721432858057154
+          ],
+          "estimate": 11.79661272701127,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "D_meaningful_all_pairs": {
+          "ci95": [
+            23.60351706403495,
+            26.130170860931766
+          ],
+          "estimate": 24.825016407174218,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "criteria": {
+          "floor": "passed",
+          "h1": "not_established",
+          "physical_failure": "supported",
+          "shrinkage": "supported"
+        },
+        "e_real_boundary_meaningful": {
+          "ci95": [
+            4.224373685523124,
+            4.645547545973639
+          ],
+          "estimate": 4.424900783263418,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "endpoint_D_moved": {
+          "ci95": [
+            20.60810859540919,
+            23.539713004539312
+          ],
+          "estimate": 22.01095238869043,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "endpoint_err_pred": {
+          "ci95": [
+            17.1562849864677,
+            18.67719107241579
+          ],
+          "estimate": 17.896694624089495,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "endpoint_err_real": {
+          "ci95": [
+            3.9177388772886754,
+            4.462121876070416
+          ],
+          "estimate": 4.166216073708674,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "floor_ratio": {
+          "ci95": [
+            0.1154515233330257,
+            0.12676885133163857
+          ],
+          "estimate": 0.1212477117555864,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "h1_contrast": {
+          "ci95": [
+            -12.534126510351658,
+            -10.017419113658436
+          ],
+          "estimate": -11.25351086919175,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "regret_jepa": {
+          "ci95": [
+            2.3641597769552014,
+            3.584926241883858
+          ],
+          "estimate": 2.964286678646538,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "regret_random": {
+          "ci95": [
+            23.45305581726112,
+            25.68097719965923
+          ],
+          "estimate": 24.502345890407177,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "regret_real_frame": {
+          "ci95": [
+            0.15121526048349376,
+            0.27971124934674685
+          ],
+          "estimate": 0.21297650501286977,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "slope_pred": {
+          "ci95": [
+            0.5572656701296433,
+            0.62677678137534
+          ],
+          "estimate": 0.5916204425889657,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "slope_pred_contact": {
+          "ci95": [
+            0.5577525120581778,
+            0.6233465206464666
+          ],
+          "estimate": 0.5916204425889657,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "slope_pred_minus_real": {
+          "ci95": [
+            -0.45391474414734123,
+            -0.38866651958962406
+          ],
+          "estimate": -0.42259461721643454,
+          "families": 200,
+          "valid_draws": 2000
+        },
+        "slope_pred_no_contact": {
+          "ci95": null,
+          "estimate": null,
+          "families": 200,
+          "valid_draws": 0
+        },
+        "slope_real": {
+          "ci95": [
+            1.0058897141114114,
+            1.0226607896325086
+          ],
+          "estimate": 1.0142150598054003,
+          "families": 200,
+          "valid_draws": 2000
+        }
+      },
+      "ordinary": {
+        "D_both": {
+          "ci95": [
+            -0.3602569562098248,
+            18.698655300050643
+          ],
+          "estimate": 7.648161983795617,
+          "families": 100,
+          "valid_draws": 1996
+        },
+        "D_boundary": {
+          "ci95": [
+            0.471534488269152,
+            3.32905579922261
+          ],
+          "estimate": 1.679166533446456,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "D_boundary_meaningful": {
+          "ci95": [
+            -0.9505808474091344,
+            29.018439779499445
+          ],
+          "estimate": 10.75260386615599,
+          "families": 100,
+          "valid_draws": 1974
+        },
+        "D_exactly_one": {
+          "ci95": [
+            -2.7344660893084995,
+            0.5294915917920822
+          ],
+          "estimate": -1.1024872487582087,
+          "families": 100,
+          "valid_draws": 1722
+        },
+        "D_meaningful_all_pairs": {
+          "ci95": [
+            11.068976059454338,
+            19.69711820497896
+          ],
+          "estimate": 15.217987008876484,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "criteria": {
+          "floor": "failed",
+          "h1": "inconclusive_readout_floor",
+          "physical_failure": "inconclusive_readout_floor",
+          "shrinkage": "inconclusive_readout_floor"
+        },
+        "e_real_boundary_meaningful": {
+          "ci95": [
+            3.9140987985421005,
+            6.156404826493102
+          ],
+          "estimate": 5.103691986663867,
+          "families": 100,
+          "valid_draws": 1963
+        },
+        "endpoint_D_moved": {
+          "ci95": [
+            9.900596425225066,
+            20.0547481368505
+          ],
+          "estimate": 14.699416556916043,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "endpoint_err_pred": {
+          "ci95": [
+            5.921092029483292,
+            7.424790133328011
+          ],
+          "estimate": 6.654773923146032,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "endpoint_err_real": {
+          "ci95": [
+            1.9885198807474114,
+            2.4615488717845184
+          ],
+          "estimate": 2.2149412732995457,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "floor_ratio": {
+          "ci95": [
+            0.10475167050867579,
+            0.6765603728550195
+          ],
+          "estimate": 0.5087381421972531,
+          "families": 100,
+          "valid_draws": 1973
+        },
+        "h1_contrast": {
+          "ci95": [
+            -3.5677704837987303,
+            -3.5677704837987303
+          ],
+          "estimate": -3.5677704837987303,
+          "families": 100,
+          "valid_draws": 1262
+        },
+        "regret_jepa": {
+          "ci95": [
+            0.2698418762126257,
+            1.091423727284314
+          ],
+          "estimate": 0.621442618583717,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "regret_random": {
+          "ci95": [
+            1.4602398226316968,
+            4.220614328242233
+          ],
+          "estimate": 2.7138928467510324,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "regret_real_frame": {
+          "ci95": [
+            0.018467778260093447,
+            0.14493673094536227
+          ],
+          "estimate": 0.06784852387325238,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "slope_pred": {
+          "ci95": [
+            0.5571025128405898,
+            0.7665285336718868
+          ],
+          "estimate": 0.6891945030593045,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "slope_pred_contact": {
+          "ci95": [
+            0.5547178790094021,
+            0.7694070321397409
+          ],
+          "estimate": 0.6891945030593045,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "slope_pred_minus_real": {
+          "ci95": [
+            -0.4454711809973751,
+            -0.22328495705648627
+          ],
+          "estimate": -0.30436103488962973,
+          "families": 100,
+          "valid_draws": 2000
+        },
+        "slope_pred_no_contact": {
+          "ci95": null,
+          "estimate": null,
+          "families": 100,
+          "valid_draws": 0
+        },
+        "slope_real": {
+          "ci95": [
+            0.9640217837420728,
+            1.0213932178274898
+          ],
+          "estimate": 0.9935555379489343,
+          "families": 100,
+          "valid_draws": 2000
+        }
+      },
+      "pooled": {
+        "D_both": {
+          "ci95": [
+            21.370664826743834,
+            23.815937787924458
+          ],
+          "estimate": 22.60152277254067,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "D_boundary": {
+          "ci95": [
+            12.88933731411178,
+            14.586497960675754
+          ],
+          "estimate": 13.72508501350016,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "D_boundary_meaningful": {
+          "ci95": [
+            18.533941390754684,
+            20.58151297327553
+          ],
+          "estimate": 19.571321192246735,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "D_exactly_one": {
+          "ci95": [
+            10.775325489676332,
+            12.598116009255424
+          ],
+          "estimate": 11.668898865865037,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "D_meaningful_all_pairs": {
+          "ci95": [
+            22.65578221352464,
+            25.17297691785659
+          ],
+          "estimate": 23.87296844878435,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "criteria": {
+          "floor": "passed",
+          "h1": "not_established",
+          "physical_failure": "supported",
+          "shrinkage": "supported"
+        },
+        "e_real_boundary_meaningful": {
+          "ci95": [
+            4.228413094039456,
+            4.649862198045846
+          ],
+          "estimate": 4.438210414702642,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "endpoint_D_moved": {
+          "ci95": [
+            19.853832482514157,
+            22.752593999114552
+          ],
+          "estimate": 21.2863857747308,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "endpoint_err_pred": {
+          "ci95": [
+            13.58964004855834,
+            14.726072237555902
+          ],
+          "estimate": 14.149387723775007,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "endpoint_err_real": {
+          "ci95": [
+            3.3242062038724134,
+            3.7315417496921364
+          ],
+          "estimate": 3.515791140238965,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "floor_ratio": {
+          "ci95": [
+            0.11577480889505813,
+            0.12724285255700737
+          ],
+          "estimate": 0.1216983010177814,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "h1_contrast": {
+          "ci95": [
+            -12.453550564246994,
+            -9.975764496296852
+          ],
+          "estimate": -11.215273354836558,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "regret_jepa": {
+          "ci95": [
+            1.7605897867222393,
+            2.6393750700457876
+          ],
+          "estimate": 2.1833386586255976,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "regret_random": {
+          "ci95": [
+            16.40251425205502,
+            18.111965733511486
+          ],
+          "estimate": 17.239528209188464,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "regret_real_frame": {
+          "ci95": [
+            0.11951383574489663,
+            0.21576224956462123
+          ],
+          "estimate": 0.16460051129966397,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "slope_pred": {
+          "ci95": [
+            0.5629279223292958,
+            0.6294949896474124
+          ],
+          "estimate": 0.5955662900905045,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "slope_pred_contact": {
+          "ci95": [
+            0.5637347151509166,
+            0.6267398739599037
+          ],
+          "estimate": 0.5955662900905045,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "slope_pred_minus_real": {
+          "ci95": [
+            -0.44942960838813445,
+            -0.38554551074023335
+          ],
+          "estimate": -0.41781330870909805,
+          "families": 300,
+          "valid_draws": 2000
+        },
+        "slope_pred_no_contact": {
+          "ci95": null,
+          "estimate": null,
+          "families": 300,
+          "valid_draws": 0
+        },
+        "slope_real": {
+          "ci95": [
+            1.0054362202394753,
+            1.021829474201777
+          ],
+          "estimate": 1.0133795987996026,
+          "families": 300,
+          "valid_draws": 2000
+        }
+      }
+    },
+    "verification_max_error": 0.0
+  },
+  "runtime": {
+    "device": "cpu",
+    "platform": "macOS-15.7.3-arm64-arm-64bit",
+    "precision": "float32",
+    "python": "3.10.21",
+    "torch": "2.14.0"
+  },
+  "seal": {
+    "audit_sha256": "5a007bdb9e923e986333f7e2a4abee906f182d34726b098e11033d4cf8e3cdd0",
+    "config_sha256": "77c40276d71d621ed54a720480c844e44fd741dbe41451d47f04746b6177a11f",
+    "decision_rules": "next_metrics.apply_criteria; floor ratio < 0.25 gates every claim",
+    "develop_sha256": "605804745e58b1f79986c82d774b9edb6d5cc95b5e2d3ec636f3652c024bdc64",
+    "readout_selection_sha256": "4c90fb3e7cf01b2ca22760d6f299122625c0c79827e15c9900143b8b5d77ddcd",
+    "reserved_ids": [
+      "challenge-000",
+      "challenge-001",
+      "challenge-002",
+      "challenge-003",
+      "challenge-004",
+      "challenge-005",
+      "challenge-006",
+      "challenge-007",
+      "challenge-008",
+      "challenge-009",
+      "challenge-010",
+      "challenge-011",
+      "challenge-012",
+      "challenge-013",
+      "challenge-014",
+      "challenge-015",
+      "challenge-016",
+      "challenge-017",
+      "challenge-018",
+      "challenge-019",
+      "challenge-020",
+      "challenge-021",
+      "challenge-022",
+      "challenge-023",
+      "challenge-024",
+      "challenge-025",
+      "challenge-026",
+      "challenge-027",
+      "challenge-028",
+      "challenge-029",
+      "challenge-030",
+      "challenge-031",
+      "challenge-032",
+      "challenge-033",
+      "challenge-034",
+      "challenge-035",
+      "challenge-036",
+      "challenge-037",
+      "challenge-038",
+      "challenge-039",
+      "challenge-040",
+      "challenge-041",
+      "challenge-042",
+      "challenge-043",
+      "challenge-044",
+      "challenge-045",
+      "challenge-046",
+      "challenge-047",
+      "challenge-048",
+      "challenge-049",
+      "challenge-050",
+      "challenge-051",
+      "challenge-052",
+      "challenge-053",
+      "challenge-054",
+      "challenge-055",
+      "challenge-056",
+      "challenge-057",
+      "challenge-058",
+      "challenge-059",
+      "challenge-060",
+      "challenge-061",
+      "challenge-062",
+      "challenge-063",
+      "challenge-064",
+      "challenge-065",
+      "challenge-066",
+      "challenge-067",
+      "challenge-068",
+      "challenge-069",
+      "challenge-070",
+      "challenge-071",
+      "challenge-072",
+      "challenge-073",
+      "challenge-074",
+      "challenge-075",
+      "challenge-076",
+      "challenge-077",
+      "challenge-078",
+      "challenge-079",
+      "challenge-080",
+      "challenge-081",
+      "challenge-082",
+      "challenge-083",
+      "challenge-084",
+      "challenge-085",
+      "challenge-086",
+      "challenge-087",
+      "challenge-088",
+      "challenge-089",
+      "challenge-090",
+      "challenge-091",
+      "challenge-092",
+      "challenge-093",
+      "challenge-094",
+      "challenge-095",
+      "challenge-096",
+      "challenge-097",
+      "challenge-098",
+      "challenge-099",
+      "ordinary-000",
+      "ordinary-001",
+      "ordinary-002",
+      "ordinary-003",
+      "ordinary-004",
+      "ordinary-005",
+      "ordinary-006",
+      "ordinary-007",
+      "ordinary-008",
+      "ordinary-009",
+      "ordinary-010",
+      "ordinary-011",
+      "ordinary-012",
+      "ordinary-013",
+      "ordinary-014",
+      "ordinary-015",
+      "ordinary-016",
+      "ordinary-017",
+      "ordinary-018",
+      "ordinary-019",
+      "ordinary-020",
+      "ordinary-021",
+      "ordinary-022",
+      "ordinary-023",
+      "ordinary-024",
+      "ordinary-025",
+      "ordinary-026",
+      "ordinary-027",
+      "ordinary-028",
+      "ordinary-029",
+      "ordinary-030",
+      "ordinary-031",
+      "ordinary-032",
+      "ordinary-033",
+      "ordinary-034",
+      "ordinary-035",
+      "ordinary-036",
+      "ordinary-037",
+      "ordinary-038",
+      "ordinary-039",
+      "ordinary-040",
+      "ordinary-041",
+      "ordinary-042",
+      "ordinary-043",
+      "ordinary-044",
+      "ordinary-045",
+      "ordinary-046",
+      "ordinary-047",
+      "ordinary-048",
+      "ordinary-049"
+    ],
+    "reserved_manifest_sha256": "55a9b2a11a66b8ba81d2ff1595ce448a390f9d650ce1e457238b3aea25b8c9e2",
+    "sources": {
+      "collection": "9b2fdcb7ebee9911c181e3ce7a786b8a79013293632151a2fcee96d6b61d5237",
+      "common": "3ad8ef97c3b84d0a4e4a7df6dcde3636d08d9c4c25435ca415abdc51e1429f7e",
+      "inference": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+      "metrics": "38df7546ebd3166c554df1ffddcd86d43d7440d180f1755625715a24453d9912",
+      "readout": "b654e70d2dd981122f7dd8cf5cecdf926895b474e518a0dacc070ad051fd8c68",
+      "replay": "02afbdcd892fe3b77e464d08bc18c8f25f64e07e1cef2ba9517504d236467639",
+      "runner": "d50e9a8ec40e4f7279d954ba64b772837235316557838e7c13e01902e598da05",
+      "uv_lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+    }
+  },
+  "sources": {
+    "collection": "9b2fdcb7ebee9911c181e3ce7a786b8a79013293632151a2fcee96d6b61d5237",
+    "common": "3ad8ef97c3b84d0a4e4a7df6dcde3636d08d9c4c25435ca415abdc51e1429f7e",
+    "inference": "a73a17ee3d037d81ee45f5fa10211ec9be750b03a240f6b14a95c061c0cee61c",
+    "metrics": "38df7546ebd3166c554df1ffddcd86d43d7440d180f1755625715a24453d9912",
+    "readout": "b654e70d2dd981122f7dd8cf5cecdf926895b474e518a0dacc070ad051fd8c68",
+    "replay": "02afbdcd892fe3b77e464d08bc18c8f25f64e07e1cef2ba9517504d236467639",
+    "runner": "d50e9a8ec40e4f7279d954ba64b772837235316557838e7c13e01902e598da05",
+    "uv_lock": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00"
+  },
+  "stage_seconds": {
+    "audit": [
+      0.5529091251082718
+    ],
+    "collect": [
+      28.64842866593972
+    ],
+    "confirm": [
+      45.251021625008434
+    ],
+    "develop": [
+      67.80648775026202
+    ],
+    "seal": [
+      0.005523291882127523
+    ]
+  },
+  "task": "PHYS-002"
+}

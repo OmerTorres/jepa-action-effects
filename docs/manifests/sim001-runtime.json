@@ -1,0 +1,121 @@
+{
+  "task": "SIM-001",
+  "status": "passed",
+  "git_head": "95a6182bf1245a6635cee28bc5fd211d71b81944",
+  "git_dirty": true,
+  "python": "3.10.21",
+  "platform": "macOS-15.7.3-arm64-arm-64bit",
+  "packages": {
+    "stable-worldmodel": "0.0.5",
+    "numpy": "2.2.6",
+    "pymunk": "7.3.0",
+    "pygame": "2.6.1",
+    "gymnasium": "1.3.0"
+  },
+  "uv_lock_sha256": "dd6d330ad7056c1bbe3abcc1f6863243aac4b14e1aebab2bd5d523491080db00",
+  "simulator_revision": "44c45bd1f774995aac0cc2b41444ebea24c1d5ad",
+  "configuration": {
+    "state_atol": 1e-10,
+    "ordering_seed": 20260926,
+    "audit_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "candidate_ids": [
+      "hold",
+      "right",
+      "left",
+      "up",
+      "down",
+      "diagonal"
+    ]
+  },
+  "results": {
+    "passed": true,
+    "gates": {
+      "duplicate_replay": true,
+      "branch_order_independence": true,
+      "contact_identities_and_timestamps_exact": true,
+      "instrumentation_matches_base": true,
+      "ten_physics_substeps_per_control": true,
+      "reset_steps_separate": true,
+      "history_timing": true,
+      "direct_push_contact": true,
+      "near_miss_no_contact": true,
+      "sustained_contact": true,
+      "both_block_polygons_identified": true,
+      "block_wall_without_agent_block": true,
+      "moving_rotating_branch_point": true,
+      "all_seed_candidates_complete": true
+    },
+    "maximum_numeric_discrepancy": 0.0,
+    "epsilon_sim": 0.0,
+    "instrumentation_reference_maximum_discrepancy": 0.0
+  },
+  "artifacts": {
+    "report": "outputs/sim001/report.json",
+    "report_sha256": "395109e66b2c9b62a2961b2264c74c434c67bbf402dfbfedbbd9ea302ccc3e0f",
+    "examples": {
+      "direct_push": {
+        "model_compatible_frame": {
+          "path": "outputs/sim001/direct_push-model-frame.png",
+          "sha256": "65b408072ff3ae2698542b931a97d374383f973545278fb5400931ac9e822e56"
+        },
+        "annotated_diagnostic": {
+          "path": "outputs/sim001/direct_push-annotated.png",
+          "sha256": "680f76bbb8062f05ec3eebf7f4cf26bffa1512b03970fbd98fe6ab395ae58c4a"
+        }
+      },
+      "near_miss": {
+        "model_compatible_frame": {
+          "path": "outputs/sim001/near_miss-model-frame.png",
+          "sha256": "63bdf29a6a601b3acfbfdb35bb83806d74a3ba8b7b0f3c6bf9c00fcf089939cf"
+        },
+        "annotated_diagnostic": {
+          "path": "outputs/sim001/near_miss-annotated.png",
+          "sha256": "63bdf29a6a601b3acfbfdb35bb83806d74a3ba8b7b0f3c6bf9c00fcf089939cf"
+        }
+      },
+      "sustained_contact": {
+        "model_compatible_frame": {
+          "path": "outputs/sim001/sustained_contact-model-frame.png",
+          "sha256": "99578468c01b93b0c5b0b1edda6202f8a71e6b953302c1918475463abe6f4f1f"
+        },
+        "annotated_diagnostic": {
+          "path": "outputs/sim001/sustained_contact-annotated.png",
+          "sha256": "b87cc00b8b74b1a2bae78e578496c0f0fe2220e9a52390a02365d1f6e1190e04"
+        }
+      },
+      "block_wall_only": {
+        "model_compatible_frame": {
+          "path": "outputs/sim001/block_wall_only-model-frame.png",
+          "sha256": "d4adb09c64f17c5e19bc5150dc4c01a5d4d4d758fdc24024470e954de5201bf1"
+        },
+        "annotated_diagnostic": {
+          "path": "outputs/sim001/block_wall_only-annotated.png",
+          "sha256": "d4adb09c64f17c5e19bc5150dc4c01a5d4d4d758fdc24024470e954de5201bf1"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Validated only on the recorded locked runtime; cross-platform determinism is unproven.",
+    "Observable body dynamics are compared; Pymunk solver caches are neither exposed nor cloned.",
+    "Fixtures validate labels and replay mechanics, not natural-regime prevalence.",
+    "Historical training-time simulator compatibility remains unproven."
+  ]
+}
